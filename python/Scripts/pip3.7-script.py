@@ -1,4 +1,4 @@
-#!C:\Users\Jakob\PycharmProjects\Hannes_Webcam\python\Scripts\python.exe
+#!C:\Users\Jakob\PycharmProjects\parcelcopter37\python\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==19.0.3','console_scripts','pip3.7'
 __requires__ = 'pip==19.0.3'
 import re

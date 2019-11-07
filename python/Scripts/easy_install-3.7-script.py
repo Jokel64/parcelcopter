@@ -1,4 +1,4 @@
-#!C:\Users\Jakob\PycharmProjects\Hannes_Webcam\python\Scripts\python.exe
+#!C:\Users\Jakob\PycharmProjects\parcelcopter37\python\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==40.8.0','console_scripts','easy_install-3.7'
 __requires__ = 'setuptools==40.8.0'
 import re
