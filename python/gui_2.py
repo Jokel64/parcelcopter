@@ -76,10 +76,13 @@ while LOOP_ACTIVE:
 
     font = cv2.FONT_HERSHEY_COMPLEX
 
-    img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    _, bw = cv2.threshold(img, thresh, 255, cv2.THRESH_BINARY)
+    lower_red = np.array([100, 180, 150])
+    upper_red = np.array([180, 204, 255])
+    red = cv2.inRange(frame, lower_red, upper_red)
+    #img = cv2.cvtColor(red, cv2.COLOR_BGR2GRAY)
+    #_, bw = cv2.threshold(img, thresh, 255, cv2.THRESH_BINARY)
     #    _, threshold = cv2.threshold(img, 240, 255, cv2.THRESH_BINARY)
-    threshold = cv2.adaptiveThreshold(bw, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+    threshold = cv2.adaptiveThreshold(red, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
     contours, _ = cv2.findContours(threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     Anzahl = 0
     list = []
@@ -117,7 +120,7 @@ while LOOP_ACTIVE:
     Anzahl = Label(fenster, text="Anzahl erkannter Vierecke " + str(Anzahl))
     Anzahl.place(x=0, y=200, width=300, height=30)
     cv2.imshow("shapes", frame)
-    cv2.imshow("Threshold", threshold)
+    cv2.imshow("Threshold", red)
     fenster.update()
 
 
