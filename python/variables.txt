@@ -1,0 +1,10 @@
+min_Groesse
+10
+max_Groesse
+1000000
+BGR_unten
+[100, 100, 100]
+BGR_oben
+[50, 50, 255]
+flughoehe
+2
