@@ -13,7 +13,7 @@ variables = {}
 Anzahl = 0
 def gui(name):
     def speichern():
-        f = open('variables.txt', 'w')
+        f = open('conf.ini', 'w')
         for var in variables:
             f.write(var+"\n")
             f.write(str(variables[var])+"\n")
@@ -74,7 +74,7 @@ def gui(name):
         fenster.update()
 
 def starten(name):
-    f = open('variables.txt', 'r+')
+    f = open('conf.ini', 'r+')
     lines = f.read().splitlines()
     f.close()
     i = 0
