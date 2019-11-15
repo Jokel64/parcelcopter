@@ -1,0 +1,10 @@
+min_Groesse
+100
+max_Groesse
+100000
+schwarzweiﬂfilter
+50
+lower_red
+[  0   0 100]
+upper_red
+[100 100 255]
