@@ -1,3 +1,7 @@
+from modules.PiAct import *
+from modules.PiCam import *
+from modules.PiSen import *
+
 import cv2
 import logging
 import threading
