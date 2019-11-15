@@ -175,21 +175,21 @@ format = "%(asctime)s: %(message)s"
 logging.basicConfig(format=format, level=logging.INFO,
                         datefmt="%H:%M:%S")
 
-logging.info("Main    : Programm starten")
+logging.info("Main    : Programm start")
 
-x = threading.Thread(target=starten, args=('starten',))
-x.start()
-x.join()
+flight_status = threading.Thread(target=starten, args=('start',))
+flight_status.start()
+flight_status.join()
 
 interface = threading.Thread(target=gui, args=('gui',))
 interface.start()
 
-x = threading.Thread(target=warten, args=('warten',))
-x.start()
-x.join()
+flight_status = threading.Thread(target=warten, args=('wait',))
+flight_status.start()
+flight_status.join()
 
-x = threading.Thread(target=Finde_paket, args=('Finde_Paket',))
-x.start()
+flight_status = threading.Thread(target=Finde_paket, args=('Find_Packe',))
+flight_status.start()
 
 
 
