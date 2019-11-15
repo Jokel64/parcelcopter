@@ -11,7 +11,6 @@ from PIL import ImageTk, Image
 LOOP_ACTIVE = True
 variables = {}
 Anzahl = 0
-
 def gui(name):
     def speichern():
         f = open('variables.txt', 'w')
@@ -70,6 +69,8 @@ def gui(name):
     maximalgroesseText.place(x=0, y=60, width=200, height=30)
     global LOOP_ACTIVE
     while LOOP_ACTIVE:
+        Anzahlfenster = Label(fenster, text="Anzahl erkannter Vierecke " + str(Anzahl))
+        Anzahlfenster.place(x=0, y=200, width=300, height=30)
         fenster.update()
 
 def starten(name):
@@ -83,22 +84,19 @@ def starten(name):
         else:
             lines[i + 1] = lines[i + 1].replace("[", "")
             lines[i + 1] = lines[i + 1].replace("]", "")
-            liste = lines[i + 1].split(", ")
+            liste = lines[i + 1].split(" ")
             list = []
             for eintrag in liste:
-                list.append(int(eintrag))
+                if not eintrag=="":
+                    list.append(int(eintrag))
             variables.update({lines[i]: np.asarray(list)})
         i = i + 2
     logging.info("Thread %s: Variablen initialisiert", name)
 
 def warten(name):
     logging.info("Thread %s: starting", name)
-    empfangen = False
-
-    while not empfangen:
-        empfangen = True
-        logging.info("Thread %s: warten", name)
-
+    logging.info("Thread %s: warten", name)
+    time.sleep(5)
     logging.info("Thread %s: GPS Signale Empfangen", name)
 
 
@@ -113,8 +111,51 @@ def GoTo_coordinates(name):
     logging.info("Thread %s: Fliege zu Koordinaten", name)
 
 def Finde_paket(name):
-    logging.info("Fliege zu Paket...", name)
+    cap = cv2.VideoCapture(0)
+    logging.info("Thread %s: Fliege zu Paket...", name)
 
+    while LOOP_ACTIVE:
+        # Capture frame-by-frame
+        ret, frame = cap.read()
+
+        font = cv2.FONT_HERSHEY_COMPLEX
+        red = cv2.inRange(frame, variables["lower_red"], variables["upper_red"])
+        cv2.imshow("red", red)
+        contours, _ = cv2.findContours(red, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        Anzahl = 0
+        list = []
+        for cnt in contours:
+            approx = cv2.approxPolyDP(cnt, 0.01 * cv2.arcLength(cnt, True), True)
+            if len(approx) == 4 and cv2.contourArea(cnt) >= variables["min_Groesse"] and cv2.contourArea(cnt) <= variables["max_Groesse"]:
+                xmittelpunkt = (approx.ravel()[0] + approx.ravel()[2] + approx.ravel()[4] + approx.ravel()[6]) / 4
+                ymittelpunkt = (approx.ravel()[1] + approx.ravel()[3] + approx.ravel()[5] + approx.ravel()[7]) / 4
+                dabei = False
+                #            checke ob das Viereck schon erkannt wurde
+                for elm in list:
+                    if (xmittelpunkt - elm[0] <= 1 or xmittelpunkt - elm[0] >= 1 or ymittelpunkt - elm[
+                        1] <= 1 or ymittelpunkt - elm[1] >= 1):
+                        dabei = True
+                if dabei == False:
+                    Anzahl = Anzahl + 1
+
+                    drehung = np.arctan((approx.ravel()[3] - approx.ravel()[1]) / (approx.ravel()[2] - approx.ravel()[0]))
+                    drehung = drehung / np.pi * 180
+                    cv2.drawContours(frame, [approx], 0, (0), 5)
+                    list.append([xmittelpunkt, ymittelpunkt, drehung])
+                    print(approx.ravel())
+                    if not xmittelpunkt < 480:
+                        xmittelpunkt = 479;
+                    if not ymittelpunkt < 480:
+                        ymittelpunkt = 479;
+                    color = frame[int(xmittelpunkt), int(ymittelpunkt)]
+                    cv2.putText(frame, "B:" + str(color[0]) + " G:" + str(color[1]) + " R:" + str(color[2]),
+                                (int(xmittelpunkt), int(ymittelpunkt)), font, 1, (0))
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+        cv2.imshow("shapes", frame)
+    cap.release()
+    cv2.destroyAllWindows()
 
 def Sinken(name):
     looging.info("Gelandet", name)
@@ -142,6 +183,12 @@ interface.start()
 x = threading.Thread(target=warten, args=('warten',))
 x.start()
 x.join()
+
+x = threading.Thread(target=Finde_paket, args=('Finde_Paket',))
+x.start()
+
+
+
 interface.join()
 logging.info("Main    : all done")
 

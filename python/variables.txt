@@ -1,10 +1,10 @@
 min_Groesse
-10
+100
 max_Groesse
-1000000
-BGR_unten
-[100, 100, 100]
-BGR_oben
-[50, 50, 255]
-flughoehe
-2
+100000
+schwarzweiﬂfilter
+50
+lower_red
+[  0   0 100]
+upper_red
+[100 100 255]

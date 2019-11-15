@@ -7,7 +7,7 @@ f.close()
 i = 0
 while i < len(lines):
     if '[' not in lines[i+1]:
-        varisables.update({lines[i]:int(lines[i+1])})
+        variables.update({lines[i]:int(lines[i+1])})
     else:
         lines[i+1] = lines[i+1].replace("[","")
         lines[i+1] = lines[i + 1].replace("]", "")
@@ -17,6 +17,3 @@ while i < len(lines):
             list.append(int(eintrag))
         variables.update({lines[i]: np.asarray(list)})
     i = i+2
-
-
-print(variables)
