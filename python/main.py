@@ -78,25 +78,6 @@ def gui(name):
         fenster.update()
 
 def starten(name):
-    f = open('conf.ini', 'r+')
-    lines = f.read().splitlines()
-    f.close()
-    i = 0
-    while i < len(lines):
-        if '[' not in lines[i + 1]:
-            variables.update({lines[i]: int(lines[i + 1])})
-        else:
-            lines[i + 1] = lines[i + 1].replace("[", "")
-            lines[i + 1] = lines[i + 1].replace("]", "")
-            liste = lines[i + 1].split(" ")
-            list = []
-            for eintrag in liste:
-                if not eintrag=="":
-                    list.append(int(eintrag))
-            variables.update({lines[i]: np.asarray(list)})
-        i = i + 2
-    logging.info("Thread %s: Variablen initialisiert", name)
-
 def warten(name):
     logging.info("Thread %s: starting", name)
     logging.info("Thread %s: warten", name)
