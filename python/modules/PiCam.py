@@ -42,9 +42,9 @@ class PiCam:
                     cv2.drawContours(frame, [approx], 0, (0), 5)
                     self.list.append([xmittelpunkt, ymittelpunkt, drehung])
                     if not xmittelpunkt < 480:
-                        xmittelpunkt = 479;
+                        xmittelpunkt = 479
                     if not ymittelpunkt < 480:
-                        ymittelpunkt = 479;
+                        ymittelpunkt = 479
                     color = frame[int(xmittelpunkt), int(ymittelpunkt)]
                     cv2.putText(frame, "B:" + str(color[0]) + " G:" + str(color[1]) + " R:" + str(color[2]),
                                 (int(xmittelpunkt), int(ymittelpunkt)), font, 1, (0))
