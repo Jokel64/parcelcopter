@@ -19,7 +19,8 @@ class PiCam:
         # Capture frame-by-frame
         ret, frame = self.usbConf.read()
         font = cv2.FONT_HERSHEY_COMPLEX
-        red = cv2.inRange(frame, self.lowerRed, self.upperRed)
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        red = cv2.inRange(hsv, self.lowerRed, self.upperRed)
         contours, _ = cv2.findContours(red, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         Anzahl = 0
         for cnt in contours:
