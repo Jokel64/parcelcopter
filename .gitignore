@@ -23,8 +23,6 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
-venv/
-venv37/
 .idea/
 
 # PyInstaller
@@ -91,6 +89,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+venv/
+venv37/
+python/pyvenv.cfg
 
 # Spyder project settings
 .spyderproject
