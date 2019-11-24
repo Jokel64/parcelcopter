@@ -8,7 +8,6 @@ from modules.DataRes import *
 from modules.ArrayOp import *
 from modules.SquarePos import *
 
-
 import logging
 import threading
 import time
