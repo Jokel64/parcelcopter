@@ -2,18 +2,18 @@ import cv2
 import logging
 import time
 import numpy as np
-from ConfigMan import ConfigMan
+from modules.ConfigMan import ConfigMan
 
 class PiCam:
-    def __init__(self):
+    def __init__(self, config):
         self.id = 0
         self.usbConf = cv2.VideoCapture(0)
-        config = ConfigMan().getDict()
         self.lowerRed = config["lowerRed"]
         self.upperRed = config["upperRed"]
         self.minSize = config["minSize"]
         self.maxSize = config["maxSize"]
         self.list = []
+        logging.info("Camera    : Camera Runs")
 
     def PosSquares(self):
         # Capture frame-by-frame
@@ -58,5 +58,6 @@ class PiCam:
 
 
     def destroy(self):
+        logging.info("Camera    : Camera stoped")
         self.usbConf.release()
         cv2.destroyAllWindows()
