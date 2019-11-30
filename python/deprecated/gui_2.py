@@ -67,23 +67,18 @@ maximalgroesseText.place(x = 0, y = 60, width=200, height=30)
 
 LOOP_ACTIVE = True
 while LOOP_ACTIVE:
-
-
-
-
-
     ret, frame = cap.read()
 
     font = cv2.FONT_HERSHEY_COMPLEX
 
     lower_red = np.array([100, 180, 150])
     upper_red = np.array([180, 204, 255])
-    red = cv2.inRange(frame, lower_red, upper_red)
-    #img = cv2.cvtColor(red, cv2.COLOR_BGR2GRAY)
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    hsv_inrange = cv2.inRange(hsv, [0,115,194], [23,255,255])
     #_, bw = cv2.threshold(img, thresh, 255, cv2.THRESH_BINARY)
     #    _, threshold = cv2.threshold(img, 240, 255, cv2.THRESH_BINARY)
-    threshold = cv2.adaptiveThreshold(red, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
-    contours, _ = cv2.findContours(threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    #threshold = cv2.adaptiveThreshold(red, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+    contours, _ = cv2.findContours(hsv_inrange, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     Anzahl = 0
     list = []
     #list [xkooordinate mittelpunkt, ykoordinate mittelpunkt, drehung]
@@ -91,36 +86,35 @@ while LOOP_ACTIVE:
     print('neu')
     for cnt in contours:
         approx = cv2.approxPolyDP(cnt, 0.01 * cv2.arcLength(cnt, True), True)
-#elemente aussortieren
-        if len(approx) == 4 and cv2.contourArea(cnt) >= min and cv2.contourArea(cnt) <= max:
+        if len(approx) == 4 and cv2.contourArea(cnt) >= minSize and cv2.contourArea(cnt) <= maxSize:
             xmittelpunkt = (approx.ravel()[0] + approx.ravel()[2] + approx.ravel()[4] + approx.ravel()[6]) / 4
             ymittelpunkt = (approx.ravel()[1] + approx.ravel()[3] + approx.ravel()[5] + approx.ravel()[7]) / 4
             dabei = False
-#            checke ob das Viereck schon erkannt wurde
-            for elm in list:
-                if (xmittelpunkt-elm[0]<=1 or xmittelpunkt-elm[0]>=1 or ymittelpunkt-elm[1]<=1 or ymittelpunkt-elm[1]>=1):
-                    dabei = True
+            #            checke ob das Viereck schon erkannt wurde
+            self.list = []
+            for elm in self.list:
+            if (xmittelpunkt - elm[0] <= 1 or xmittelpunkt - elm[0] >= 1 or ymittelpunkt - elm[1] <= 1 or ymittelpunkt - elm[1] >= 1):
+                dabei = True
             if dabei == False:
                 Anzahl = Anzahl + 1
 
-                drehung = np.arctan((approx.ravel()[3] - approx.ravel()[1]) / (approx.ravel()[2] - approx.ravel()[0]))
-                drehung = drehung/np.pi*180
+                drehung = np.arctan(
+                    (approx.ravel()[3] - approx.ravel()[1]) / (approx.ravel()[2] - approx.ravel()[0]))
+                drehung = drehung / np.pi * 180
                 cv2.drawContours(frame, [approx], 0, (0), 5)
                 list.append([xmittelpunkt, ymittelpunkt, drehung])
-                x = approx.ravel()[0]
-                y = approx.ravel()[1]
-                if y >=479:
-                    y = 479
-                if x >= 479:
-                    x = 479
-                color = frame[x, y]
-                cv2.putText(frame, "B:"+str(color[0])+" G:"+str(color[1])+" R:"+str(color[2]), (x, y), font, 1, (0))
-                print(approx.ravel())
+                if not xmittelpunkt < 480:
+                    xmittelpunkt = 479;
+                if not ymittelpunkt < 480:
+                    ymittelpunkt = 479;
+                color = frame[int(xmittelpunkt), int(ymittelpunkt)]
+                cv2.putText(frame, "B:" + str(color[0]) + " G:" + str(color[1]) + " R:" + str(color[2]),
+                            (int(xmittelpunkt), int(ymittelpunkt)), font, 1, (0))
                 print(list)
+    cv2.imshow("red", hsv_inrange)
+    cv2.imshow("shapes", frame)
     Anzahl = Label(fenster, text="Anzahl erkannter Vierecke " + str(Anzahl))
     Anzahl.place(x=0, y=200, width=300, height=30)
-    cv2.imshow("shapes", frame)
-    cv2.imshow("Threshold", red)
     fenster.update()
 
 
