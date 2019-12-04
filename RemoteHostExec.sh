@@ -1,0 +1,1 @@
+ssh pi@10.42.0.86 nohup python3 repo/remote/parcelcopter/python/deprecated/webstreaming_2.py --ip 10.42.0.86  --port 8000
