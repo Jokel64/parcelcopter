@@ -1,1 +1,0 @@
-ssh pi@10.42.0.153 nohup python3 repo/remote/parcelcopter/python/tinker.py
