@@ -1,5 +1,5 @@
 # USAGE
-# python webstreaming.py --ip 0.0.0.0 --port 8000
+# python.old webstreaming.py --ip 0.0.0.0 --port 8000
 
 # import the necessary packages
 from imutils.video import VideoStream

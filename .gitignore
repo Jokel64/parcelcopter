@@ -15,8 +15,8 @@ downloads/
 eggs/
 .eggs/
 lib64/
-python/Lib/
-python/Scripts
+python.old/Lib/
+python.old/Scripts
 parts/
 sdist/
 var/
@@ -28,7 +28,7 @@ MANIFEST
 .idea/
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
+#  Usually these files are written by a python.old script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
@@ -93,7 +93,7 @@ env.bak/
 venv.bak/
 venv/
 venv37/
-python/pyvenv.cfg
+python.old/pyvenv.cfg
 
 # Spyder project settings
 .spyderproject
