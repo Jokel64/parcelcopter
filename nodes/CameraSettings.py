@@ -60,6 +60,9 @@ def talker():
     cv2.createTrackbar("U - S", "Trackbars", 255, 255, nothing)
     cv2.createTrackbar("U - V", "Trackbars", 255, 255, nothing)
 
+    cv2.createTrackbar("Min Size", "Trackbars", 0, 2000, nothing)
+    cv2.createTrackbar("Max Size", "Trackbars", 2000, 2000, nothing)
+
     pub = rospy.Publisher("/camera/settings", String, queue_size=10)
     rospy.init_node("SettingsProvider", anonymous=True)
     #rate = rospy.Rate(50)  # 2hz
@@ -69,6 +72,8 @@ def talker():
     u_h = 0
     u_s = 0
     u_v = 0
+    l_size = 0
+    u_size = 2000
 
 
     while not rospy.is_shutdown():
@@ -95,7 +100,16 @@ def talker():
         if u_v != cv2.getTrackbarPos("U - V", "Trackbars"):
             u_v = cv2.getTrackbarPos("U - V", "Trackbars")
             pub.publish(createMsg("u_v", u_v))
-        cv2.waitKey(500)
+
+        if l_size != cv2.getTrackbarPos("Min Size", "Trackbars"):
+            l_size = cv2.getTrackbarPos("Min Size", "Trackbars")
+            pub.publish(createMsg("l_size", l_size))
+
+        if u_size != cv2.getTrackbarPos("Max Size", "Trackbars"):
+            u_size = cv2.getTrackbarPos("Max Size", "Trackbars")
+            pub.publish(createMsg("u_size", u_size))
+
+        cv2.waitKey(100)
         #rate.sleep()
 
 

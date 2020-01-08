@@ -38,19 +38,8 @@
 import rospy
 import numpy as np
 import cv2
-from sensor_msgs.msg import CompressedImage
 from std_msgs.msg import Int16MultiArray
 from std_msgs.msg import String
-font = cv2.FONT_HERSHEY_COMPLEX
-
-rospy.init_node('imageprogressing', anonymous=True)
-pub = rospy.Publisher("/camera/image/coordinates", Int16MultiArray, queue_size=10)
-l_h = 0
-l_s = 0
-l_v = 0
-u_h = 0
-u_s = 0
-u_v = 0
 
 def callback(data):
 
@@ -58,6 +47,8 @@ def callback(data):
     image = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     filterd = cv2.inRange(hsv, (l_h, l_s, l_v), (u_h, u_s, u_v))
+    filterd = cv2.GaussianBlur(filterd,(5,5),cv2.BORDER_DEFAULT)
+
     _, contours, _ = cv2.findContours(filterd, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     Anzahl = 0
 
