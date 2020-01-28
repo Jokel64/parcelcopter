@@ -26,6 +26,7 @@ wheels/
 *.egg
 MANIFEST
 .idea/
+/out/
 
 # PyInstaller
 #  Usually these files are written by a python.old script from a template
