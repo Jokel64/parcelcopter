@@ -1,7 +1,7 @@
-%%This is a very basic article template.
-%%There is just one section and two subsections.
-\documentclass{article}
+\documentclass[ngerman]{article}
 \usepackage[colorlinks, linkcolor = black, citecolor = black, filecolor = black, urlcolor = blue]{hyperref}
+\usepackage[german, english]{babel}
+\usepackage[utf8]{inputenc}
 
 \begin{document}
 
@@ -19,15 +19,13 @@ Joachim Hecker\\
 Sebstian\\
 Hannes Pfitzner\\
 
-\newpage
-\section{Mechanik}
-\newpage
-\section{Elektronik}
-\newpage
-\section{Software}
-\subsection{Zustandsdiagramm}
-\subsection{Ressourcenmanagment}
-\subsection{Variablen}
+\include{einleitung}
+\include{greifer}
+\include{sensact}
+\include{softwareimplementierung}
+\include{bilderkennung}
+\include{gesamtintegration}
+
 \section{Quellenverzeichnis}
 
 

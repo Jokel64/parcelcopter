@@ -1,0 +1,14 @@
+\section{Einleitung}
+Bei dieser Projektarbeit geht es um die Entwicklung einer Paketgreiffunktion für einen
+bereits funktionierenden Quadrokopter. Die zu entwickelnde Hardware lässt sich dabei
+in vier Kategorien einteilen: Ein Greifarm, der in der Lage ist, Pakete mit einer Größe
+von ca. 10 cm zu greifen und zu halten; eine Kamera, die das zu greifende Paket
+erkennt; diverse Sensorik und Aktorik für den Greifarm und anderweitige
+Kontrollfunktionen; ein System-on-a-Chip (SoC) für die Bildanalyse, Regelung und
+Steuerung des Greifarms und des Quadrokopters, wobei dieser selbst bereits mit
+einem weiteren SoC ausgestattet ist, mit welchem für die Steuerung nur kommuniziert
+werden muss. Es gibt eine Vielzahl verschiedener SoCs, wobei sich hier aufgrund
+weiter Verbreitung für den Raspberry Pi (RPi) entschieden wurde, welcher, salopp
+gesagt, als das Gehirn der neu entwickelten Funktionalität dient. Im Folgenden soll es
+nun um die grundlegende Softwarearchitektur und -infrastruktur gehen, welche die
+Aufgaben des Raspberry Pis auf diesem implementiert.
