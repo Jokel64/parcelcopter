@@ -5,6 +5,6 @@
     <node name="CameraImagePub" pkg="parcelcopter" type="CameraImagePub.py" />
     <node name="CameraSettings" pkg="parcelcopter" type="CameraSettings.py" />
     <node name="ImageProcessing" pkg="parcelcopter" type="ImageProcessing.py" />
-    <arg name="node_start_delay" default="5.0" />
-    <!--<node name="FlightController" pkg="parcelcopter" type="FlightController.py" required="true" aunch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>-->
+    <!---<arg name="node_start_delay" default="5.0" />-->
+    <node name="FlightController" pkg="parcelcopter" type="FlightController.py" />
 </launch>
