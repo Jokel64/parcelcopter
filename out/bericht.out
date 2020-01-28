@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{Teammitglieder}{}% 1
+\BOOKMARK [1][-]{section.2}{Einleitung}{}% 2
+\BOOKMARK [1][-]{section.3}{Die Greifermechanik}{}% 3
+\BOOKMARK [1][-]{section.4}{Sesorik, Aktorik und andere Hardware}{}% 4
+\BOOKMARK [1][-]{section.5}{Softwareimplementierung}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Betriebssystem und Entwicklungsumgebung}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{Softwarearchitektur}{section.5}% 7
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Single Application vs. ROS}{subsection.5.2}% 8
+\BOOKMARK [2][-]{subsection.5.3}{Robot Operating System \(ROS\)}{section.5}% 9
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Mavros und Simulation}{subsection.5.3}% 10
+\BOOKMARK [2][-]{subsection.5.4}{Dronensteuerung}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{Bilderkennung}{}% 12
+\BOOKMARK [1][-]{section.7}{Gesamtintegration}{}% 13
+\BOOKMARK [1][-]{section.8}{Quellenverzeichnis}{}% 14
