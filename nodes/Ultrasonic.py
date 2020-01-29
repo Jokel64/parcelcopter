@@ -15,25 +15,25 @@ signal.signal(signal.SIGINT, signal_handler)
 
 class sonar():
     def __init__(self):
-        rospy.init_node('sonar', anonymous=True)
-        self.distance_publisher = rospy.Publisher('/sonar_dist',Float32, queue_size=1)
+        rospy.init_node('dist_sens', anonymous=True)
+        self.distance_publisher = rospy.Publisher('/sensor_dist',Float32, queue_size=1)
         self.r = rospy.Rate(15)
-    def dist_sendor(self,dist):
+    def dist_sensor(self,dist):
         data = Float32()
         data.data=dist
         self.distance_publisher.publish(data)
 
 
 gpio.setmode(gpio.BCM)
-trig = 27 # 7th
-echo = 17 # 6th
+trig = 18
+echo = 14
 
 gpio.setup(trig, gpio.OUT)
 gpio.setup(echo, gpio.IN)
 
 sensor=sonar()
 time.sleep(0.5)
-print ('-----------------------------------------------------------------sonar start')
+print ('sonar start')
 try :
     while True :
         gpio.output(trig, False)
@@ -55,8 +55,7 @@ try :
             continue
         distance = round(distance, 3)
         #print ('Distance : %f cm'%distance)
-        sensor.dist_sendor(distance)
-
+        sensor.dist_sensor(distance)
         sensor.r.sleep()
 
 except (KeyboardInterrupt, SystemExit):
