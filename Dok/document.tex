@@ -1,7 +1,19 @@
-\documentclass[ngerman]{article}
+\documentclass[ngerman, 12pt, letterpaper]{article}
 \usepackage[colorlinks, linkcolor = black, citecolor = black, filecolor = black, urlcolor = blue]{hyperref}
 \usepackage[german, english]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\newcommand{\code}[1]{\texttt{#1}}
+\usepackage[
+%showframe,% Seitenlayout anzeigen
+left=3cm,
+right=2cm,
+top=2.5cm,
+bottom=2cm,
+%includeheadfoot
+]{geometry}
+
+
 
 \begin{document}
 
@@ -19,12 +31,14 @@ Joachim Hecker\\
 Sebstian\\
 Hannes Pfitzner\\
 
+\include{literatur}
 \include{einleitung}
 \include{greifer}
 \include{sensact}
 \include{softwareimplementierung}
 \include{bilderkennung}
 \include{gesamtintegration}
+
 
 \section{Quellenverzeichnis}
 
