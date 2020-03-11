@@ -12,10 +12,14 @@ top=2.5cm,
 bottom=2cm,
 %includeheadfoot
 ]{geometry}
+\usepackage{apacite}
 
+\title{Erweiterung eines Quadrokopters um einen kameragestützen Paketgreifer}
 
 
 \begin{document}
+\maketitle
+\newpage
 
 \tableofcontents
 \newpage
@@ -33,15 +37,14 @@ Hannes Pfitzner\\
 
 \include{literatur}
 \include{einleitung}
+\include{Anforderungen}
 \include{greifer}
 \include{sensact}
 \include{softwareimplementierung}
 \include{bilderkennung}
 \include{gesamtintegration}
 
-
-\section{Quellenverzeichnis}
-
-
+\bibliographystyle{apacite}
+\bibliography{references}
 
 \end{document}
