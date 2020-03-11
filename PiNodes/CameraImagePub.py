@@ -42,7 +42,7 @@ from sensor_msgs.msg import CompressedImage
 def talker():
     pub = rospy.Publisher("/camera/image/compressed", CompressedImage)
     rospy.init_node('talker', anonymous=True)
-    #rate = rospy.Rate(25) # 10hz
+    rate = rospy.Rate(10) # 10hz
     cap = cv2.VideoCapture(0)
     while not rospy.is_shutdown():
         ret, frame = cap.read()
@@ -55,7 +55,7 @@ def talker():
         # Publish new image
         pub.publish(msg)
         rospy.loginfo("Published Image")
-        #rate.sleep()
+        rate.sleep()
 
 if __name__ == '__main__':
     try:
