@@ -1,5 +1,15 @@
 \section{Softwareimplementierung}
-\paragraph{}
+\subsection{Python als Programmiersprache}
+
+Bei der Wahl der Programmiersprache ist zu beachten das sie möglichst einfach und bereits relativ alt ist. Der Vorteil von alten Programmiersprachen ist, dass es eine umfangreiche Beispielsammlung gibt. Dadurch kann man sich leicht an bereits vorhandenem Code orientieren.
+Anforderungs-bedingt muss die Programmiersprache möglichst ressourcenschonend sein.
+Dadurch fallen alle grafischen Programmiersprachen wie Matlap, Simulink, Labview etc. heraus. Diese haben aufgrund ihres unstrukturierten Programmablaufs, eine eher schlechte Laufzeit.\\ 
+\\
+In dem Studium wurde bei uns Java gelehrt. Der Vorteil von Java ist, das es plattformübergreifend funktioniert. Leider verwendet Java dafür eine Virtuelle Java Maschine. Also ein Betriebssystem, dass noch mal über dem Betriebssystem liegt. Dies verringert die Laufzeit von Java enorm. Ein weiteres Problem liegt darin, dass Schnittstellen immer plattformabhängig sind(USB, D-Sub, Ethernet etc.). Dadurch werden sie durch Java nur schlecht unterstützt. Aus diesen Gründen konnte Java ebenfalls nicht gewählt werden.\\
+\\
+Eine weitere Alternative ist eine C-Programmiersprache(C++, C etc.). Diese haben den großen Vorteil, dass sie echtzeitfähig sind. Sie können also unter Umständen garantieren, dass das Ergebnis des Algorithmus nach einer bestimmten Zeit feststeht. Dies ist für eine Drohnensteuerung sehr geeignet, da man garantieren sollte, dass sie Drohne in einem bestimmten Zeitintervall überwacht wird. Außerdem sind C-Sprachen sehr Hardware nah geschrieben, wodurch die Laufzeit sehr gut ist. Allerdings nutzen wir die Hought-Transformation der Bibliothek Open-cv. Diese Bibliothek ist allerdings nicht echtzeitfähig, wodurch der große Vorteil von C verloren geht. Des Weiteren ist es sehr schwer/mühselig Open-cv in C zu implementieren.\\
+\\
+Außerdem ist Python eine Alternative. Python ist leider nicht echtzeitfähig. Jedoch ist es sehr benutzerfreundlich, hinsichtlich des Importierens von Bibliotheken. Es ist nicht so Hardware nah wie C, allerdings immer noch deutlich näher als Java oder Labview. Außerdem gibt es zahlreiche Beispiele für Python und das Ansteuern von Schnittstellen geht problemlos. Aus all diesen Gründen ist die Wahl auf Python gefallen.
 \subsection{Vergleich Monolithische Single Application und Service Oriented Architecture}
 \subsubsection{Monolithische Single Application}
 \paragraph{}
@@ -84,7 +94,10 @@ Der dazugehörige Subscriber ist im Knoten "Image Processing" implementiert und 
 \subsection{Starten und Automation eines ROS-Systems}
 Damit die Knoten auch lauffähig sind, müssen die Dateien zunächst mit \code{chmod +x} für den Kernel ausführbar gekennzeichnet werden. Nun können, nachdem \code{roscore} ausgeführt wurde, in einem jeweils neuen Terminaltab mit \code{rosrun paketname knotenname.py} die verschiedenen Knoten ausgeführt werden. Mit \code{rostopic echo /topic/name} können die Nachrichten der verschiedenen Topics überwacht werden. Um das alle nicht jedes Mal von Hand machen zu müssen, gibt es bei ROS sogenannte Launch-Files, die, wenn ausgeführt, nicht nur einen ROS-Core ausführen, sondern auch alle notwendigen Knoten startet, Umgebungsvariablen setzt etc. Das Launch File basiert auf XML und enthält innerhalb des \code{<launch></launch>} Tags alle Komponenten. Ein Knoten ist dabei recht selbsterklärend aufgebaut: \code{<node name="CameraImagePub" pkg="parcelcopter" type="CameraImagePub.py" />}. Innerhalb des Tags können außerdem Startparameter mit \code{arg} definiert werden.Mit dem \code{env}-Tag können zudem Umgebungsvariablen gesetzt werden. 
 
-\paragraph{}Man bemerke hier die Modularität und Stabilität von ROS. Denn die Knoten geben keinen Fehler aus, obwohl ein anderer Knoten, der eigentlich für die Ausführung von Nöten ist, noch gar nicht gestartet ist. Sobald dieser bereit ist, fangen die davon abhängigen Knoten automatisch an zu arbeiten. 
+\paragraph{}
+Man bemerke hier die Modularität und Stabilität von ROS. Denn die Knoten geben keinen Fehler aus, obwohl ein anderer Knoten, der eigentlich für die Ausführung von Nöten ist, noch gar nicht gestartet ist. Sobald dieser bereit ist, fangen die davon abhängigen Knoten automatisch an zu arbeiten. 
 
 \subsection{Mavros und Simulation}
-\subsection{Dronensteuerung}
+Die Simulation der Drohne erfolgt in Gazebo. Dafür wird ein PX4-Controller simuliert. Gazebo greift die Signale von dem ROS Interface ab und verarbeitet sie. Dafür wird eine FPL-Drohne simuliert. Ihre Daten sendet dann Gazebo wieder an den PX4-Controller. Weiterhin sendet es einen Video-Stream mit den simulierten Bildern. Dieser wird dann von der Node ImagePub erkannt und in ROS gestreamt. Eigentlich kommt er schon über ROS aber auf diesem Wege ist es realitätsgetreuer. (Die Alternative wäre einfach eine andere Quelle für den ImagePub anzugeben.) Auf diesem Wege kann die Drohne nahezu eins zu eins simuliert werden. \\
+\\
+Auf diesem Wege wurden bereits viele Fehler wie z. B. Vorzeichenfehler bei den Berechnungen gefunden. Jedoch ist es etwas kompliziert neue Drohnen zu implementieren, da dies erst die Umgebung programmiert werden muss. Unten sieht man einen Kurzfilm, welcher eine Simulation zeigt.
