@@ -1,0 +1,1590 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                      Style-File  itm_symbol.sty                         %
+%                                                                         %
+%            fuer haeufig gebrauchte mechanische Symbole                  %
+%                                                                         %
+%                          Stefan Maier                                   %
+%                                                                         %
+%         Unter Verwendung von Vorlagen anderer Mitarbeiter               %
+%                                                                         %
+%                              1997                                       %
+%                              2010: Umstellung auf \bm                   %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+% Ein Manual mit dem Befehlen fuer die Symbole und den erzeugten Symbolen %
+% ist als itm_symbol.ps abgelegt.                                         %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%   UNIVERSELLER  S Y M B O L . T E X - F I L E                           %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%  mechb_symbol.sty identisch mit symbol.tex                              %
+%  Es gibt bei mir ein skript prtsymbol, das aus symbol.tex automatisch   %
+%  prtsymbol.tex erzeugt, siehe auch unten.                               %
+%  prtsymbol.tex muss noch leicht modifiziert werden und kann dann mit    %
+%  LaTeX uebersetzt werden.                                               %
+%  prtsymbol.ps ist identisch mit mechb_symbol.ps                         %
+%                                                                         %
+%  Stefan Maier 28.1.97                                                   %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Regeln die gewaehrleisten, dass symbol.tex von dem Programm prtsymbol  %
+%  in ein auszudruckendes tex-file prtsymbol.tex uebersetzt werden kann:  %
+%  - Backslashes dienen zur Trennung von Feldern innerhalb einer Zeile.   %
+%  - Zeilen die in der 1. Spalte ein %-Zeichen haben werden von LaTeX als %
+%    Kommentarzeile aufgefasst.                                           %
+%  - Steht im 1. Feld ausschliesslich ein %-Zeichen erkennt prtsymbol     %
+%    die Zeile als Text der in prtsymbol.tex ausgedruckt werden soll:     %
+%    o Text im 2. Feld wird als Ueberschrift einer section erkannt,       %
+%    o Text im 3. Feld wird als Ueberschrift einer subsection erkannt,    %
+%    o Text im 4. Feld wird als normaler Text gedruckt.                   %
+%    Der Text muss in Latex-Syntax geschrieben werden,                    %
+%    jedoch OHNE den BACKSLASH zu verwenden. Stattdessen schreibt man ##. %
+%  - Am Beginn eines Blockes mit newcommands muss eine Zeile stehen, in   %
+%    deren 1. Feld nur %% steht. Danach erfolgt die Ausgabe in            %
+%    prtsymbol.tex zweispaltig, bis zur naechsten Ueberschrift.           %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{bm}
+
+%
+%
+%\Fette Lateiner (Vektoren und Matrizen)
+%
+%\\Kleine fette Lateiner
+%\\\Kleiner Buchstabe plus kleines b f"ur bold. Ausnahmen mit bo anstatt b: dbo, pbo, sbo.
+%%\
+\newcommand{\ab     }{\bm a}
+\newcommand{\bb     }{\bm b}
+\newcommand{\cb     }{\bm c}
+\newcommand{\dbo    }{\bm d}
+\newcommand{\eb     }{\bm e}
+\newcommand{\fb     }{\bm f}
+\newcommand{\gb     }{\bm g}
+\newcommand{\hb     }{\bm h}
+\newcommand{\ib     }{\bm i}
+\newcommand{\jb     }{\bm j}
+\newcommand{\kb     }{\bm k}
+\newcommand{\lb     }{\bm l}
+\newcommand{\mb     }{\bm m}
+\newcommand{\nb     }{\bm n}
+\newcommand{\ob     }{\bm o}
+\newcommand{\pbo    }{\bm p}
+\newcommand{\qb     }{\bm q}
+\newcommand{\rb     }{\bm r}
+\newcommand{\sbo    }{\bm s}
+\newcommand{\tb     }{\bm t}
+\newcommand{\ub     }{\bm u}
+\newcommand{\vb     }{\bm v}
+\newcommand{\wb     }{\bm w}
+\newcommand{\xb     }{\bm x}
+\newcommand{\yb     }{\bm y}
+\newcommand{\zb     }{\bm z}
+%
+%\\Gro"se fette Lateiner
+%\\\Gro"ser Buchstabe plus kleines b f"ur bold.
+%%\
+\newcommand{\Ab     }{\bm A}
+\newcommand{\Bb     }{\bm B}
+\newcommand{\Cb     }{\bm C}
+\newcommand{\Db     }{\bm D}
+\newcommand{\Eb     }{\bm E}
+\newcommand{\Fb     }{\bm F}
+\newcommand{\Gb     }{\bm G}
+\newcommand{\Hb     }{\bm H}
+\newcommand{\Ib     }{\bm I}
+\newcommand{\Jb     }{\bm J}
+\newcommand{\Kb     }{\bm K}
+\newcommand{\Lb     }{\bm L}
+\newcommand{\Mb     }{\bm M}
+\newcommand{\Nb     }{\bm N}
+\newcommand{\Ob     }{\bm O}
+\newcommand{\Pb     }{\bm P}
+\newcommand{\Qb     }{\bm Q}
+\newcommand{\Rb     }{\bm R}
+\newcommand{\Sb     }{\bm S}
+\newcommand{\Tb     }{\bm T}
+\newcommand{\Ub     }{\bm U}
+\newcommand{\Vb     }{\bm V}
+\newcommand{\Wb     }{\bm W}
+\newcommand{\Xb     }{\bm X}
+\newcommand{\Yb     }{\bm Y}
+\newcommand{\Zb     }{\bm Z}
+%
+%\\Kleine fette Lateiner mit Punkt
+%\\\Kleiner Buchstabe plus b f"ur bold und p f"ur Punkt (dot).
+%%\
+\newcommand{\abp    }{\dot{\ab}}
+\newcommand{\bbp    }{\dot{\bb}}
+\newcommand{\cbp    }{\dot{\cb}}
+\newcommand{\dbp    }{\dot{\dbo}}
+\newcommand{\ebp    }{\dot{\eb}}
+\newcommand{\fbp    }{\dot{\fb}}
+\newcommand{\gbp    }{\dot{\gb}}
+\newcommand{\hbp    }{\dot{\hb}}
+\newcommand{\ibp    }{\dot{\ib}}
+\newcommand{\jbp    }{\dot{\jb}}
+\newcommand{\kbp    }{\dot{\kb}}
+\newcommand{\lbp    }{\dot{\lb}}
+\newcommand{\mbp    }{\dot{\mb}}
+\newcommand{\nbp    }{\dot{\nb}}
+\newcommand{\obp    }{\dot{\ob}}
+\newcommand{\pbp    }{\dot{\pbo}}
+\newcommand{\qbp    }{\dot{\qb}}
+\newcommand{\rbp    }{\dot{\rb}}
+\newcommand{\sbp    }{\dot{\sbo}}
+\newcommand{\tbp    }{\dot{\tb}}
+\newcommand{\ubp    }{\dot{\ub}}
+\newcommand{\vbp    }{\dot{\vb}}
+\newcommand{\wbp    }{\dot{\wb}}
+\newcommand{\xbp    }{\dot{\xb}}
+\newcommand{\ybp    }{\dot{\yb}}
+\newcommand{\zbp    }{\dot{\zb}}
+%
+%\\Gro"se fette Lateiner mit Punkt 
+%\\\Gro"ser Buchstabe plus b f"ur bold und p f"ur Punkt (dot).
+%%\
+\newcommand{\Abp    }{\dot{\Ab}}
+\newcommand{\Bbp    }{\dot{\Bb}}
+\newcommand{\Cbp    }{\dot{\Cb}}
+\newcommand{\Dbp    }{\dot{\Db}}
+\newcommand{\Ebp    }{\dot{\Eb}}
+\newcommand{\Fbp    }{\dot{\Fb}}
+\newcommand{\Gbp    }{\dot{\Gb}}
+\newcommand{\Hbp    }{\dot{\Hb}}
+\newcommand{\Ibp    }{\dot{\Ib}}
+\newcommand{\Jbp    }{\dot{\Jb}}
+\newcommand{\Kbp    }{\dot{\Kb}}
+\newcommand{\Lbp    }{\dot{\Lb}}
+\newcommand{\Mbp    }{\dot{\Mb}}
+\newcommand{\Nbp    }{\dot{\Nb}}
+\newcommand{\Obp    }{\dot{\Ob}}
+\newcommand{\Pbp    }{\dot{\Pb}}
+\newcommand{\Qbp    }{\dot{\Qb}}
+\newcommand{\Rbp    }{\dot{\Rb}}
+\newcommand{\Sbp    }{\dot{\Sb}}
+\newcommand{\Tbp    }{\dot{\Tb}}
+\newcommand{\Ubp    }{\dot{\Ub}}
+\newcommand{\Vbp    }{\dot{\Vb}}
+\newcommand{\Wbp    }{\dot{\Wb}}
+\newcommand{\Xbp    }{\dot{\Xb}}
+\newcommand{\Ybp    }{\dot{\Yb}}
+\newcommand{\Zbp    }{\dot{\Zb}}
+%
+%\\Kleine fette Lateiner mit doppeltem Punkt
+%\\\Kleiner Buchstabe plus b f"ur bold und pp f"ur Punkt Punkt (ddot).
+%%\
+\newcommand{\abpp   }{\ddot{\ab}}
+\newcommand{\bbpp   }{\ddot{\bb}}
+\newcommand{\cbpp   }{\ddot{\cb}}
+\newcommand{\dbpp   }{\ddot{\dbo}}
+\newcommand{\ebpp   }{\ddot{\eb}}
+\newcommand{\fbpp   }{\ddot{\fb}}
+\newcommand{\gbpp   }{\ddot{\gb}}
+\newcommand{\hbpp   }{\ddot{\hb}}
+\newcommand{\ibpp   }{\ddot{\ib}}
+\newcommand{\jbpp   }{\ddot{\jb}}
+\newcommand{\kbpp   }{\ddot{\kb}}
+\newcommand{\lbpp   }{\ddot{\lb}}
+\newcommand{\mbpp   }{\ddot{\mb}}
+\newcommand{\nbpp   }{\ddot{\nb}}
+\newcommand{\obpp   }{\ddot{\ob}}
+\newcommand{\pbpp   }{\ddot{\pbo}}
+\newcommand{\qbpp   }{\ddot{\qb}}
+\newcommand{\rbpp   }{\ddot{\rb}}
+\newcommand{\sbpp   }{\ddot{\sbo}}
+\newcommand{\tbpp   }{\ddot{\tb}}
+\newcommand{\ubpp   }{\ddot{\ub}}
+\newcommand{\vbpp   }{\ddot{\vb}}
+\newcommand{\wbpp   }{\ddot{\wb}}
+\newcommand{\xbpp   }{\ddot{\xb}}
+\newcommand{\ybpp   }{\ddot{\yb}}
+\newcommand{\zbpp   }{\ddot{\zb}}
+%
+%\\Gro"se fette Lateiner mit doppeltem Punkt
+%\\\Gro"ser Buchstabe plus b f"ur bold und pp f"ur Punkt Punkt (ddot).
+%%\
+\newcommand{\Abpp   }{\ddot{\Ab}}
+\newcommand{\Bbpp   }{\ddot{\Bb}}
+\newcommand{\Cbpp   }{\ddot{\Cb}}
+\newcommand{\Dbpp   }{\ddot{\Db}}
+\newcommand{\Ebpp   }{\ddot{\Eb}}
+\newcommand{\Fbpp   }{\ddot{\Fb}}
+\newcommand{\Gbpp   }{\ddot{\Gb}}
+\newcommand{\Hbpp   }{\ddot{\Hb}}
+\newcommand{\Ibpp   }{\ddot{\Ib}}
+\newcommand{\Jbpp   }{\ddot{\Jb}}
+\newcommand{\Kbpp   }{\ddot{\Kb}}
+\newcommand{\Lbpp   }{\ddot{\Lb}}
+\newcommand{\Mbpp   }{\ddot{\Mb}}
+\newcommand{\Nbpp   }{\ddot{\Nb}}
+\newcommand{\Obpp   }{\ddot{\Ob}}
+\newcommand{\Pbpp   }{\ddot{\Pb}}
+\newcommand{\Qbpp   }{\ddot{\Qb}}
+\newcommand{\Rbpp   }{\ddot{\Rb}}
+\newcommand{\Sbpp   }{\ddot{\Sb}}
+\newcommand{\Tbpp   }{\ddot{\Tb}}
+\newcommand{\Ubpp   }{\ddot{\Ub}}
+\newcommand{\Vbpp   }{\ddot{\Vb}}
+\newcommand{\Wbpp   }{\ddot{\Wb}}
+\newcommand{\Xbpp   }{\ddot{\Xb}}
+\newcommand{\Ybpp   }{\ddot{\Yb}}
+\newcommand{\Zbpp   }{\ddot{\Zb}}
+%
+%\\Kleine fette Lateiner mit Querstrich
+%\\\Kleiner Buchstabe plus b f"ur bold und q f"ur quer (bar).
+%%\
+\newcommand{\abq    }{\bar{\ab}}
+\newcommand{\bbq    }{\bar{\bb}}
+\newcommand{\cbq    }{\bar{\cb}}
+\newcommand{\dbq    }{\bar{\dbo}}
+\newcommand{\ebq    }{\bar{\eb}}
+\newcommand{\fbq    }{\bar{\fb}}
+\newcommand{\gbq    }{\bar{\gb}}
+\newcommand{\hbq    }{\bar{\hb}}
+\newcommand{\ibq    }{\bar{\ib}}
+\newcommand{\jbq    }{\bar{\jb}}
+\newcommand{\kbq    }{\bar{\kb}}
+\newcommand{\lbq    }{\bar{\lb}}
+\newcommand{\mbq    }{\bar{\mb}}
+\newcommand{\nbq    }{\bar{\nb}}
+\newcommand{\obq    }{\bar{\ob}}
+\newcommand{\pbq    }{\bar{\pbo}}
+\newcommand{\qbq    }{\bar{\qb}}
+\newcommand{\rbq    }{\bar{\rb}}
+\newcommand{\sbq    }{\bar{\sbo}}
+\newcommand{\tbq    }{\bar{\tb}}
+\newcommand{\ubq    }{\bar{\ub}}
+\newcommand{\vbq    }{\bar{\vb}}
+\newcommand{\wbq    }{\bar{\wb}}
+\newcommand{\xbq    }{\bar{\xb}}
+\newcommand{\ybq    }{\bar{\yb}}
+\newcommand{\zbq    }{\bar{\zb}}
+%
+%\\Gro"se fette Lateiner mit Querstrich
+%\\\Gro"ser Buchstabe plus b f"ur bold und q f"ur quer (bar).
+%%\
+\newcommand{\Abq    }{\bar{\Ab}}
+\newcommand{\Bbq    }{\bar{\Bb}}
+\newcommand{\Cbq    }{\bar{\Cb}}
+\newcommand{\Dbq    }{\bar{\Db}}
+\newcommand{\Ebq    }{\bar{\Eb}}
+\newcommand{\Fbq    }{\bar{\Fb}}
+\newcommand{\Gbq    }{\bar{\Gb}}
+\newcommand{\Hbq    }{\bar{\Hb}}
+\newcommand{\Ibq    }{\bar{\Ib}}
+\newcommand{\Jbq    }{\bar{\Jb}}
+\newcommand{\Kbq    }{\bar{\Kb}}
+\newcommand{\Lbq    }{\bar{\Lb}}
+\newcommand{\Mbq    }{\bar{\Mb}}
+\newcommand{\Nbq    }{\bar{\Nb}}
+\newcommand{\Obq    }{\bar{\Ob}}
+\newcommand{\Pbq    }{\bar{\Pb}}
+\newcommand{\Qbq    }{\bar{\Qb}}
+\newcommand{\Rbq    }{\bar{\Rb}}
+\newcommand{\Sbq    }{\bar{\Sb}}
+\newcommand{\Tbq    }{\bar{\Tb}}
+\newcommand{\Ubq    }{\bar{\Ub}}
+\newcommand{\Vbq    }{\bar{\Vb}}
+\newcommand{\Wbq    }{\bar{\Wb}}
+\newcommand{\Xbq    }{\bar{\Xb}}
+\newcommand{\Ybq    }{\bar{\Yb}}
+\newcommand{\Zbq    }{\bar{\Zb}}
+%
+%\\Kleine fette Lateiner mit langer Schlange
+%\\\Kleiner Buchstabe plus b f"ur bold und S f"ur Schlange (widetilde).
+%%\
+\newcommand{\abS    }{\widetilde{\ab}}
+\newcommand{\bbS    }{\widetilde{\bb}}
+\newcommand{\cbS    }{\widetilde{\cb}}
+\newcommand{\dbS    }{\widetilde{\dbo}}
+\newcommand{\ebS    }{\widetilde{\eb}}
+\newcommand{\fbS    }{\widetilde{\fb}}
+\newcommand{\gbS    }{\widetilde{\gb}}
+\newcommand{\hbS    }{\widetilde{\hb}}
+\newcommand{\ibS    }{\widetilde{\ib}}
+\newcommand{\jbS    }{\widetilde{\jb}}
+\newcommand{\kbS    }{\widetilde{\kb}}
+\newcommand{\lbS    }{\widetilde{\lb}}
+\newcommand{\mbS    }{\widetilde{\mb}}
+\newcommand{\nbS    }{\widetilde{\nb}}
+\newcommand{\obS    }{\widetilde{\ob}}
+\newcommand{\pbS    }{\widetilde{\pbo}}
+\newcommand{\qbS    }{\widetilde{\qb}}
+\newcommand{\rbS    }{\widetilde{\rb}}
+\newcommand{\sbS    }{\widetilde{\sbo}}
+\newcommand{\tbS    }{\widetilde{\tb}}
+\newcommand{\ubS    }{\widetilde{\ub}}
+\newcommand{\vbS    }{\widetilde{\vb}}
+\newcommand{\wbS    }{\widetilde{\wb}}
+\newcommand{\xbS    }{\widetilde{\xb}}
+\newcommand{\ybS    }{\widetilde{\yb}}
+\newcommand{\zbS    }{\widetilde{\zb}}
+%
+%\\Gro"se fette Lateiner mit langer Schlange
+%\\\Gro"ser Buchstabe plus b f"ur bold und S f"ur Schlange (widetilde).
+%%\
+\newcommand{\AbS    }{\widetilde{\Ab}}
+\newcommand{\BbS    }{\widetilde{\Bb}}
+\newcommand{\CbS    }{\widetilde{\Cb}}
+\newcommand{\DbS    }{\widetilde{\Db}}
+\newcommand{\EbS    }{\widetilde{\Eb}}
+\newcommand{\FbS    }{\widetilde{\Fb}}
+\newcommand{\GbS    }{\widetilde{\Gb}}
+\newcommand{\HbS    }{\widetilde{\Hb}}
+\newcommand{\IbS    }{\widetilde{\Ib}}
+\newcommand{\JbS    }{\widetilde{\Jb}}
+\newcommand{\KbS    }{\widetilde{\Kb}}
+\newcommand{\LbS    }{\widetilde{\Lb}}
+\newcommand{\MbS    }{\widetilde{\Mb}}
+\newcommand{\NbS    }{\widetilde{\Nb}}
+\newcommand{\ObS    }{\widetilde{\Ob}}
+\newcommand{\PbS    }{\widetilde{\Pb}}
+\newcommand{\QbS    }{\widetilde{\Qb}}
+\newcommand{\RbS    }{\widetilde{\Rb}}
+\newcommand{\SbS    }{\widetilde{\Sb}}
+\newcommand{\TbS    }{\widetilde{\Tb}}
+\newcommand{\UbS    }{\widetilde{\Ub}}
+\newcommand{\VbS    }{\widetilde{\Vb}}
+\newcommand{\WbS    }{\widetilde{\Wb}}
+\newcommand{\XbS    }{\widetilde{\Xb}}
+\newcommand{\YbS    }{\widetilde{\Yb}}
+\newcommand{\ZbS    }{\widetilde{\Zb}}
+%
+%\\Kleine fette Lateiner mit normaler Schlange
+%\\\Kleiner Buchstabe plus b f"ur bold und s f"ur Schlange (tilde).
+%%\
+\newcommand{\abs    }{\tilde{\ab}}
+\newcommand{\bbs    }{\tilde{\bb}}
+\newcommand{\cbs    }{\tilde{\cb}}
+\newcommand{\dbs    }{\tilde{\dbo}}
+\newcommand{\ebs    }{\tilde{\eb}}
+\newcommand{\fbs    }{\tilde{\fb}}
+\newcommand{\gbs    }{\tilde{\gb}}
+\newcommand{\hbs    }{\tilde{\hb}}
+\newcommand{\ibs    }{\tilde{\ib}}
+\newcommand{\jbs    }{\tilde{\jb}}
+\newcommand{\kbs    }{\tilde{\kb}}
+\newcommand{\lbs    }{\tilde{\lb}}
+\newcommand{\mbs    }{\tilde{\mb}}
+\newcommand{\nbs    }{\tilde{\nb}}
+\newcommand{\obs    }{\tilde{\ob}}
+\newcommand{\pbs    }{\tilde{\pbo}}
+\newcommand{\qbs    }{\tilde{\qb}}
+\newcommand{\rbs    }{\tilde{\rb}}
+\newcommand{\sbs    }{\tilde{\sbo}}
+\newcommand{\tbs    }{\tilde{\tb}}
+\newcommand{\ubs    }{\tilde{\ub}}
+\newcommand{\vbs    }{\tilde{\vb}}
+\newcommand{\wbs    }{\tilde{\wb}}
+\newcommand{\xbs    }{\tilde{\xb}}
+\newcommand{\ybs    }{\tilde{\yb}}
+\newcommand{\zbs    }{\tilde{\zb}}
+%
+%\\Gro"se fette Lateiner mit normaler Schlange
+%\\\Gro"ser Buchstabe plus b f"ur bold und s f"ur Schlange (tilde).
+%%\
+\newcommand{\Abs    }{\tilde{\Ab}}
+\newcommand{\Bbs    }{\tilde{\Bb}}
+\newcommand{\Cbs    }{\tilde{\Cb}}
+\newcommand{\Dbs    }{\tilde{\Db}}
+\newcommand{\Ebs    }{\tilde{\Eb}}
+\newcommand{\Fbs    }{\tilde{\Fb}}
+\newcommand{\Gbs    }{\tilde{\Gb}}
+\newcommand{\Hbs    }{\tilde{\Hb}}
+\newcommand{\Ibs    }{\tilde{\Ib}}
+\newcommand{\Jbs    }{\tilde{\Jb}}
+\newcommand{\Kbs    }{\tilde{\Kb}}
+\newcommand{\Lbs    }{\tilde{\Lb}}
+\newcommand{\Mbs    }{\tilde{\Mb}}
+\newcommand{\Nbs    }{\tilde{\Nb}}
+\newcommand{\Obs    }{\tilde{\Ob}}
+\newcommand{\Pbs    }{\tilde{\Pb}}
+\newcommand{\Qbs    }{\tilde{\Qb}}
+\newcommand{\Rbs    }{\tilde{\Rb}}
+\newcommand{\Sbs    }{\tilde{\Sb}}
+\newcommand{\Tbs    }{\tilde{\Tb}}
+\newcommand{\Ubs    }{\tilde{\Ub}}
+\newcommand{\Vbs    }{\tilde{\Vb}}
+\newcommand{\Wbs    }{\tilde{\Wb}}
+\newcommand{\Xbs    }{\tilde{\Xb}}
+\newcommand{\Ybs    }{\tilde{\Yb}}
+\newcommand{\Zbs    }{\tilde{\Zb}}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Null und R in bf
+%\\\Null klein ausschreiben und ebenso wie bei R ein bf anh"angen.
+%%\
+\newcommand{\nullbf }{\bf 0}
+\newcommand{\Rbf    }{\bf R}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Fette Griechen
+%\\\Der neue Befehl setzt sich im allg. aus den ersten drei Buchstaben der
+%\\\standardm"a"sig vordefinierten Befehle f"ur griechische Buchstaben und
+%\\\weiteren Buchstaben zusammen, die die Art des zu druckenden Griechen
+%\\\beschreiben: z.B. b f"ur bold und p f"ur einen Punkt "uber dem Buchstaben.
+%\\\Ist ein ##LaTeX{}-Befehl f"ur einen griechischen Buchstaben k"urzer als
+%\\\drei Buchstaben, so werden eben alle vorhandenen Buchstaben eingesetzt.
+%\\\Griechische Buchstaben die ein "`var"' vorangestellt haben, z.B. varepsilon
+%\\\werden durch ein kleines v und den ersten beiden Buchstaben des restlichen
+%\\\Namens abgek"urzt z.B. vep.
+%
+%\\Kleine fette Griechen
+%\\\Abk"urzung des griechischen Buchstabens plus b f"ur bold.
+%%\
+\newcommand{\alpb   }{\bm \alpha}
+\newcommand{\betb   }{\bm \beta}
+\newcommand{\gamb   }{\bm \gamma}
+\newcommand{\delb   }{\bm \delta}
+\newcommand{\epsb   }{\bm \epsilon}
+\newcommand{\vepb   }{\bm \varepsilon}
+\newcommand{\zetb   }{\bm \zeta}
+\newcommand{\etab   }{\bm \eta}
+\newcommand{\theb   }{\bm \theta}
+\newcommand{\vthb   }{\bm \vartheta}
+\newcommand{\iotb   }{\bm \iota}
+\newcommand{\kapb   }{\bm \kappa}
+\newcommand{\lamb   }{\bm \lambda}
+\newcommand{\mub    }{\bm \mu}
+\newcommand{\nub    }{\bm \nu}
+\newcommand{\xib    }{\bm \xi}
+\newcommand{\pib    }{\bm \pi}
+\newcommand{\vpib   }{\bm \varpi}
+\newcommand{\rhob   }{\bm \rho}
+\newcommand{\vrhb   }{\bm \varrho}
+\newcommand{\sigb   }{\bm \sigma}
+\newcommand{\vsib   }{\bm \varsigma}
+\newcommand{\taub   }{\bm \tau}
+\newcommand{\upsb   }{\bm \upsilon}
+\newcommand{\phib   }{\bm \phi}
+\newcommand{\vphb   }{\bm \varphi}
+\newcommand{\chib   }{\bm \chi}
+\newcommand{\psib   }{\bm \psi}
+\newcommand{\omeb   }{\bm \omega}
+%
+%\\Gro"se fette Griechen
+%\\\Abk"urzung des griechischen Buchstabens plus b f"ur bold. Ausnahmen: Delbo statt Delb.
+%%\
+\newcommand{\Gamb   }{\bm \Gamma}
+\newcommand{\Delbo  }{\bm \Delta}
+\newcommand{\Theb   }{\bm \Theta}
+\newcommand{\Lamb   }{\bm \Lambda}
+\newcommand{\Xib    }{\bm \Xi}
+\newcommand{\Pib    }{\bm \Pi}
+\newcommand{\Sigb   }{\bm \Sigma}
+\newcommand{\Upsb   }{\bm \Upsilon}
+\newcommand{\Phib   }{\bm \Phi}
+\newcommand{\Psib   }{\bm \Psi}
+\newcommand{\Omeb   }{\bm \Omega}
+%
+%\\Kleine fette Griechen mit Punkt
+%\\\Abk"urzung des griechischen Buchstabens plus b f"ur bold und p f"ur Punkt (dot).
+%%\
+\newcommand{\alpbp  }{\dot{\alpb}}
+\newcommand{\betbp  }{\dot{\betb}}
+\newcommand{\gambp  }{\dot{\gamb}}
+\newcommand{\delbp  }{\dot{\delb}}
+\newcommand{\epsbp  }{\dot{\epsb}}
+\newcommand{\vepbp  }{\dot{\vepb}}
+\newcommand{\zetbp  }{\dot{\zetb}}
+\newcommand{\etabp  }{\dot{\etab}}
+\newcommand{\thebp  }{\dot{\theb}}
+\newcommand{\vthbp  }{\dot{\vthb}}
+\newcommand{\iotbp  }{\dot{\iotb}}
+\newcommand{\kapbp  }{\dot{\kapb}}
+\newcommand{\lambp  }{\dot{\lamb}}
+\newcommand{\mubp   }{\dot{\mub}}
+\newcommand{\nubp   }{\dot{\nub}}
+\newcommand{\xibp   }{\dot{\xib}}
+\newcommand{\pibp   }{\dot{\pib}}
+\newcommand{\vpibp  }{\dot{\vpib}}
+\newcommand{\rhobp  }{\dot{\rhob}}
+\newcommand{\vrhbp  }{\dot{\vrhb}}
+\newcommand{\sigbp  }{\dot{\sigb}}
+\newcommand{\vsibp  }{\dot{\vsib}}
+\newcommand{\taubp  }{\dot{\taub}}
+\newcommand{\upsbp  }{\dot{\upsb}}
+\newcommand{\phibp  }{\dot{\phib}}
+\newcommand{\vphbp  }{\dot{\vphb}}
+\newcommand{\chibp  }{\dot{\chib}}
+\newcommand{\psibp  }{\dot{\psib}}
+\newcommand{\omebp  }{\dot{\omeb}}
+%
+%\\Gro"se fette Griechen mit Punkt
+%\\\Abk"urzung des griechischen Buchstabens plus b f"ur bold und p f"ur Punkt (dot).
+%%\
+\newcommand{\Gambp  }{\dot{\Gamb}}
+\newcommand{\Delbp  }{\dot{\Delbo}}
+\newcommand{\Thebp  }{\dot{\Theb}}
+\newcommand{\Lambp  }{\dot{\Lamb}}
+\newcommand{\Xibp   }{\dot{\Xib}}
+\newcommand{\Pibp   }{\dot{\Pib}}
+\newcommand{\Sigbp  }{\dot{\Sigb}}
+\newcommand{\Upsbp  }{\dot{\Upsb}}
+\newcommand{\Phibp  }{\dot{\Phib}}
+\newcommand{\Psibp  }{\dot{\Psib}}
+\newcommand{\Omebp  }{\dot{\Omeb}}
+%
+%\\Kleine fette Griechen mit doppeltem Punkt
+%\\\Abk"urzung des griechischen Buchstabens plus b f"ur bold und pp f"ur Punkt Punkt(ddot).
+%%\
+\newcommand{\alpbpp }{\ddot{\alpb}}
+\newcommand{\betbpp }{\ddot{\betb}}
+\newcommand{\gambpp }{\ddot{\gamb}}
+\newcommand{\delbpp }{\ddot{\delb}}
+\newcommand{\epsbpp }{\ddot{\epsb}}
+\newcommand{\vepbpp }{\ddot{\vepb}}
+\newcommand{\zetbpp }{\ddot{\zetb}}
+\newcommand{\etabpp }{\ddot{\etab}}
+\newcommand{\thebpp }{\ddot{\theb}}
+\newcommand{\vthbpp }{\ddot{\vthb}}
+\newcommand{\iotbpp }{\ddot{\iotb}}
+\newcommand{\kapbpp }{\ddot{\kapb}}
+\newcommand{\lambpp }{\ddot{\lamb}}
+\newcommand{\mubpp  }{\ddot{\mub}}
+\newcommand{\nubpp  }{\ddot{\nub}}
+\newcommand{\xibpp  }{\ddot{\xib}}
+\newcommand{\pibpp  }{\ddot{\pib}}
+\newcommand{\vpibpp }{\ddot{\vpib}}
+\newcommand{\rhobpp }{\ddot{\rhob}}
+\newcommand{\vrhbpp }{\ddot{\vrhb}}
+\newcommand{\sigbpp }{\ddot{\sigb}}
+\newcommand{\vsibpp }{\ddot{\vsib}}
+\newcommand{\taubpp }{\ddot{\taub}}
+\newcommand{\upsbpp }{\ddot{\upsb}}
+\newcommand{\phibpp }{\ddot{\phib}}
+\newcommand{\vphbpp }{\ddot{\vphb}}
+\newcommand{\chibpp }{\ddot{\chib}}
+\newcommand{\psibpp }{\ddot{\psib}}
+\newcommand{\omebpp }{\ddot{\omeb}}
+%
+%\\Kleine fette Griechen mit Querstrich
+%\\\Abk"urzung des griechischen Buchstabens plus b f"ur bold und q f"ur quer (bar).
+%%\
+\newcommand{\alpbq  }{\bar{\alpb}}
+\newcommand{\betbq  }{\bar{\betb}}
+\newcommand{\gambq  }{\bar{\gamb}}
+\newcommand{\delbq  }{\bar{\delb}}
+\newcommand{\epsbq  }{\bar{\epsb}}
+\newcommand{\vepbq  }{\bar{\vepb}}
+\newcommand{\zetbq  }{\bar{\zetb}}
+\newcommand{\etabq  }{\bar{\etab}}
+\newcommand{\thebq  }{\bar{\theb}}
+\newcommand{\vthbq  }{\bar{\vthb}}
+\newcommand{\iotbq  }{\bar{\iotb}}
+\newcommand{\kapbq  }{\bar{\kapb}}
+\newcommand{\lambq  }{\bar{\lamb}}
+\newcommand{\mubq   }{\bar{\mub}}
+\newcommand{\nubq   }{\bar{\nub}}
+\newcommand{\xibq   }{\bar{\xib}}
+\newcommand{\pibq   }{\bar{\pib}}
+\newcommand{\vpibq  }{\bar{\vpib}}
+\newcommand{\rhobq  }{\bar{\rhob}}
+\newcommand{\vrhbq  }{\bar{\vrhb}}
+\newcommand{\sigbq  }{\bar{\sigb}}
+\newcommand{\vsibq  }{\bar{\vsib}}
+\newcommand{\taubq  }{\bar{\taub}}
+\newcommand{\upsbq  }{\bar{\upsb}}
+\newcommand{\phibq  }{\bar{\phib}}
+\newcommand{\vphbq  }{\bar{\vphb}}
+\newcommand{\chibq  }{\bar{\chib}}
+\newcommand{\psibq  }{\bar{\psib}}
+\newcommand{\omebq  }{\bar{\omeb}}
+%
+%\\Kleine fette Griechen mit langer Schlange
+%\\\Abk"urzung des griechischen Buchstabens plus b f"ur bold und S f"ur Schlange (widetilde).
+%%\
+\newcommand{\alpbS  }{\widetilde{\alpb}}
+\newcommand{\betbS  }{\widetilde{\betb}}
+\newcommand{\gambS  }{\widetilde{\gamb}}
+\newcommand{\delbS  }{\widetilde{\delb}}
+\newcommand{\epsbS  }{\widetilde{\epsb}}
+\newcommand{\vepbS  }{\widetilde{\vepb}}
+\newcommand{\zetbS  }{\widetilde{\zetb}}
+\newcommand{\etabS  }{\widetilde{\etab}}
+\newcommand{\thebS  }{\widetilde{\theb}}
+\newcommand{\vthbS  }{\widetilde{\vthb}}
+\newcommand{\iotbS  }{\widetilde{\iotb}}
+\newcommand{\kapbS  }{\widetilde{\kapb}}
+\newcommand{\lambS  }{\widetilde{\lamb}}
+\newcommand{\mubS   }{\widetilde{\mub}}
+\newcommand{\nubS   }{\widetilde{\nub}}
+\newcommand{\xibS   }{\widetilde{\xib}}
+\newcommand{\pibS   }{\widetilde{\pib}}
+\newcommand{\vpibS  }{\widetilde{\vpib}}
+\newcommand{\rhobS  }{\widetilde{\rhob}}
+\newcommand{\vrhbS  }{\widetilde{\vrhb}}
+\newcommand{\sigbS  }{\widetilde{\sigb}}
+\newcommand{\vsibS  }{\widetilde{\vsib}}
+\newcommand{\taubS  }{\widetilde{\taub}}
+\newcommand{\upsbS  }{\widetilde{\upsb}}
+\newcommand{\phibS  }{\widetilde{\phib}}
+\newcommand{\vphbS  }{\widetilde{\vphb}}
+\newcommand{\chibS  }{\widetilde{\chib}}
+\newcommand{\psibS  }{\widetilde{\psib}}
+\newcommand{\omebS  }{\widetilde{\omeb}}
+%
+%\\Kleine fette Griechen mit normaler Schlange
+%\\\Abk"urzung des griechischen Buchstabens plus b f"ur bold und s f"ur Schlange (tilde).
+%%\
+\newcommand{\alpbs  }{\tilde{\alpb}}
+\newcommand{\betbs  }{\tilde{\betb}}
+\newcommand{\gambs  }{\tilde{\gamb}}
+\newcommand{\delbs  }{\tilde{\delb}}
+\newcommand{\epsbs  }{\tilde{\epsb}}
+\newcommand{\vepbs  }{\tilde{\vepb}}
+\newcommand{\zetbs  }{\tilde{\zetb}}
+\newcommand{\etabs  }{\tilde{\etab}}
+\newcommand{\thebs  }{\tilde{\theb}}
+\newcommand{\vthbs  }{\tilde{\vthb}}
+\newcommand{\iotbs  }{\tilde{\iotb}}
+\newcommand{\kapbs  }{\tilde{\kapb}}
+\newcommand{\lambs  }{\tilde{\lamb}}
+\newcommand{\mubs   }{\tilde{\mub}}
+\newcommand{\nubs   }{\tilde{\nub}}
+\newcommand{\xibs   }{\tilde{\xib}}
+\newcommand{\pibs   }{\tilde{\pib}}
+\newcommand{\vpibs  }{\tilde{\vpib}}
+\newcommand{\rhobs  }{\tilde{\rhob}}
+\newcommand{\vrhbs  }{\tilde{\vrhb}}
+\newcommand{\sigbs  }{\tilde{\sigb}}
+\newcommand{\vsibs  }{\tilde{\vsib}}
+\newcommand{\taubs  }{\tilde{\taub}}
+\newcommand{\upsbs  }{\tilde{\upsb}}
+\newcommand{\phibs  }{\tilde{\phib}}
+\newcommand{\vphbs  }{\tilde{\vphb}}
+\newcommand{\chibs  }{\tilde{\chib}}
+\newcommand{\psibs  }{\tilde{\psib}}
+\newcommand{\omebs  }{\tilde{\omeb}}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Einige spezielle d"unne Griechen
+%\\\Die Befehle werden nach den selben Regeln wie bei den fetten Griechen gebildet.
+%\\\Zus"atzlich gibt es hier noch das Dachsymbol (hat) "uber dem Buchstaben,
+%\\\welches durch ein d abgek"urzt wird.
+%%\
+%\\\####alpha####
+\newcommand{\alpp   }{\dot{\alpha}}
+\newcommand{\alppp  }{\ddot{\alpha}}
+\newcommand{\alpq   }{\bar{\alpha}}
+\newcommand{\alps   }{\tilde{\alpha}}
+\newcommand{\alpS   }{\widetilde{\alpha}}
+\newcommand{\alpd   }{\hat{\alpha}}
+%\\\####beta####
+\newcommand{\betp   }{\dot{\beta}}
+\newcommand{\betpp  }{\ddot{\beta}}
+\newcommand{\betq   }{\bar{\beta}}
+\newcommand{\bets   }{\tilde{\beta}}
+\newcommand{\betS   }{\widetilde{\beta}}
+\newcommand{\betd   }{\hat{\beta}}
+%\\\####gamma####
+\newcommand{\gamp   }{\dot{\gamma}}
+\newcommand{\gampp  }{\ddot{\gamma}}
+\newcommand{\gamq   }{\bar{\gamma}}
+\newcommand{\gams   }{\tilde{\gamma}}
+\newcommand{\gamS   }{\widetilde{\gamma}}
+\newcommand{\gamd   }{\hat{\gamma}}
+%\\\####delta####
+\newcommand{\delp   }{\dot{\delta}}
+\newcommand{\delpp  }{\ddot{\delta}}
+\newcommand{\delq   }{\bar{\delta}}
+\newcommand{\dels   }{\widetilde{\delta}}
+\newcommand{\delS   }{\tilde{\delta}}
+\newcommand{\deld   }{\hat{\delta}}
+%\\\####varepsilon####
+\newcommand{\vepp   }{\dot{\varepsilon}}
+\newcommand{\veppp  }{\ddot{\varepsilon}}
+\newcommand{\vepq   }{\bar{\varepsilon}}
+\newcommand{\veps   }{\tilde{\varepsilon}}
+\newcommand{\vepS   }{\widetilde{\varepsilon}}
+\newcommand{\vepd   }{\hat{\varepsilon}}
+%\\\####varphi####
+\newcommand{\vphp   }{\dot{\varphi}}
+\newcommand{\vphpp  }{\ddot{\varphi}}
+\newcommand{\vphq   }{\bar{\varphi}}
+\newcommand{\vphs   }{\tilde{\varphi}}
+\newcommand{\vphS   }{\widetilde{\varphi}}
+\newcommand{\vphd   }{\hat{\varphi}}
+%\\\####psi####
+\newcommand{\psip   }{\dot{\psi}}
+\newcommand{\psipp  }{\ddot{\psi}}
+\newcommand{\psiq   }{\bar{\psi}}
+\newcommand{\psis   }{\tilde{\psi}}
+\newcommand{\psiS   }{\widetilde{\psi}}
+\newcommand{\psid   }{\hat{\psi}}
+%\\\####omega####
+\newcommand{\omep   }{\dot{\omega}}
+\newcommand{\omepp  }{\ddot{\omega}}
+\newcommand{\omeq   }{\bar{\omega}}
+\newcommand{\omes   }{\tilde{\omega}}
+\newcommand{\omeS   }{\widetilde{\omega}}
+\newcommand{\omed   }{\hat{\omega}}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Mengen
+%\\\Der Befehl Rm steht f"ur ein R in Mengenschreibweise. Ein darauf folgendes
+%\\\h bedeutet, da"s der n"achste Buchstabe des Befehls hochgesetzt erscheint.
+%%\
+\newcommand{\Rm     }{I\!\!R}
+\newcommand{\Rmhf   }{\Rm^f}
+\newcommand{\Rmhg   }{\Rm^g}
+\newcommand{\Rmhh   }{\Rm^h}
+\newcommand{\Rmhk   }{\Rm^k}
+\newcommand{\Rmhl   }{\Rm^l}
+\newcommand{\Rmhm   }{\Rm^m}
+\newcommand{\Rmhn   }{\Rm^n}
+\newcommand{\Rmhs   }{\Rm^s}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Partielle Differentiale
+%\\\Das Partialzeichen wird durch ein kleines d ersetzt, welches dem gew"unschten
+%\\\Buchstaben voransteht. Die Abk"urzung quad bedeutet Quadrat (also hoch 2).
+%%\
+\newcommand{\dquad  }{\partial^2}
+%
+%\\Kleine Lateiner
+%\\\Kleines d plus kleiner Buchstabe.
+%\\\Ausnahmen mit de anstatt d: deh, dej, deo, dep, deq.
+%%\
+\newcommand{\da     }{\partial a}      
+\newcommand{\db     }{\partial b}      
+\newcommand{\dc     }{\partial c}      
+\newcommand{\dd     }{\partial d}      
+\newcommand{\de     }{\partial e}      
+\newcommand{\df     }{\partial f}      
+\newcommand{\dg     }{\partial g} 
+\newcommand{\deh    }{\partial h}
+\newcommand{\di     }{\partial i}
+\newcommand{\dej    }{\partial j}
+\newcommand{\dk     }{\partial k}
+\newcommand{\dl     }{\partial l}
+\newcommand{\dm     }{\partial m}
+\newcommand{\dn     }{\partial n}
+\newcommand{\deo    }{\partial o}
+\newcommand{\dep    }{\partial p}
+\newcommand{\deq    }{\partial q}
+\newcommand{\dr     }{\partial r}
+\newcommand{\ds     }{\partial s}
+\newcommand{\dt     }{\partial t}
+\newcommand{\du     }{\partial u}
+\newcommand{\dv     }{\partial v}
+\newcommand{\dw     }{\partial w}
+\newcommand{\dx     }{\partial x}
+\newcommand{\dy     }{\partial y}
+\newcommand{\dz     }{\partial z}
+%
+%\\Gro"se Lateiner
+%\\\Kleines d plus gro"ser Buchstabe.
+%%\
+\newcommand{\dA     }{\partial A}      
+\newcommand{\dB     }{\partial B}      
+\newcommand{\dC     }{\partial C}      
+\newcommand{\dD     }{\partial D}      
+\newcommand{\dE     }{\partial E}      
+\newcommand{\dF     }{\partial F}      
+\newcommand{\dG     }{\partial G} 
+\newcommand{\dH     }{\partial H}
+\newcommand{\dI     }{\partial I}
+\newcommand{\dJ     }{\partial J}
+\newcommand{\dK     }{\partial K}
+\newcommand{\dL     }{\partial L}
+\newcommand{\dM     }{\partial M}
+\newcommand{\dN     }{\partial N}
+\newcommand{\dO     }{\partial O}
+\newcommand{\dP     }{\partial P}
+\newcommand{\dQ     }{\partial Q}
+\newcommand{\dR     }{\partial R}
+\newcommand{\dS     }{\partial S}
+\newcommand{\dT     }{\partial T}
+\newcommand{\dU     }{\partial U}
+\newcommand{\dV     }{\partial V}
+\newcommand{\dW     }{\partial W}
+\newcommand{\dX     }{\partial X}
+\newcommand{\dY     }{\partial Y}
+\newcommand{\dZ     }{\partial Z}
+%
+%\\Kleine fette Lateiner
+%\\\Kleines d plus kleiner Buchstabe plus b f"ur bold.
+%%\
+\newcommand{\dab    }{\partial \ab}      
+\newcommand{\dbb    }{\partial \bb}      
+\newcommand{\dcb    }{\partial \cb}      
+\newcommand{\ddb    }{\partial \dbo}      
+\newcommand{\deb    }{\partial \eb}      
+\newcommand{\dfb    }{\partial \fb}      
+\newcommand{\dgb    }{\partial \gb} 
+\newcommand{\dhb    }{\partial \hb}
+\newcommand{\dib    }{\partial \ib}
+\newcommand{\djb    }{\partial \jb}
+\newcommand{\dkb    }{\partial \kb}
+\newcommand{\dlb    }{\partial \lb}
+\newcommand{\dmb    }{\partial \mb}
+\newcommand{\dnb    }{\partial \nb}
+\newcommand{\dob    }{\partial \ob}
+\newcommand{\dpb    }{\partial \pbo}
+\newcommand{\dqb    }{\partial \qb}
+\newcommand{\drb    }{\partial \rb}
+\newcommand{\dsb    }{\partial \sbo}
+\newcommand{\dtb    }{\partial \tb}
+\newcommand{\dub    }{\partial \ub}
+\newcommand{\dvb    }{\partial \vb}
+\newcommand{\dwb    }{\partial \wb}
+\newcommand{\dxb    }{\partial \xb}
+\newcommand{\dyb    }{\partial \yb}
+\newcommand{\dzb    }{\partial \zb}
+%
+%\\Gro"se fette Lateiner
+%\\\Kleines d plus gro"ser Buchstabe plus b f"ur bold.
+%%\
+\newcommand{\dAb    }{\partial \Ab}      
+\newcommand{\dBb    }{\partial \Bb}      
+\newcommand{\dCb    }{\partial \Cb}      
+\newcommand{\dDb    }{\partial \Db}      
+\newcommand{\dEb    }{\partial \Eb}      
+\newcommand{\dFb    }{\partial \Fb}      
+\newcommand{\dGb    }{\partial \Gb} 
+\newcommand{\dHb    }{\partial \Hb}
+\newcommand{\dIb    }{\partial \Ib}
+\newcommand{\dJb    }{\partial \Jb}
+\newcommand{\dKb    }{\partial \Kb}
+\newcommand{\dLb    }{\partial \Lb}
+\newcommand{\dMb    }{\partial \Mb}
+\newcommand{\dNb    }{\partial \Nb}
+\newcommand{\dOb    }{\partial \Ob}
+\newcommand{\dPb    }{\partial \Pb}
+\newcommand{\dQb    }{\partial \Qb}
+\newcommand{\dRb    }{\partial \Rb}
+\newcommand{\dSb    }{\partial \Sb}
+\newcommand{\dTb    }{\partial \Tb}
+\newcommand{\dUb    }{\partial \Ub}
+\newcommand{\dVb    }{\partial \Vb}
+\newcommand{\dWb    }{\partial \Wb}
+\newcommand{\dXb    }{\partial \Xb}
+\newcommand{\dYb    }{\partial \Yb}
+\newcommand{\dZb    }{\partial \Zb}
+%
+%\\Kleine Griechen
+%\\\Kleines d plus Abk"urzung des griechischen Buchstabens (siehe "`Fette Griechen"').
+%%\
+\newcommand{\dalp   }{\partial \alpha}
+\newcommand{\dbet   }{\partial \beta}
+\newcommand{\dgam   }{\partial \gamma}
+\newcommand{\ddel   }{\partial \delta}
+\newcommand{\deps   }{\partial \epsilon}
+\newcommand{\dvep   }{\partial \varepsilon}
+\newcommand{\dzet   }{\partial \zeta}
+\newcommand{\deta   }{\partial \eta}
+\newcommand{\dthe   }{\partial \theta}
+\newcommand{\dvth   }{\partial \vartheta}
+\newcommand{\diot   }{\partial \iota}
+\newcommand{\dkap   }{\partial \kappa}
+\newcommand{\dlam   }{\partial \lambda}
+\newcommand{\dmu    }{\partial \mu}
+\newcommand{\dnu    }{\partial \nu}
+\newcommand{\dxi    }{\partial \xi}
+\newcommand{\dpi    }{\partial \pi}
+\newcommand{\dvpi   }{\partial \varpi}
+\newcommand{\drho   }{\partial \rho}
+\newcommand{\dvrh   }{\partial \varrho}
+\newcommand{\dsig   }{\partial \sigma}
+\newcommand{\dvsi   }{\partial \varsigma}
+\newcommand{\dtau   }{\partial \tau}
+\newcommand{\dups   }{\partial \upsilon}
+\newcommand{\dphi   }{\partial \phi}
+\newcommand{\dvph   }{\partial \varphi}
+\newcommand{\dchi   }{\partial \chi}
+\newcommand{\dpsi   }{\partial \psi}
+\newcommand{\dome   }{\partial \omega}
+%
+%\\Gro"se Griechen
+%\\\Kleines d plus Abk"urzung des griechischen Buchstabens (siehe "`Fette Griechen"').
+%%\
+\newcommand{\dGam   }{\partial \Gamma}
+\newcommand{\dDel   }{\partial \Delta}
+\newcommand{\dThe   }{\partial \Theta}
+\newcommand{\dLam   }{\partial \Lambda}
+\newcommand{\dXi    }{\partial \Xi}
+\newcommand{\dPi    }{\partial \Pi}
+\newcommand{\dSig   }{\partial \Sigma}
+\newcommand{\dUps   }{\partial \Upsilon}
+\newcommand{\dPhi   }{\partial \Phi}
+\newcommand{\dPsi   }{\partial \Psi}
+\newcommand{\dOme   }{\partial \Omega}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Variationen
+%\\\F"ur das delta-Zeichen schreibt man delta und f"ugt den gew"unschten
+%\\\Buchstaben hinzu. Die Abk"urzung quad bedeutet Quadrat (also hoch 2).
+%%\
+\newcommand{\deltaquad}{\delta^2}
+%
+%\\Kleine Lateiner
+%\\\delta plus kleiner Buchstabe.
+%%\
+\newcommand{\deltaa }{\delta a}      
+\newcommand{\deltab }{\delta b}      
+\newcommand{\deltac }{\delta c}      
+\newcommand{\deltad }{\delta d}      
+\newcommand{\deltae }{\delta e}      
+\newcommand{\deltaf }{\delta f}      
+\newcommand{\deltag }{\delta g} 
+\newcommand{\deltah }{\delta h}
+\newcommand{\deltai }{\delta i}
+\newcommand{\deltaj }{\delta j}
+\newcommand{\deltak }{\delta k}
+\newcommand{\deltal }{\delta l}
+\newcommand{\deltam }{\delta m}
+\newcommand{\deltan }{\delta n}
+\newcommand{\deltao }{\delta o}
+\newcommand{\deltap }{\delta p}
+\newcommand{\deltaq }{\delta q}
+\newcommand{\deltar }{\delta r}
+\newcommand{\deltas }{\delta s}
+\newcommand{\deltat }{\delta t}
+\newcommand{\deltau }{\delta u}
+\newcommand{\deltav }{\delta v}
+\newcommand{\deltaw }{\delta w}
+\newcommand{\deltax }{\delta x}
+\newcommand{\deltay }{\delta y}
+\newcommand{\deltaz }{\delta z}
+%
+%\\Gro"se Lateiner
+%\\\delta plus gro"ser Buchstabe.
+%%\
+\newcommand{\deltaA }{\delta A}      
+\newcommand{\deltaB }{\delta B}      
+\newcommand{\deltaC }{\delta C}      
+\newcommand{\deltaD }{\delta D}      
+\newcommand{\deltaE }{\delta E}      
+\newcommand{\deltaF }{\delta F}      
+\newcommand{\deltaG }{\delta G} 
+\newcommand{\deltaH }{\delta H}
+\newcommand{\deltaI }{\delta I}
+\newcommand{\deltaJ }{\delta J}
+\newcommand{\deltaK }{\delta K}
+\newcommand{\deltaL }{\delta L}
+\newcommand{\deltaM }{\delta M}
+\newcommand{\deltaN }{\delta N}
+\newcommand{\deltaO }{\delta O}
+\newcommand{\deltaP }{\delta P}
+\newcommand{\deltaQ }{\delta Q}
+\newcommand{\deltaR }{\delta R}
+\newcommand{\deltaS }{\delta S}
+\newcommand{\deltaT }{\delta T}
+\newcommand{\deltaU }{\delta U}
+\newcommand{\deltaV }{\delta V}
+\newcommand{\deltaW }{\delta W}
+\newcommand{\deltaX }{\delta X}
+\newcommand{\deltaY }{\delta Y}
+\newcommand{\deltaZ }{\delta Z}
+%
+%\\Kleine fette Lateiner
+%\\\delta plus kleiner Buchstabe plus b f"ur bold.
+%%\
+\newcommand{\deltaab}{\delta \ab}      
+\newcommand{\deltabb}{\delta \bb}      
+\newcommand{\deltacb}{\delta \cb}      
+\newcommand{\deltadb}{\delta \dbo}      
+\newcommand{\deltaeb}{\delta \eb}      
+\newcommand{\deltafb}{\delta \fb}      
+\newcommand{\deltagb}{\delta \gb} 
+\newcommand{\deltahb}{\delta \hb}
+\newcommand{\deltaib}{\delta \ib}
+\newcommand{\deltajb}{\delta \jb}
+\newcommand{\deltakb}{\delta \kb}
+\newcommand{\deltalb}{\delta \lb}
+\newcommand{\deltamb}{\delta \mb}
+\newcommand{\deltanb}{\delta \nb}
+\newcommand{\deltaob}{\delta \ob}
+\newcommand{\deltapb}{\delta \pbo}
+\newcommand{\deltaqb}{\delta \qb}
+\newcommand{\deltarb}{\delta \rb}
+\newcommand{\deltasb}{\delta \sbo}
+\newcommand{\deltatb}{\delta \tb}
+\newcommand{\deltaub}{\delta \ub}
+\newcommand{\deltavb}{\delta \vb}
+\newcommand{\deltawb}{\delta \wb}
+\newcommand{\deltaxb}{\delta \xb}
+\newcommand{\deltayb}{\delta \yb}
+\newcommand{\deltazb}{\delta \zb}
+%
+%\\Gro"se fette Lateiner
+%\\\delta plus gro"ser Buchstabe plus b f"ur bold.
+%%\
+\newcommand{\deltaAb}{\delta \Ab}      
+\newcommand{\deltaBb}{\delta \Bb}      
+\newcommand{\deltaCb}{\delta \Cb}      
+\newcommand{\deltaDb}{\delta \Db}      
+\newcommand{\deltaEb}{\delta \Eb}      
+\newcommand{\deltaFb}{\delta \Fb}      
+\newcommand{\deltaGb}{\delta \Gb} 
+\newcommand{\deltaHb}{\delta \Hb}
+\newcommand{\deltaIb}{\delta \Ib}
+\newcommand{\deltaJb}{\delta \Jb}
+\newcommand{\deltaKb}{\delta \Kb}
+\newcommand{\deltaLb}{\delta \Lb}
+\newcommand{\deltaMb}{\delta \Mb}
+\newcommand{\deltaNb}{\delta \Nb}
+\newcommand{\deltaOb}{\delta \Ob}
+\newcommand{\deltaPb}{\delta \Pb}
+\newcommand{\deltaQb}{\delta \Qb}
+\newcommand{\deltaRb}{\delta \Rb}
+\newcommand{\deltaSb}{\delta \Sb}
+\newcommand{\deltaTb}{\delta \Tb}
+\newcommand{\deltaUb}{\delta \Ub}
+\newcommand{\deltaVb}{\delta \Vb}
+\newcommand{\deltaWb}{\delta \Wb}
+\newcommand{\deltaXb}{\delta \Xb}
+\newcommand{\deltaYb}{\delta \Yb}
+\newcommand{\deltaZb}{\delta \Zb}
+%
+%\\Kleine Griechen
+%\\\delta plus Abk"urzung des griechischen Buchstabens (siehe "`Fette Griechen"').
+%%\
+\newcommand{\deltaalp}{\delta \alpha}
+\newcommand{\deltabet}{\delta \beta}
+\newcommand{\deltagam}{\delta \gamma}
+\newcommand{\deltadel}{\delta \delta}
+\newcommand{\deltaeps}{\delta \epsilon}
+\newcommand{\deltavep}{\delta \varepsilon}
+\newcommand{\deltazet}{\delta \zeta}
+\newcommand{\deltaeta}{\delta \eta}
+\newcommand{\deltathe}{\delta \theta}
+\newcommand{\deltavth}{\delta \vartheta}
+\newcommand{\deltaiot}{\delta \iota}
+\newcommand{\deltakap}{\delta \kappa}
+\newcommand{\deltalam}{\delta \lambda}
+\newcommand{\deltamu }{\delta \mu}
+\newcommand{\deltanu }{\delta \nu}
+\newcommand{\deltaxi }{\delta \xi}
+\newcommand{\deltapi }{\delta \pi}
+\newcommand{\deltavpi}{\delta \varpi}
+\newcommand{\deltarho}{\delta \rho}
+\newcommand{\deltavrh}{\delta \varrho}
+\newcommand{\deltasig}{\delta \sigma}
+\newcommand{\deltavsi}{\delta \varsigma}
+\newcommand{\deltatau}{\delta \tau}
+\newcommand{\deltaups}{\delta \upsilon}
+\newcommand{\deltaphi}{\delta \phi}
+\newcommand{\deltavph}{\delta \varphi}
+\newcommand{\deltachi}{\delta \chi}
+\newcommand{\deltapsi}{\delta \psi}
+\newcommand{\deltaome}{\delta \omega}
+%
+%\\Gro"se Griechen
+%\\\delta plus Abk"urzung des griechischen Buchstabens (siehe "`Fette Griechen"').
+%%\
+\newcommand{\deltaGam}{\delta \Gamma}
+\newcommand{\deltaDel}{\delta \Delta}
+\newcommand{\deltaThe}{\delta \Theta}
+\newcommand{\deltaLam}{\delta \Lambda}
+\newcommand{\deltaXi }{\delta \Xi}
+\newcommand{\deltaPi }{\delta \Pi}
+\newcommand{\deltaSig}{\delta \Sigma}
+\newcommand{\deltaUps}{\delta \Upsilon}
+\newcommand{\deltaPhi}{\delta \Phi}
+\newcommand{\deltaPsi}{\delta \Psi}
+\newcommand{\deltaOme}{\delta \Omega}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Gro"ses ##Delta
+%\\\F"ur das Delta-Zeichen schreibt man Del und f"ugt den gew"unschten
+%\\\Buchstaben hinzu. Die Abk"urzung quad bedeutet Quadrat (also hoch 2).
+%%\
+\newcommand{\Delquad}{\Delta^2}
+%
+%\\Kleine Lateiner
+%\\\Del plus kleiner Buchstabe.
+%%\
+\newcommand{\Dela   }{\Delta a}      
+\newcommand{\Delb   }{\Delta b}      
+\newcommand{\Delc   }{\Delta c}      
+\newcommand{\Deld   }{\Delta d}      
+\newcommand{\Dele   }{\Delta e}      
+\newcommand{\Delf   }{\Delta f}      
+\newcommand{\Delg   }{\Delta g} 
+\newcommand{\Delh   }{\Delta h}
+\newcommand{\Deli   }{\Delta i}
+\newcommand{\Delj   }{\Delta j}
+\newcommand{\Delk   }{\Delta k}
+\newcommand{\Dell   }{\Delta l}
+\newcommand{\Delm   }{\Delta m}
+\newcommand{\Deln   }{\Delta n}
+\newcommand{\Delo   }{\Delta o}
+\newcommand{\Delp   }{\Delta p}
+\newcommand{\Delq   }{\Delta q}
+\newcommand{\Delr   }{\Delta r}
+\newcommand{\Dels   }{\Delta s}
+\newcommand{\Delt   }{\Delta t}
+\newcommand{\Delu   }{\Delta u}
+\newcommand{\Delv   }{\Delta v}
+\newcommand{\Delw   }{\Delta w}
+\newcommand{\Delx   }{\Delta x}
+\newcommand{\Dely   }{\Delta y}
+\newcommand{\Delz   }{\Delta z}
+%
+%\\Gro"se Lateiner
+%\\\Del plus gro"ser Buchstabe.
+%%\
+\newcommand{\DelA   }{\Delta A}      
+\newcommand{\DelB   }{\Delta B}      
+\newcommand{\DelC   }{\Delta C}      
+\newcommand{\DelD   }{\Delta D}      
+\newcommand{\DelE   }{\Delta E}      
+\newcommand{\DelF   }{\Delta F}      
+\newcommand{\DelG   }{\Delta G} 
+\newcommand{\DelH   }{\Delta H}
+\newcommand{\DelI   }{\Delta I}
+\newcommand{\DelJ   }{\Delta J}
+\newcommand{\DelK   }{\Delta K}
+\newcommand{\DelL   }{\Delta L}
+\newcommand{\DelM   }{\Delta M}
+\newcommand{\DelN   }{\Delta N}
+\newcommand{\DelO   }{\Delta O}
+\newcommand{\DelP   }{\Delta P}
+\newcommand{\DelQ   }{\Delta Q}
+\newcommand{\DelR   }{\Delta R}
+\newcommand{\DelS   }{\Delta S}
+\newcommand{\DelT   }{\Delta T}
+\newcommand{\DelU   }{\Delta U}
+\newcommand{\DelV   }{\Delta V}
+\newcommand{\DelW   }{\Delta W}
+\newcommand{\DelX   }{\Delta X}
+\newcommand{\DelY   }{\Delta Y}
+\newcommand{\DelZ   }{\Delta Z}
+%
+%\\Kleine fette Lateiner
+%\\\Del plus kleiner Buchstabe plus b f"ur bold.
+%%\
+\newcommand{\Delab  }{\Delta \ab}      
+\newcommand{\Delbb  }{\Delta \bb}      
+\newcommand{\Delcb  }{\Delta \cb}      
+\newcommand{\Deldb  }{\Delta \dbo}      
+\newcommand{\Deleb  }{\Delta \eb}      
+\newcommand{\Delfb  }{\Delta \fb}      
+\newcommand{\Delgb  }{\Delta \gb} 
+\newcommand{\Delhb  }{\Delta \hb}
+\newcommand{\Delib  }{\Delta \ib}
+\newcommand{\Deljb  }{\Delta \jb}
+\newcommand{\Delkb  }{\Delta \kb}
+\newcommand{\Dellb  }{\Delta \lb}
+\newcommand{\Delmb  }{\Delta \mb}
+\newcommand{\Delnb  }{\Delta \nb}
+\newcommand{\Delob  }{\Delta \ob}
+\newcommand{\Delpb  }{\Delta \pbo}
+\newcommand{\Delqb  }{\Delta \qb}
+\newcommand{\Delrb  }{\Delta \rb}
+\newcommand{\Delsb  }{\Delta \sbo}
+\newcommand{\Deltb  }{\Delta \tb}
+\newcommand{\Delub  }{\Delta \ub}
+\newcommand{\Delvb  }{\Delta \vb}
+\newcommand{\Delwb  }{\Delta \wb}
+\newcommand{\Delxb  }{\Delta \xb}
+\newcommand{\Delyb  }{\Delta \yb}
+\newcommand{\Delzb  }{\Delta \zb}
+%
+%\\Gro"se fette Lateiner
+%\\\Del plus gro"ser Buchstabe plus b f"ur bold.
+%%\
+\newcommand{\DelAb  }{\Delta \Ab}      
+\newcommand{\DelBb  }{\Delta \Bb}      
+\newcommand{\DelCb  }{\Delta \Cb}      
+\newcommand{\DelDb  }{\Delta \Db}      
+\newcommand{\DelEb  }{\Delta \Eb}      
+\newcommand{\DelFb  }{\Delta \Fb}      
+\newcommand{\DelGb  }{\Delta \Gb} 
+\newcommand{\DelHb  }{\Delta \Hb}
+\newcommand{\DelIb  }{\Delta \Ib}
+\newcommand{\DelJb  }{\Delta \Jb}
+\newcommand{\DelKb  }{\Delta \Kb}
+\newcommand{\DelLb  }{\Delta \Lb}
+\newcommand{\DelMb  }{\Delta \Mb}
+\newcommand{\DelNb  }{\Delta \Nb}
+\newcommand{\DelOb  }{\Delta \Ob}
+\newcommand{\DelPb  }{\Delta \Pb}
+\newcommand{\DelQb  }{\Delta \Qb}
+\newcommand{\DelRb  }{\Delta \Rb}
+\newcommand{\DelSb  }{\Delta \Sb}
+\newcommand{\DelTb  }{\Delta \Tb}
+\newcommand{\DelUb  }{\Delta \Ub}
+\newcommand{\DelVb  }{\Delta \Vb}
+\newcommand{\DelWb  }{\Delta \Wb}
+\newcommand{\DelXb  }{\Delta \Xb}
+\newcommand{\DelYb  }{\Delta \Yb}
+\newcommand{\DelZb  }{\Delta \Zb}
+%
+%\\Kleine Griechen
+%\\\Del plus Abk"urzung des griechischen Buchstabens (siehe "`Fette Griechen"').
+%%\
+\newcommand{\Delalp  }{\Delta \alpha}
+\newcommand{\Delbet  }{\Delta \beta}
+\newcommand{\Delgam  }{\Delta \gamma}
+\newcommand{\Deldel  }{\Delta \delta}
+\newcommand{\Deleps  }{\Delta \epsilon}
+\newcommand{\Delvep  }{\Delta \varepsilon}
+\newcommand{\Delzet  }{\Delta \zeta}
+\newcommand{\Deleta  }{\Delta \eta}
+\newcommand{\Delthe  }{\Delta \theta}
+\newcommand{\Delvth  }{\Delta \vartheta}
+\newcommand{\Deliot  }{\Delta \iota}
+\newcommand{\Delkap  }{\Delta \kappa}
+\newcommand{\Dellam  }{\Delta \lambda}
+\newcommand{\Delmu   }{\Delta \mu}
+\newcommand{\Delnu   }{\Delta \nu}
+\newcommand{\Delxi   }{\Delta \xi}
+\newcommand{\Delpi   }{\Delta \pi}
+\newcommand{\Delvpi  }{\Delta \varpi}
+\newcommand{\Delrho  }{\Delta \rho}
+\newcommand{\Delvrh  }{\Delta \varrho}
+\newcommand{\Delsig  }{\Delta \sigma}
+\newcommand{\Delvsi  }{\Delta \varsigma}
+\newcommand{\Deltau  }{\Delta \tau}
+\newcommand{\Delups  }{\Delta \upsilon}
+\newcommand{\Delphi  }{\Delta \phi}
+\newcommand{\Delvph  }{\Delta \varphi}
+\newcommand{\Delchi  }{\Delta \chi}
+\newcommand{\Delpsi  }{\Delta \psi}
+\newcommand{\Delome  }{\Delta \omega}
+%
+%\\Gro"se Griechen
+%\\\Del plus Abk"urzung des griechischen Buchstabens (siehe "`Fette Griechen"').
+%%\
+\newcommand{\DelGam  }{\Delta \Gamma}
+\newcommand{\DelDel  }{\Delta \Delta}
+\newcommand{\DelThe  }{\Delta \Theta}
+\newcommand{\DelLam  }{\Delta \Lambda}
+\newcommand{\DelXi   }{\Delta \Xi}
+\newcommand{\DelPi   }{\Delta \Pi}
+\newcommand{\DelSig  }{\Delta \Sigma}
+\newcommand{\DelUps  }{\Delta \Upsilon}
+\newcommand{\DelPhi  }{\Delta \Phi}
+\newcommand{\DelPsi  }{\Delta \Psi}
+\newcommand{\DelOme  }{\Delta \Omega}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Sonderzeichen
+%\\\Die Befehle "`pkt"' sowie "`komma"' bewirken eine Leerstelle vor dem
+%\\\jeweiligen Zeichen. Bei "`und"' befindet sich vor und hinter dem gedruckten
+%\\\Zeichen jeweils eine Leerstelle, bei "`foral"' jeweils eine gr"o"sere L"ucke. 
+%%\
+\newcommand{\DEF    }{:=}  
+\newcommand{\FED    }{=:}  
+%\newcommand{\qed    }{\bullet}  
+\newcommand{\pkt    }{\quad.}
+\newcommand{\komma  }{\quad,}
+\newcommand{\und    }{\quad und \quad}
+\newcommand{\foral  }{\hspace{3ex} \forall \hspace{2ex}}
+%
+%\\Abh"angigkeit von der Zeit t, t_0, t_1,t_2
+%\\\k steht f"ur die Klammern um t, nu f"ur den Index 0, ei f"ur den Inex 1
+%\\\und zw f"ur den Index 2.
+%%\
+\newcommand{\tk     }{(t)}
+\newcommand{\tnuk   }{(t_0)}
+\newcommand{\teik   }{(t_1)}
+\newcommand{\tzwk   }{(t_2)}
+\newcommand{\tnuteik}{(t_0,t_1)}
+\newcommand{\tnutzwk}{(t_0,t_2)}
+\newcommand{\teitzwk}{(t_1,t_2)}
+%
+%\\Summen
+%\\\Die Abk"urzung Sum steht f"ur eine Summe mit "uber dem Symbol angeschriebenen
+%\\\Grenzen, der vierte Buchstabe steht f"ur die Laufvariable, die beiden n"achsten Buchstaben
+%\\\bezeichnen die Grenzen, wobei ei die Zahl 1, dr die Zahl 3 abk"urzen.
+%%\
+\newcommand{\Sumjip }{\sum_{\begin{array}{c} \\[-3.7ex]\scriptstyle j=1 \\ [-1.1ex] \scriptstyle j \neq i \end{array}^p}}
+\newcommand{\Sumied }{\sum \limits_{i=1}^{3}}
+\newcommand{\Sumjed }{\sum \limits_{j=1}^{3}}
+\newcommand{\Sumien }{\sum \limits_{i=1}^{n}}
+\newcommand{\Sumiem }{\sum \limits_{i=1}^{m}}
+\newcommand{\Sumjen }{\sum \limits_{j=1}^{n}}
+\newcommand{\Sumjem }{\sum \limits_{j=1}^{m}}
+%
+%\\Summe bzw. Integral mit Grenzen "uber dem Symbol
+%\\\Werden nach diesem Befehl Grenzen angegeben, so erscheinen diese automatisch
+%\\\"uber und unter dem Summen- bzw. Integralzeichen.
+%%\
+\newcommand{\Sum    }{\sum \limits}
+\newcommand{\Int    }{\int \limits}
+%
+%\\Integral von t_0 bis t_1
+%%\
+\newcommand{\inttnutei}{\int_{\tnu}^{\tei}}
+%
+%\\Gro"se Klammern
+%\\\Mit diesen Klammern kann man verschiedene Klammerungsebenen darstellen.
+%\\\Die ersten drei Buchstaben des Befehls stehen f"ur linke Klammer (lef) bzw.
+%\\\rechte Klammer (rig). Der Zusatzbuchstabe b steht hier f"ur brace und 
+%\\\bezeichnet die "au"serste (und damit gr"o"ste), geschweifte Klammer. Eine
+%\\\eckige Klammer wird durch ein e abgek"urzt und stellt die n"achst niedere
+%\\\Klammerungsebene dar. Ohne Zusatz wird eine normale Klammer erzeugt deren
+%\\\feste Gr"o"se unter der der beiden anderen Klammern liegt.
+%%\
+\newcommand{\lef    }{\left( \rule{0em}{3ex} \right. }
+\newcommand{\rig    }{\left. \rule{0em}{3ex} \right) }
+\newcommand{\lefe   }{\left[ \rule{0em}{3.5ex} \right. }
+\newcommand{\rige   }{\left. \rule{0em}{3.5ex} \right] }
+\newcommand{\lefb   }{\left\{ \rule{0em}{4ex} \right. }
+\newcommand{\rigb   }{ \left. \rule{0em}{4ex} \right\} }
+%
+%\\Gradienten
+%\\\Der ##LaTeX{}-Befehl nabla wird durch grad abgek"urzt, danach folgt evtl. ein
+%\\\q welches nabla quadrat symbolisiert und danach der darzustallende lateinische
+%\\\bzw. die Abk"urzung des griechischen Buchstabens. Ein h nach dem darzustellenden
+%\\\Buchstaben sagt aus, da"s der auf h folgende Buchstabe als Hochzahl steht.
+%\\\Ohne h steht der folgende Buchstabe als Index.
+%%\
+\newcommand{\gradgj  }{\nabla g_j}
+\newcommand{\gradhj  }{\nabla h_j}
+\newcommand{\gradvph }{\nabla \varphi}
+\newcommand{\gradvphhi}{\nabla \varphi^{(i)} }
+\newcommand{\gradqgj }{\nabla^2 \! g_j}
+\newcommand{\gradqhj }{\nabla^2 \! h_j}
+\newcommand{\gradqvph}{\nabla^2 \! \varphi}
+\newcommand{\gradqvphi}{\nabla^2 \! \varphi^{(i)} }
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   
+%\Indizierte Variablen
+%\\\Lateinischer Buchstabe bzw. Abk"urzung eines griechischen Buchstabens. Folgt
+%\\\darauf ein b, so wird der Buchstabe fett gedruckt. Ein nachfolgendes p bedeutet
+%\\\Punkt, ein pp doppelter Punkt, ein s Schlange und ein q Querstrich auf dem
+%\\\gedruckten Buchstaben. Durch ein h wird ausgedr"uckt, da"s die nachfolgenden
+%\\\Zeichen als Exponent (hoch) stehen, ohne h stehen sie als Index.
+%\\\Die Buchstaben dr symbolisieren die Zahl 3, ei die Zahl 1 und nu die Zahl 0.
+%\\\Beachte: F"ur die ersten drei Buchstaben sind nur Kombinationen erlaubt, die
+%\\\sich nicht mit den Abk"urzungen f"ur griechische Buchstaben "uberschneiden.
+%%\
+\newcommand{\tnu    }{t_0}
+\newcommand{\tei    }{t_1}
+\newcommand{\tzw    }{t_2}
+\newcommand{\tnutei }{[ \tnu , \tei ]}
+%
+\newcommand{\alpi   }{\alpha^{(i)}}
+%                                 
+\newcommand{\Mpmj   }{\dot{M}_{mj}}
+\newcommand{\xpj    }{\dot{x}_j}
+\newcommand{\xpk    }{\dot{x}_k}
+\newcommand{\xppk   }{\ddot{x}_k}
+\newcommand{\ypj    }{\dot{y}_j}
+\newcommand{\zpj    }{\dot{z}_j}
+\newcommand{\zpn    }{\dot{z}_n}
+%
+\newcommand{\Gphei  }{\dot{G}^1}
+\newcommand{\Hphei  }{\dot{H}^1}
+\newcommand{\xjhei  }{x_j^1}
+\newcommand{\xpjhei }{\dot{x}_j^1}
+\newcommand{\yjhei  }{y_j^1}  
+\newcommand{\yjhnu  }{y_j^0}
+\newcommand{\zjhei  }{z_j^1}   
+\newcommand{\zjhnu  }{z_j^0}             
+\newcommand{\zpjhei }{\dot{z}_j^1}
+%
+\newcommand{\etamhnu}{\eta_m^0}   
+\newcommand{\zetmhnu}{\zeta_m^0}                                           
+\newcommand{\mujhnu }{\mu_j^0}        
+\newcommand{\mujhei }{\mu_j^1}        
+\newcommand{\mupj   }{\dot{\mu}_j}
+\newcommand{\numhnu }{\nu_m^0}        
+\newcommand{\numhei }{\nu_m^1}   
+\newcommand{\nupm   }{\dot{\nu}_m}     
+\newcommand{\ximhnu }{\xi_m^0}        
+\newcommand{\xipm   }{\dot{\xi}_m}   
+\newcommand{\sigkhei}{\sigma_k^1}      
+\newcommand{\tauihnu}{\tau_i^0}                                             
+\newcommand{\tauihei}{\tau_i^1}        
+\newcommand{\vphi   }{\varphi_i}
+\newcommand{\vphj   }{\varphi_j}
+\newcommand{\Phimhnu}{\Phi_m^0}   
+\newcommand{\Phipmhnu}{\dot{\Phi}_m^0}
+%
+\newcommand{\psii   }{\psi_i}
+\newcommand{\psij   }{\psi_j}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Indizierte Vektoren/Matrizen
+%\\\Lateinischer Buchstabe bzw. Abk"urzung eines griechischen Buchstabens. Folgt
+%\\\darauf ein b, so wird der Buchstabe fett gedruckt. Ein nachfolgendes p bedeutet
+%\\\Punkt, ein pp doppelter Punkt, ein s Schlange und ein q Querstrich auf dem
+%\\\gedruckten Buchstaben. Durch ein h wird ausgedr"uckt, da"s die nachfolgenden
+%\\\Zeichen als Exponent (hoch) stehen, ohne h stehen sie als Index.
+%\\\Die Buchstaben dr symbolisieren die Zahl 3, ei die Zahl 1 und nu die Zahl 0.
+%\\\Beachte: F"ur die ersten drei Buchstaben sind nur Kombinationen erlaubt, die
+%\\\sich nicht mit den Abk"urzungen f"ur griechische Buchstaben "uberschneiden.
+%%\
+%\\\Indizes unten####
+\newcommand{\abei   }{\ab_1}
+\newcommand{\abi    }{\ab_i}
+\newcommand{\abj    }{\ab_j}
+\newcommand{\CbD    }{\Cb_D}
+\newcommand{\CbI    }{\Cb_I}
+\newcommand{\HbTei  }{\Hb_{T1}}
+\newcommand{\Ibi    }{\Ib_i}  
+\newcommand{\JbTi   }{\Jb_{T_i}}
+\newcommand{\JbTj   }{\Jb_{T_j}}
+\newcommand{\JbTk   }{\Jb_{T_k}}
+\newcommand{\JbRi   }{\Jb_{R_i}}
+\newcommand{\JbRj   }{\Jb_{R_j}}
+\newcommand{\JbRk   }{\Jb_{R_k}}
+\newcommand{\LbTi   }{\Lb_{T_i}}
+\newcommand{\LbTj   }{\Lb_{T_j}}
+\newcommand{\LbTk   }{\Lb_{T_k}}
+\newcommand{\LbRi   }{\Lb_{R_i}}
+\newcommand{\LbRj   }{\Lb_{R_j}}
+\newcommand{\LbRk   }{\Lb_{R_k}}
+\newcommand{\qbD    }{\qb_D}
+\newcommand{\qbI    }{\qb_I}
+\newcommand{\rbei   }{\rb_1}
+\newcommand{\rbi    }{\rb_i}
+\newcommand{\rbj    }{\rb_j}
+\newcommand{\rbij   }{\rb_{ij}}
+\newcommand{\Sbei   }{\Sb_1}
+\newcommand{\Sbi    }{\Sb_i}
+\newcommand{\ubei   }{\ub_1}
+\newcommand{\ubi    }{\ub_i}
+\newcommand{\ubj    }{\ub_j}
+\newcommand{\ubij   }{\ub_{ij}}
+\newcommand{\vbei   }{\vb_1}
+\newcommand{\vbi    }{\vb_i}
+\newcommand{\vbj    }{\vb_j}
+\newcommand{\vbij   }{\vb_{ij}}
+\newcommand{\ybei   }{\yb_1}
+\newcommand{\ybi    }{\yb_i}
+\newcommand{\alpbei }{\alpb_1}
+\newcommand{\alpbi  }{\alpb_i}
+\newcommand{\omebei }{\omeb_1}
+\newcommand{\omebi  }{\omeb_i}
+\newcommand{\omebsei}{\omebs_1}
+\newcommand{\omebsi }{\omebs_i}
+%  
+%\\\Indizes unten und oben####
+\newcommand{\fbihe  }{\fb_i^e}
+\newcommand{\fbihr  }{\fb_i^r}
+\newcommand{\lbihe  }{\lb_i^e}
+\newcommand{\lbihr  }{\lb_i^r}
+%
+%\\\Indizes oben in Klammern####
+\newcommand{\Bbhi   }{\Bb^{(i)}}   
+\newcommand{\Hbhi   }{\Hb^{(i)}}     
+\newcommand{\Nbhi   }{\Nb^{(i)}}   
+\newcommand{\NbhihT }{\Nb^{(i)^T}}   
+\newcommand{\pbhi   }{\pbo^{(i)}}     
+\newcommand{\sbhi   }{\sbo^{(i)}}    
+\newcommand{\sbhihT }{\sbo^{(i)^T}}     
+\newcommand{\Wbhi   }{\Wb^{(i)}}    
+\newcommand{\gambhi }{\gamb^{(i)}}    
+\newcommand{\etabhi }{\etab^{(i)}}    
+\newcommand{\lambhi }{\lamb^{(i)}}      
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\Befehle mit Parametern
+%
+%\\Vektoren aus $##Rm^2$ und $##Rm^3$
+%\\\Der erste Buchstabe v steht f"ur Vektor, die n"achsten vier geben die Anzahl
+%\\\der Zeilen des Vektors an. Wird zus"atzlich noch ein e angef"ugt, so werden
+%\\\die Vektorkoordinaten in eckige Klammern gesetzt.
+%%\
+\newcommand{\vzwei}[2]{\mbox{$\left( \begin{array}{c}{#1}\\{#2} \end{array} \right)$}}
+\newcommand{\vdrei}[3]{\mbox{$\left( \begin{array}{c}{#1}\\{#2}\\{#3} \end{array} \right)$}}
+\newcommand{\vzweie}[2]{\mbox{$\left[ \begin{array}{c}{#1}\\{#2} \end{array} \right]$}}
+\newcommand{\vdreie}[3]{\mbox{$\left[ \begin{array}{c}{#1}\\{#2}\\{#3} \end{array} \right]$}}
+%
+%\\Transponierte Darstellung von Vektoren aus $##Rm^2$ und $##Rm^3$
+%\\\Bei der Zusammensetzung des Befehlsnamen gelten die gleichen Regeln wie
+%\\\f"ur nicht transponierte Vektoren (siehe oben). Zus"atzlich wird jedoch
+%\\\ein t f"ur ``transponiert'' angeh"angt.
+%%\
+\newcommand{\vzweit}[2]{\mbox{$\left( \begin{array}{cc}{#1}&{#2} \end{array} \right)$}}
+\newcommand{\vdreit}[3]{\mbox{$\left( \begin{array}{ccc}{#1}&{#2}&{#3} \end{array} \right)$}}
+\newcommand{\vzweiet}[2]{\mbox{$\left[ \begin{array}{cc}{#1}&{#2} \end{array} \right]$}}
+\newcommand{\vdreiet}[3]{\mbox{$\left[ \begin{array}{ccc}{#1}&{#2}&{#3} \end{array} \right]$}}
+%
+%\\$2##times2$- bzw. $3##times3$-Matrizen
+%\\\Der erste Buchstabe m steht f"ur Matrix, die n"achsten vier geben die Anzahl
+%\\\der Zeilen der Matrix an. Wird zus"atzlich noch ein e angef"ugt, so werden
+%\\\die Matrixkoordinaten in eckige Klammern gesetzt.
+%%\
+\newcommand{\mzwei}[4]{\mbox{$\left( \begin{array}{cc}{#1}&{#2}\\{#3}&{#4} \end{array} \right)$}}
+\newcommand{\mdrei}[9]{\mbox{$\left( \begin{array}{ccc}{#1}&{#2}&{#3}\\{#4}&{#5}&{#6}\\{#7}&{#8}&{#9} \end{array} \right)$}}
+\newcommand{\mzweie}[4]{\mbox{$\left[ \begin{array}{cc}{#1}&{#2}\\{#3}&{#4} \end{array} \right]$}}
+\newcommand{\mdreie}[9]{\mbox{$\left[ \begin{array}{ccc}{#1}&{#2}&{#3}\\{#4}&{#5}&{#6}\\{#7}&{#8}&{#9} \end{array} \right]$}}
+%
+%\\Vergr"o"serter Bruch
+%\\\Das gro"se F anstatt dem kleinen f im ##LaTeX{}-Befehl frac symbolisiert einen
+%\\\vergr"oserten Bruch.
+%%\
+\newcommand{\Frac} [2]{\frac{\mbox{${#1}$}}{\mbox{${#2}$}}}
+%
+%\\Partielle und totale Ableitungen
+%\\\"`pab"' symbolisiert partielle Ableitung, "`abl"' totale Ableitung.####
+%\\\Ein zw davor bedeutet zweifache Ableitung.
+%\\\Gro"ser Anfangsbuchstabe bedeutet vergr"o"serter Bruch.
+%\\\Ein k am Ende setzt die Ableitung in Klammern.
+%%\
+\newcommand{\pab}[2]{ \mbox{$\Frac{ \partial {#1}}{ \partial {#2}} $}}
+\newcommand{\zwpab}[2]{ \mbox{$\Frac{ \partial^2 {#1}}{ \partial {#2}^2} $}}
+\newcommand{\Pab}[2]{ \mbox{$\Frac{ \partial {#1}}{ \partial {#2}} $}}
+\newcommand{\abl}[2]{ \mbox{$\Frac{ d {#1}}{ d {#2}} $}}
+\newcommand{\zwabl}[2]{ \mbox{$\Frac{ d^2 {#1}}{ d {#2}^2} $}}
+\newcommand{\Abl}[2]{ \mbox{$\Frac{ d {#1}}{ d {#2}} $}}
+\newcommand{\pabk}[2]{\mbox{$\left( \Frac{ \partial {#1}}{ \partial {#2}}\right) $}}
+\newcommand{\zwpabk}[2]{\mbox{$\left( \Frac{ \partial^2 {#1}}{ \partial {#2}^2}\right) $}}
+\newcommand{\Pabk}[2]{\mbox{$\left( \Frac{ \partial {#1}}{ \partial {#2}}\right) $}}
+\newcommand{\ablk}[2]{\mbox{$\left( \Frac{ d {#1}}{ d {#2}}\right) $}}
+\newcommand{\zwablk}[2]{\mbox{$\left( \Frac{ d^2 {#1}}{ d {#2}^2}\right) $}}
+\newcommand{\Ablk}[2]{\mbox{$\left( \Frac{ d {#1}}{ d {#2}}\right) $}}
+%
+%\\Einf"ugen von Text innerhalb einer Formel
+%\\\Mit diesem Befehl kann Text im Text-Modus innerhalb einer mathematischen
+%\\\Umgebung eingef"ugt werden. Vor und hinter den Text werden automatisch
+%\\\Leerstellen gesetzt.
+%%\
+\newcommand{\txt    }[1]{\mbox{\quad {#1} \quad}}
+%
+%\\``$a ##times b$''--Zeichen
+%\\\Kann auch im Text Modus ohne Umschalten in den Mathematischen Modus
+%\\\verwendet werden.
+%%\
+\newcommand{\kreuz  }[2]{\mbox{${#1} \times {#2}$}}
+%
+%\\Zitieren einer Gleichung, einer Abbildung oder einer Tabelle
+%\\\Ein n als letzter oder zweitletzter Buchstabe zeigt an, da"s das auszugebende
+%\\\Wort in der Mehrzahl steht. Ein p bedeutet das das Wort abgek"urzt wird.
+%%\
+\newcommand{\gl     }[1]{\mbox{Gleichung~(\ref{#1})}}
+\newcommand{\glp    }[1]{\mbox{Gl.~(\ref{#1})}}
+\newcommand{\gln    }[1]{\mbox{Gleichungen~(\ref{#1})}}
+\newcommand{\glnp   }[1]{\mbox{Gln.~(\ref{#1})}}
+\newcommand{\abb    }[1]{\mbox{Abbildung\ \ref{#1}}}
+\newcommand{\abbp   }[1]{\mbox{Abb.~\ref{#1}}}
+\newcommand{\abbn   }[1]{\mbox{Abbildungen\ \ref{#1}}}
+\newcommand{\bild   }[1]{\mbox{Bild~\ref{#1}}}
+\newcommand{\bilder }[1]{\mbox{Bilder~\ref{#1}}}
+\newcommand{\tab    }[1]{\mbox{Tabelle~\ref{#1}}}
+\newcommand{\tabp   }[1]{\mbox{Tab.~\ref{#1}}}
+\newcommand{\tabn   }[1]{\mbox{Tabellen~\ref{#1}}}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%       E N D E                                                           %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%23456789012345678901234567890123456789012345678901234567890123456789012345
+%        1         2         3         4         5         6         7

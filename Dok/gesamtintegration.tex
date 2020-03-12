@@ -1,30 +1,19 @@
-\section{Gesamtintegration}
-\subsection{Programmaufbau}
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.5]{"Grafiken/Nodes.png"}
-	\caption{Programmaufbau}
-	\label{fig:meine-grafik}
-\end{figure}
-Das Programm besteht grundlegend aus 4 Nodes/Unterprogrammen. Zum einen dem Image Publisher und Ultrasonic Sensor. Und zum anderen aus dem Image Progressor und Flight Controller, um diese Daten zu verarbeiten. In der obigen Grafik sind diese Nodes, sowie deren empfangene(unten) und gesendete(oben) Themen zu sehen. \\
-\\
-Alle 4 Nodes laufen gleichzeitig und kommunizieren über das Interface ROS(siehe Interfaces). Um Multithreading(ein paralleles ablaufen der Unterprogramme) zu gewährleisten, wird jedes Programm in einem separaten Thread ausgeführt.\\
-\\
-Grundlegend sind alle Programme gleich aufgebaut. Zuerst gibt es einen Teil, der die Verbindung zum ROS Interface herstellt. Dafür wird zuerst gewartet, bis der Server läuft, anschließend werden die entsprechenden Themen deklariert. Nun geht das Programm in eine Schleife, bei der es auf eine ankommende Nachricht wartet. Empfängt es eine Nachricht, so verarbeitet es diese. Gegenbefalls sendet es regelmäßig eine neue Nachricht. Der Server auf dem diese Themen laufen, wird dabei vom Raspberry Pi gehostet. Sobald dieser steht, können alle Nodes zu spezifischen Themen Nachrichten senden oder die gesendeten Nachrichten zu diesen Themen empfangen.\\
-\\
-Der Ultrasonic Sensor empfängt seine Daten über USB und sendet die Entfernung unter dem Thema: $``/sensor_dist''$. Das verwendete Datenformat ist dabei: Float32. Da er die Daten quasi unabl\"assig empfangen kann, sendet er mit einer Frequenz von 20 Hz die Position.\\
-\\
-Die Node:``Camera Publisher'' macht das Gleiche. Jedoch sendet diese Node unter dem Thema: ``CompressedImage'' und mit einer Frequenz von 10 Hz. Diese ist so gering, weil die Bildverarbeitung so lange dauert. Damit der Pi nicht überlastet wird, werden nur begrenzt viele Bilder verarbeitet. Dieses ist nicht so schlimm, weil die Drohne nicht zu schnell fliegt. \\
-\\
-Der Vorteil von 2 Nodes(welche Daten lediglich in ROS posten) ist, dass man im Testmodus einfach einen Sensor simulieren kann ohne die eigentlichen funktionsverarbeitende Programme umschreiben müssen. Diese Programme laufen dann auf einem externen PC, der sich im gleichen Netzwerk wie die der Pi befindet, und senden regelmäßig ``Fake'' Nachrichten(auch als Fake News) bekannt.
-Außerdem kann man so \"uber einen externen PC einfach den Datenfluss kontrollieren, da man quasi die Rohdaten abrufen kann, um die Funktion der einzelnen Programme zu überprüfen.\\
-\\
-Die Image Progressing Node empf\"angt das Rohbild und filtert es nach den Angaben, der Camera Settings App. Anschließend sendet er die Koordinaten des empfangen Paketes und seine Drehung. Dies tut er in dem PoseStamped Format. Dabei ist die X-Koordinate, die X-Koordinate des Paketes die Y-Koordinate, die Y-Koordinate des Paketes und und die Z-Koordinate die Drehung des Paketes. \\
-\\
-Es war sehr schwierig, die richtigen Formate zu w\"ahlen da Python im Allgemeinen eher unsauber mit den verschiedenen Datentypen umgeht. So gibt es z. B. keinen Unterschied zwischen einem 32-Bit oder einem 64-Bit Integrer. Falls die Zahl außerhalb des darstellbaren Bereiches des 32-Bit Interger liegt, so erweitert der Python-Interpretor es selbstständig zu einem 64 Bit Integer. ROS ist hingegen sehr Typenspezifisch, wodurch es zuerst einige Unklarheiten bezüglich der Typen gab und diese dementsprechend verändert werden mussten.\\
-\\
-Die letzte und wohl wichtigste Node ist die Flight-Controller Node. Diese berechnet aus den aufgenommen Daten eine neue Sollposition für die Drohne und schickt sie dann an die PX-4. Genaueres zu diesem Prozess ist unter dem Kapitel: “Programmablauf“ zu finden.
-\subsection{Sensordatenverarbeitung}
+\chapter{Gesamtintegration}
+%\section{Programmaufbau}
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=0.5]{"Grafiken/Nodes.png"}
+%	\caption{Programmaufbau}
+%	\label{fig:meine-grafik}
+%\end{figure}
+%Das Programm besteht grundlegend aus 4 Nodes/Unterprogrammen. Zum einen dem Image Publisher und Ultrasonic Sensor. Und zum anderen aus dem Image Progressor und Flight %Controller, um diese Daten zu verarbeiten. In der obigen Grafik sind diese Nodes, sowie deren empfangene(unten) und gesendete(oben) Themen zu sehen. \\
+%\\
+%Alle 4 Nodes laufen gleichzeitig und kommunizieren über das Interface ROS(siehe Interfaces). Um Multithreading(ein paralleles ablaufen der Unterprogramme) zu gewährleisten, wird jedes Programm in einem separaten Thread ausgeführt.\\
+%\\
+%Grundlegend sind alle Programme gleich aufgebaut. Zuerst gibt es einen Teil, der die Verbindung zum ROS Interface herstellt. Dafür wird zuerst gewartet, bis der Server läuft, anschließend werden die entsprechenden Themen deklariert. Nun geht das Programm in eine Schleife, bei der es auf eine ankommende Nachricht wartet. Empfängt es eine Nachricht, so verarbeitet es diese. Gegenbefalls sendet es regelmäßig eine neue Nachricht. Der Server auf dem diese Themen laufen, wird dabei vom Raspberry Pi gehostet. Sobald dieser steht, können alle Nodes zu spezifischen Themen Nachrichten senden oder die gesendeten Nachrichten zu diesen Themen empfangen.\\
+%\\
+
+\section{Sensordatenverarbeitung}
 Prinzipiell gibt es 3. Sensoren. Zum einen der Ultraschallsensor, um die Höhe genau und jederzeit bestimmen zu können. Außerdem gibt es einen Kamerasensor, um die Position des Paketes zu bestimmen. Das dritte Sensorsystem ist da, um die Position der Drohne zu bestimmen. Dieses wird vom Institut für Technische und Numerische Mechanik gestellt. Es ist für das fliegen der Drohne existenziell wichtig.\\
 \\
 Leider ist ein Fliegen der Drohne ohne dies nicht möglich, weil die Drohne mit globalen Koordinaten arbeitet. Das heißt, dass System bestimmt die Position der Drohne im Raum, anschließend berechnet der Flight Controller die nächste Sollposition und schickt sie an den PX4-Controller. Dieser regelt dann seine Lage dem entsprechend. Der Vorteil an diesem Vorgehen ist, dass die Drohne leicht auf eine externe Positionsbestimmung(z. B. GPS) umgestellt werden kann. 
@@ -44,11 +33,11 @@ a/b = Öffungswinkel\\
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.9]{"Grafiken/Kameraformel.png"}
+	\includegraphics[scale=0.3]{"Grafiken/Kameraformel.png"}
 	\caption{Kamerawinkel}
 	\label{fig:meine-grafik}
 \end{figure}
-\subsection{Programmablauf}
+\section{Programmablauf}
 Prinzipiell ist jede Node gleich aufgebaut. Zuerst gibt es eine Initialisierung und Verbindung mit der Masternode. Anschließend deklariert die Node welche Streams die entsprechende Node benötigt und welche nicht. Nun wird gewartet, bis eine neue Nachricht auftaucht und die diese wird dann verarbeitet. Geprüft wird in diesem Fall mit einer Rate von 20 Hz. \\
 \\
 Der Flight-Controller verhält sich jedoch leicht anders. Die PX-4 muss erst in den Offboard-Modus versetzt werden. Dieser bedeutet, dass die Drohne extern gesteuert werden kann. Außerdem muss der Arming-Modus aktiviert werden. Damit sie Befehle annimmt. Leider hat das einmalige Senden nicht gereicht. Sie hat nicht zuverlässig beide Befehle erkannt. Damit dies gewährleistet ist, sendet der Pi nun aller 5 Sekunden den Offboard Befehl, solange bis sich der Status der Drohne geändert hat, sodass sie sich nun im Offboardmodus befindet. Anschließend sendet der Controller das Arming Signal, solange bis die Drohne sich im Arming Modus befindet.\\
@@ -59,7 +48,7 @@ Anschließend wird zuerst eine Sollposition angeflogen. Aus dieser Position muss
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.85]{"Grafiken/Prozellablauf.png"}
-	\caption{Kamerawinkel}
+	\includegraphics[scale=0.5]{"Grafiken/Prozellablauf.png"}
+	\caption{Funktionsablaufdiagramm}
 	\label{fig:meine-grafik}
 \end{figure}
