@@ -53,7 +53,7 @@ Auch bei der Kamera hatten wir eine sehr große Auswahl von unterschiedlichen Mo
 	\item preislicher Rahmen maximal 100€
 	\item wenn möglich optische Bildstabilisierung
 	\item wenn möglich gute Softwareunterstützung
-\end{itemize}\\
+\end{itemize}
 Die größten Unterschiede, bei den mit dem Raspberry Pi kompatiblen Kameras liegen in der Größe, der Softwareunterstützung und des Interfaces. Für unseren Anwendungszweck war es von sehr großer Wichtigkeit, dass die Kamera möglichst kompakt aber vor allem leicht ist, da unsere Drohne unter den, von dem Gesetz vorgegebenen 2 kg bleiben soll und ein niedrigeres Gewicht auch eine längere Flugzeit bedeutet, welche ebenfalls sehr wichtig ist.\\
 Bei dem Interface gibt es hauptsächlich zwei unterschiedliche Varianten. Variante Nummer eins ist ein normales USB-Interface, welches den Vorteil hat, dass es hier eine sehr große Auswahl gibt, jedoch sind diese Kameras meistens etwas größer und das wollen wir ja aus den oben gennanten Gründen vermeiden. Variante Nummer zwei ist die Verbindung über den SCI-Port am Raspberry Pi, das hat den Vorteil, dass man noch alle USB-Ports des Raspberry Pi frei für andere Erweiterungen hat aber auch, dass man eine deutlich bessere Kontrolle über die die Kamera hat. Man kann hier zum Beispiel die Belichtungszeit aber auch noch viele andere Parameter verstellen, was bei einer günstigen USB-Kamera meist gar nicht richtig geht oder nur sehr schwer zu realisieren ist.\\
 Bei der Softwareunterstützung war uns wichtig, dass es eine sehr weit verbreitete Kamera ist, da dies meist bedeutet, dass es auch eine große Community gibt, die oft sehr hilfsbereit ist. Außerdem bedeutet das auch, dass es bereits viel Software gibt und man somit einige elementare Funktionen übernehmen kann und man somit mehr Zeit für die Projektspezifische Software hat.\\
@@ -76,7 +76,7 @@ Um zu wissen welche Aktorik man benötigt, haben wir zuerst eine Liste an Anford
 	\item Greifen eines 10mm x 10mm x 10mm großen Pakets
 	\item Drohne in x-, y- und z- Richtung steuerbar
 	\item sowohl Rotation um die z- Achse
-\end{itemize}\\
+\end{itemize}
 Mit dieser Liste haben wir nun begonnen den Greifarm und die Drohne zu konzipieren, wobei das bei der Drohne eine deutlich einfachere Aufgabe war als bei dem Greifarm. Für die Drohne benutzen wir einen Mikrocontroller zur Regelung aller Flugbewegungen.
 %1 Seite
 \subsection{Hubzylinder}
@@ -87,7 +87,7 @@ Mit der aus Kapitel 3 bekannten Greifermechanik, stellte sich nun die Frage durc
 	\item Gewicht
 	\item Fehleranfälligkeit
 	\item Effizienz
-\end{itemize}\\
+\end{itemize}
 Zur Auswahl hatten wir schließlich einen Seilzug, angetrieben durch einen Elektromotor und einen Hubzylinder. Die meistgenutzten Hubzylinder sind entweder mit pneumatisch, hydraulisch oder elektrisch angetrieben, jedoch kommt für unsere Anwendung nur der elektrische Antrieb infrage, da Hydraulik und Pneumatik zu groß und schwer sind, denn dafür würde auch noch eine Pumpe benötigt werden.\\
 \\
 \newpage
