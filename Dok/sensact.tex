@@ -5,14 +5,15 @@ Was eine autonome Paketdrohne anspruchsvoller als eine herkömmliche Drohne mit 
 
 %1 Seite
 \section{Sensorik}
-Mit das Wichtigste bei einem automatisierten Projekt ist die Sensorik, denn das ist die Grundlage auf der das ganze System basiert. Ohne die richtig gewählte Sensorik ist das Projekt, in unserem Fall die Drohne nicht in der Lage sich zu recht zu Funden und ist quasi blind und somit unbrauchbar. Die Software kann noch so gut sein, jedoch hat auch sie keine Chance, wenn sie zum Beispiel die Drohne richtig zu positionieren soll, ohne die aktuelle Position zu kennen.\\
+Mit das Wichtigste bei einem automatisierten Projekt ist die Sensorik, denn das ist die Grundlage auf der das ganze System basiert. Ohne die richtig gewählte Sensorik ist das Projekt, in unserem Fall die Drohne nicht in der Lage sich zu recht zu Finden und ist quasi blind und somit unbrauchbar. Die Software kann noch so gut sein, jedoch hat auch sie keine Chance, wenn sie zum Beispiel die Drohne richtig positionieren soll, ohne die aktuelle Position zu kennen.\\
+
 In diesem Kapitel geht es folglich um die Sensorik, welche wir explizit ausgewählt und verwendet haben und nicht um Beispielsweise das Gyroskop, welches in dem Flight Controller integriert ist, mit welchem wir aber nicht wirklich etwas zu tun hatten, da die Stabilitätsregelung bereits in dem Flight Controller vorprogrammiert war. Es wird einen Überblick geben, was für Sensoren sich in unserem Projekt befinden und warum wir uns für diese entschieden haben und was unsere Auswahl beeinflusst hat.
 
 %1 Seite
 \subsection{Positionssensorik}
 Die Position eines Objektes kann man entweder relativ, also in Relation zu einem anderen Objekt angeben oder man gibt die Position absolut an, wie zum Beispiel bei einem GPS in Längen- und Breitengrad. Wir haben uns dazu entschieden eine Mischung aus beidem zu benutzen, da man so eine besonders hohe Genauigkeit erreichen kann.
 \\
-\\ Da die Drohne Pakete ausliefern können soll, brauchen wir dementsprechend einen Sensor welcher eine absolute Position wiedergibt. Um die absolute Globale Position zu bestimmen, gibt es nur eine sinnvolle Möglichkeit, und zwar GPS, was für Global Positioning System steht und weltweit funktioniert. Da GPS Sensoren allerdings nur auf etwa 10 Meter genau sind und wir Pakete mit einer Genauigkeit von etwa +-5cm anfliegen wollen ist die Positionsbestimmung über GPS nicht ausreichend. Somit müssen wir weitere Sensoren zur Unterstützung verwenden. Zur genauen Lokalisierung des Pakets verwenden wir eine Kamera, die, wie in dem Kapitel Bilderkennung beschrieben, die genaue Position des Pakets ermittelt. Durch die Kamera lässt sich die Drohne sehr gut mittig über dem Paket platzieren, jedoch kann man sehr schwer die Höhe mit einer einzelnen Kamera bestimmen. Um die Höhe genau zu bestimmen bräuchte man entweder eine Stereokamera oder einen Abstandssensor, für welchen wir uns aus Kostengründen entschieden haben.
+\\ Da die Drohne Pakete ausliefern können soll, brauchen wir dementsprechend einen Sensor welcher eine absolute Position wiedergibt. Um die absolute globale Position zu bestimmen, gibt es nur eine sinnvolle Möglichkeit, und zwar GPS, was für Global Positioning System steht und weltweit funktioniert. Da GPS Sensoren allerdings nur auf etwa 10 Meter genau sind und wir Pakete mit einer Genauigkeit von etwa +-5cm anfliegen wollen ist die Positionsbestimmung über GPS nicht ausreichend. Somit müssen wir weitere Sensoren zur Unterstützung verwenden. Zur genauen Lokalisierung des Pakets verwenden wir eine Kamera, die, wie in dem Kapitel Bilderkennung beschrieben, die genaue Position des Pakets ermittelt. Durch die Kamera lässt sich die Drohne sehr gut mittig über dem Paket platzieren, jedoch kann man sehr schwer die Höhe mit einer einzelnen Kamera bestimmen. Um die Höhe genau zu bestimmen bräuchte man entweder eine Stereokamera oder einen Abstandssensor, für welchen wir uns aus Kostengründen entschieden haben.
 
 %1 Seite
 \subsection{Ultraschallsensor}
@@ -22,11 +23,11 @@ Den Ultraschallsensor haben wir direkt mit dem Raspi verbunden, da unser Flight 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{"Grafiken/Ultraschallsensor.png"}
-	\caption{Ultraschallsensor Schaubild\\Quelle: https://tutorials-raspberrypi.de/entfernung-messen-mit-ultraschallsensor-hc-sr04/}
-	\label{fig:meine-grafik}
+	\caption{Ultraschallsensor Schaubild\footnote{Quelle: https://tutorials-raspberrypi.de/entfernung-messen-mit-ultraschallsensor-hc-sr04/}}
+	\label{fig:ultraschall}
 \end{figure}
 \\
-Unser Aufbau ist wie in der Abbildung dargestellt, der Eingang des Sensors ist mit einem GPIO OUT Pin verbunden und der Ausgang über einen Spannungsteiler mit einem GPIO OUT verbunden um hier eine Spannung von 3,3V zu erreichen. Außerdem wird noch jeweils Masse mit Masse vom Raspi verbunden und 5V mit den 5V des Raspi verbunden. Es wird nun einmal die Sekunde die Entfernung nach Unten gemessen und an eine ROS Node gesendet, hierzu aber später mehr.
+Unser Aufbau ist wie in der Abbildung \ref{fig:ultraschall} dargestellt, der Eingang des Sensors ist mit einem GPIO OUT Pin verbunden und der Ausgang über einen Spannungsteiler mit einem GPIO OUT verbunden um hier eine Spannung von 3,3V zu erreichen. Außerdem wird noch jeweils Masse mit Masse vom Raspi verbunden und 5V mit den 5V des Raspi verbunden. Es wird nun einmal die Sekunde die Entfernung nach Unten gemessen und an eine ROS Node gesendet, hierzu aber später mehr.
 \\
 
 
@@ -63,8 +64,8 @@ Nach einer gründlichen Recherche hatten wir eine engere Auswahl an Kameras zusa
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.6]{"Grafiken/PiCam.png"}
-	\caption{Raspberry Pi Camera Module an einen Raspi angeschlossen \\Quelle: https://www.raspberrypi.org/products/camera-module-v2/}
-	\label{fig:meine-grafik}
+	\caption{Raspberry Pi Camera Module an einen Raspi angeschlossen \footnote{Quelle: https://www.raspberrypi.org/products/camera-module-v2/}}
+	\label{fig:picam}
 \end{figure}
 \\
 Bei unzureichenden Ergebnissen, sprich unscharfe Bilder aufgrund der Vibrationen der Drohne, hätten wir immer noch die Möglichkeit gehabt, eine andere Kamera zu verwenden. Da die PiCam keine optische Bildstabilisierung hat ist es noch ungewiss ob das Bild stabil genug für unsere Zwecke ist. Das zu Testen lag leider nicht mehr in unseren Möglichkeiten, da auf Grund der Covid-19 Situation keine weiteren Versuche  möglich waren.
@@ -94,8 +95,8 @@ Zur Auswahl hatten wir schließlich einen Seilzug, angetrieben durch einen Elekt
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.8]{"Grafiken/Hubzylinder.jpg"}
-	\caption{Elektrischer Hubzylinder \\Quelle: https://www.cti-modellbau.de/CTI-Hubzylinder/titan/}
-	\label{fig:meine-grafik}
+	\caption{Elektrischer Hubzylinder \footnote{Quelle: https://www.cti-modellbau.de/CTI-Hubzylinder/titan/}}
+	\label{fig:hubzylinder}
 \end{figure}
 Unsere Entscheidung ist zugunsten des elektrischen Hubzylinders gefallen, da dieser das beste Verhältnis zwischen Robustheit und Gewicht hat und dazu noch einen sehr simplen und robusten Aufbau hat. Der Hubzylinder, den wir in unserem Projekt verbaut haben, kommt aus dem Modellbau, da in diesem Segment Bauteile in der Größenordnung, wie wir sie benötigen oft vorkommen und genau für den Einsatzzweck an ferngesteuerten Modellen, was unsere Drohne im Grunde genommen auch ist.\\
 Der Zylinder wird über einen Regler angesteuert, welcher die Endpositionen des Zylinders erkennen kann und bei einer Last von etwa 60N aufgrund des Überlastungsschutzes abschaltet.
@@ -107,8 +108,8 @@ Für die Steuerung der Drohne wird ein Controller benötigt, welchen wir über d
 Nun stellt sich aber erstmal die Frage, warum wir überhaupt einen solchen Flight Controller benötigen und die Drohne nicht einfach direkt über den Raspberry Pi ansteuern. Das hat mehrere Gründe, zum einen ist die linux Version, welche sich auf dem Raspi befindet, nicht echtzeitfähig und somit kann es zu Problemen bei der Regelung kommen, wenn Beispielsweise der Raspi ausgelastet ist, würde die Regelung, welche der Quadrokopter benötigt, zu kurz kommen und somit der Flug sehr instabil werden. Zum anderen sparen wir uns damit sehr viel Zeit und Arbeitsaufwand, da der Flight Controller bereits die ganze Regelung für die Drohne besitzt und bereits mit unterschiedlichen Sensoren verbunden ist. Ein weiterer Vorteil dieser Methode ist, dass man die Drohne mit dem extra Flight Controller auch Manuel über eine Fernbedienung steuern kann, was bei einem Raspi nicht unmöglich ist, aber nochmal eine Menge mehr Aufwand bedeuten würde.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{"Grafiken/pixhawk2.png"}
-	\caption{Flight Controller Pixhawk 2 \\Quelle: https://docs.px4.io/v1.9.0/en/flight\_controller/pixhawk-2.html}
+	\includegraphics[scale=0.35]{"Grafiken/pixhawk2.png"}
+	\caption{Flight Controller Pixhawk 2 \footnote{Quelle: https://docs.px4.io/v1.9.0/en/flight\_controller/pixhawk-2.html}}
 	\label{fig:meine-grafik}
 \end{figure}
 \\
