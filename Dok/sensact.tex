@@ -26,6 +26,7 @@ Den Ultraschallsensor haben wir direkt mit dem Raspi verbunden, da unser Flight 
 	\caption{Ultraschallsensor Schaubild\footnote{Quelle: https://tutorials-raspberrypi.de/entfernung-messen-mit-ultraschallsensor-hc-sr04/}}
 	\label{fig:ultraschall}
 \end{figure}
+\footnotetext{Quelle: https://tutorials-raspberrypi.de/entfernung-messen-mit-ultraschallsensor-hc-sr04/}
 \\
 Unser Aufbau ist wie in der Abbildung \ref{fig:ultraschall} dargestellt, der Eingang des Sensors ist mit einem GPIO OUT Pin verbunden und der Ausgang über einen Spannungsteiler mit einem GPIO OUT verbunden um hier eine Spannung von 3,3V zu erreichen. Außerdem wird noch jeweils Masse mit Masse vom Raspi verbunden und 5V mit den 5V des Raspi verbunden. Es wird nun einmal die Sekunde die Entfernung nach Unten gemessen und an eine ROS Node gesendet, hierzu aber später mehr.
 \\
@@ -67,6 +68,7 @@ Nach einer gründlichen Recherche hatten wir eine engere Auswahl an Kameras zusa
 	\caption{Raspberry Pi Camera Module an einen Raspi angeschlossen \footnote{Quelle: https://www.raspberrypi.org/products/camera-module-v2/}}
 	\label{fig:picam}
 \end{figure}
+\footnotetext{Quelle: https://www.raspberrypi.org/products/camera-module-v2/}
 \\
 Bei unzureichenden Ergebnissen, sprich unscharfe Bilder aufgrund der Vibrationen der Drohne, hätten wir immer noch die Möglichkeit gehabt, eine andere Kamera zu verwenden. Da die PiCam keine optische Bildstabilisierung hat ist es noch ungewiss ob das Bild stabil genug für unsere Zwecke ist. Das zu Testen lag leider nicht mehr in unseren Möglichkeiten, da auf Grund der Covid-19 Situation keine weiteren Versuche  möglich waren.
 \newpage
@@ -98,6 +100,7 @@ Zur Auswahl hatten wir schließlich einen Seilzug, angetrieben durch einen Elekt
 	\caption{Elektrischer Hubzylinder \footnote{Quelle: https://www.cti-modellbau.de/CTI-Hubzylinder/titan/}}
 	\label{fig:hubzylinder}
 \end{figure}
+\footnotetext{Quelle: https://www.cti-modellbau.de/CTI-Hubzylinder/titan/}
 Unsere Entscheidung ist zugunsten des elektrischen Hubzylinders gefallen, da dieser das beste Verhältnis zwischen Robustheit und Gewicht hat und dazu noch einen sehr simplen und robusten Aufbau hat. Der Hubzylinder, den wir in unserem Projekt verbaut haben, kommt aus dem Modellbau, da in diesem Segment Bauteile in der Größenordnung, wie wir sie benötigen oft vorkommen und genau für den Einsatzzweck an ferngesteuerten Modellen, was unsere Drohne im Grunde genommen auch ist.\\
 Der Zylinder wird über einen Regler angesteuert, welcher die Endpositionen des Zylinders erkennen kann und bei einer Last von etwa 60N aufgrund des Überlastungsschutzes abschaltet.
 
@@ -112,6 +115,7 @@ Nun stellt sich aber erstmal die Frage, warum wir überhaupt einen solchen Fligh
 	\caption{Flight Controller Pixhawk 2 \footnote{Quelle: https://docs.px4.io/v1.9.0/en/flight\_controller/pixhawk-2.html}}
 	\label{fig:meine-grafik}
 \end{figure}
+\footnotetext{Quelle: https://docs.px4.io/v1.9.0/en/flight\_controller/pixhawk-2.html}
 \\
 \\
 An diesem Controller sind nun die vier Elektromotore über ESCs (Electronic speed control) verbunden. Außerdem wird noch ein Empfänger für das Empfangen des Signales der Fernsteuerung angeschlossen, sowie bereits oben erwähnt das GPS Modul. Der Flight Controller bekommt später also nur noch Angaben wie zum Beispiel bewege dich zwei Meter nach oben und sorgt dann dafür, dass der Kopter sich auch genau zwei Meter nach oben bewegt. Das entlastet den Raspberry Pi extrem, sodass dieser genug Rechenleistung für die Bilderkennung übrig hat.
