@@ -23,7 +23,7 @@ Mit dem Ultraschallsensor ist eine genaue Höhenbestimmung immer noch möglich. 
 Ein weiteres wichtiges Merkmal ist die Einheit der Sensordaten. Zu dem der Ultraschallsensor liefert dabei sein Ergebnis in mm. Näheres dazu findet man unter dem Kapitel ``Sensorik, Aktorik und andere Hardware''.
 
 Die Kamera bestimmt die Bildposition in Pixel. Abhängig vom Öffnungswinkel der Kamera ist die Position des Paketes daraus zu berechnen.
-Die Formel für die x/y-Koordinate ist:
+Die Formel für die $x/y$-Koordinate ist:
 \begin{equation}
 \begin{split}
 x = \frac{x^*}{a^*} \tan(\frac{a}{2}) h\\
@@ -49,27 +49,28 @@ Der Flight-Controller verhält sich jedoch leicht anders. Die PX-4 muss erst in 
 Wichtig ist das gleichzeitig mit 20 Hz, eine Sollposition gesendet werden muss, damit die Drohne im nicht wieder aus dem Offboardmodus geht. Dies hat am Anfang große Probleme bereitet, da man so schnell die Kontrolle verliert.
 
 Anschließend wird zuerst eine Sollposition angeflogen. Aus dieser Position muss die Drohne, das Paket sehen. Die Abbildung \ref{fig:Drone_Simulation1} zeigt links oben das gefilterte Bild, links unten das Bild der Kamera mit dem erkannten Paket und rechts ein Bild der Drone in der Simulation. 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=1.2]{"Grafiken/Drone_Gazebossimulatiuon1.png"}
-	\caption{Simulation der Drohne}
-	\label{fig:Drone_Simulation1}
-\end{figure}
+
 
  Anschließend richtet sich die Drohne mithilfe der Kamera mittig über dem Paket aus. Dabei vergleicht der Kontroller die aktuelle Position mit der Paketposition. Die Paketposition wird dabei mithilfe der Formel(siehe Sensorerfassung) berechnet. Um keine zu schnellen Änderungen zu fliegen wird ein P-Regler verwendet. Ist das Paket mittig und die Drohne nicht zu schnell(dies wird mithilfe der alten Position und der neuen Position bestimmt) so sinkt die Drohne. Hat sie eine Höhe von 60 cm erreicht, so dreht sie sich und richtet sich entlang des Paketes aus. Dabei verfährt sie nach dem gleichen Verfahren wie bei der Positionsausrichtung und wartet immer, bis das Paket wieder mittig ist. Siehe Abb. \ref{fig:Drone_Simulation2}
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=1.2]{"Grafiken/Drone_Gazebossimulatiuon2.png"}
-	\caption{Ausrichten über dem Paket}
-	\label{fig:Drone_Simulation2}
-\end{figure}
+
  Ist die Verdrehung kleiner als 3 Grad, sinkt sie weiter. 
  
    Ist sie nur noch 20 cm über dem Boden, so hat sie das Paket gefunden und schließt den Greifer. Anschließend könnte sie wieder abheben und das Paket zur Zielposition bringen. Der Prozess ist in dem unteren Strukturgramm Abb. \ref{fig:Programmablauf} dargestellt. In der Simulation hält sie ihr Position weiterhin. Siehe Abb, 
-
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=1.2]{"Grafiken/Drone_Gazebossimulatiuon3.png"}
+	\includegraphics[scale=1.3]{"Grafiken/Drone_Gazebossimulatiuon1.png"}
+	\caption{Simulation der Drohne}
+	\label{fig:Drone_Simulation1}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.3]{"Grafiken/Drone_Gazebossimulatiuon2.png"}
+	\caption{Ausrichten über dem Paket}
+	\label{fig:Drone_Simulation2}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1.3]{"Grafiken/Drone_Gazebossimulatiuon3.png"}
 	\caption{Halten der Position}
 	\label{fig:Drone_Simulation3}
 \end{figure}

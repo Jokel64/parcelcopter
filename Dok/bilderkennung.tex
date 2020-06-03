@@ -6,15 +6,17 @@ Zuerst wurde RGB(Red, Green, Blue) Farbraum gefiltert. Jedoch ergaben Test's das
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=0.5]{"Grafiken/hsv_colorspace_zoom34.png"}
-	\caption{HSV-Raum \\Quelle: https://www.cti-modellbau.de/CTI-Hubzylinder/titan/}
+	\caption{HSV-Raum\protect\footnotemark}
 	\label{fig:meine-grafik}
 	\end{center}
 \end{figure}
+\footnotetext{Quelle: https://www.cti-modellbau.de/CTI-Hubzylinder/titan/}
+
 Als Farbe wäre Rot sehr geeignet, da es in unsere Umgebung sehr selten vorkommt. Allerdings gibt es keine Roten-Pakete. Außerdem ist Rot für eine Kamera sehr schwer zu erkennen, da es eine der Grundfarben ist und damit in fast jeder Farbe vorkommt. Deswegen wurde als Farbe weiß gewählt. Durch den Filter werden nun weiße Flächen weiß und der Rest wird schwarz. Da das Experiment auf einem dunklen Boden stattfindet, bietet sich dies an.
 
 Weiterhin muss auf dem Paket mittig, ein weiteres schwarzes Viereck sein. Dies ist nötig um eine Orientierung bei naher Distanz zu gewährleisten. Befindet sich die Drohne nahe über dem Paket, so füllt es das komplette Kamerasichtfeld aus. Um sich nun orientieren zu können ist ein weiteres Viereck nötig. Dies muss mittig sein, da sich die Drohne im Verlauf des Anflugs parallel zu dem Rechteck ausrichtet. Damit bei allen Rotationen der Versatz immer gleich ist, muss es mittig sein. Dadurch kann man ihn in der Kameraregelung berücksichtigen.
 
-Für die Form wird der Hought-Transformation verwendet. Bei dieser wird das Bild zuerst abgeleitet. Also werden Pixel neben den sich ein andersfarbiges befindet weiß und der Rest(Weiß neben Weiß, Schwarz neben Schwarz) wird schwarz. Nun sind die Kanten deutlich zu sehen. Anschließend wird durch jeden weißen Punkt eine Linie mit verschieden Anstiegen zwischen - unendlich und + unendlich gelegt. Schneidet man dabei mit der Linie einen anderen weißen Punkt, so wird sich diese Linie gemerkt. Linien, die durch mehrere weiße Punkte gehen werden, so als Linien detektiert. Der Algorithmus wird aus der OpenCV Bibliothek implementiert. Er hat die Komplexität: n! (n Fakultät). \cite{wenyu2007}
+Für die Form wird der Hought-Transformation verwendet. Bei dieser wird das Bild zuerst abgeleitet. Also werden Pixel neben den sich ein andersfarbiges befindet weiß und der Rest(Weiß neben Weiß, Schwarz neben Schwarz) wird schwarz. Nun sind die Kanten deutlich zu sehen. Anschließend wird durch jeden weißen Punkt eine Linie mit verschieden Anstiegen zwischen - unendlich und + unendlich gelegt. Schneidet man dabei mit der Linie einen anderen weißen Punkt, so wird sich diese Linie gemerkt. Linien, die durch mehrere weiße Punkte gehen werden, so als Linien detektiert. Der Algorithmus wird aus der OpenCV Bibliothek implementiert. Er hat die Komplexität: n! (n Fakultät). \cite{wenyu2007fast}
 
 Anschließend wird das Bild nach Konturen durchsucht. Dabei sind nur die Konturen mit 4 Ecken von Bedeutung. Diese Konturen werden nun nach minimaler und maximaler Größe gefiltert. Die Intervallbreite variiert abhängig von der Flughöhe. Außerdem spielt die Auflösung der Kamera ein Rolle, diese ist 640*480p (\ref{kamera})
 
