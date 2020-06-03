@@ -1,4 +1,5 @@
 \chapter{Softwareimplementierung}
+\label{software}
 \section{Softwareanforderung}
 Ein weiterer Teil des Projektes ist die Softwareimplementierung. Die Aufgabe dieser erstreckt sich von der Bildverarbeitung über den Objekterkennungsprozess bis hin zu der Regelung und Steuerung der Drohne. Dabei muss sie verschiedensten Kriterien genügen.\\
 \\
@@ -49,12 +50,7 @@ Bis zu einem gewissen Grad war es möglich die geforderten Funktionalitäten mit
 Deshalb basiert die endgültige Software auf ROS, das genau diese Probleme adressiert. ROS steht dabei für Robot Operating System und ist ein Framework, das auf dem Publisher-Subscriber-Modell (P/S-Modell) basiert. Die Idee ist dabei, dass es verschiedene Themen (Topics) gibt, in die verschiedene dezentrale Skripte, die gleichzeitig laufen, Informationen zu einzelnen Themen veröffentlichen oder abonnieren können. So gibt es beispielsweise ein Kameraskript, das das Bild und die erkannte Position des Pakets veröffentlicht und ein Motorskript abonniert die Paketposition und kann daraus dann weitere Schlüsse ziehen. Ein anderes Skript könnte dann auf einem anderen Rechner (z.B. Laptop) im gleichen (WLAN-) Netzwerk das Kamerabild abbonnieren und mit sehr wenig Programmieraufwand anzeigen. Das elegante dabei ist, dass sämtliche vorher beschriebene Multithreading-Probleme dabei vom sogenannten ROS-Core, der zentrale Schaltstelle des ROS, übernommen werden und damit die einzelnen (selbstgeschriebenen) Skripte sehr entschlackt werden. Das macht es deutlich einfacher diese zu debuggen. ROS ist zudem sehr gut dokumentiert und für viele Probleme gibt es bereits vorgefertigte Skripte, die Dank des einfachen P/S-Modells auch einfach anzubinden sind.
 \subsection{ROS als Beispiel einer Service Oriented Architecture (SOA) / Microservices}
 Die Architektur hinter ROS ist dabei keine neue Erfindungen, sondern basiert im Gegensatz zum Ansatz der Schichtenarchitektur auf dem Prinzip der serviceorientierten Architektur (SOA). 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.5]{"Grafiken/soa.png"}
-	\caption{Service Oriented Architecture}
-	\label{fig:meine-grafik}
-\end{figure}
+
 Bei der SOA spielt der (Enterprise) Service Bus eine zentrale Rolle. Er ist das Bindeglied zwischen allen anderen Knotenpunkten im Netzwerk und stellt sicher, dass die Kommunikation funktioniert. Bei ROS ist das der ROS-Master, der über den Befehl 
 \begin{lstlisting}[language=bash]
 $ roscore
@@ -65,35 +61,41 @@ Aber einer gewissen Granularität spricht man von Microservices. Diese folgen de
 ``Erledige nur eine Aufgabe und erledige sie gut'' %ToDo:\cite{riedel:it-arch}
 Bei ``normalen'' SOAs sind die Knoten tendenziell groß und implementieren viele Funktionalitäten auf einmal. Microservices hingegen sind sehr klein und erledigen nur eine bestimmte Aufgabe. In der finalen Gesamtarchitektur kommen Knoten zum Einsatz, die sowohl den normalen SOAs als auch den Microservices zugewiesen werden können.
 
-\section{Finale Gesamtarchitektur}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{"Grafiken/soa.png"}
+	\caption{Service Oriented Architecture}
+	\label{fig:meine-grafik}
+\end{figure}
+
+\section{Finale Gesamtarchitektur - Übersicht}
 In der finalen Gesamtarchitektur (siehe Abb. \ref{fig:gesamtarch}) gibt es insgesamt drei ROS Instanzen: Die erste läuft auf dem Quadrokopter selber und dient als Schnittstelle zur Firmware des Quadrokopters. Der dazugehörige Knoten heißt Mavros, welcher mit MAVLink (Micro Air Vehicle Link) kommuniziert, das die gesamte tatsächliche Steuerung des Quadrokopters übernimmt. Dabei hat der ROS-Core jedoch keine Master-Funktion, sondern verbindet sich über eine serielle Schnittstelle mit dem ROS-Core auf dem RaspberryPi, auf dem der tatsächliche Master-ROS-Core läuft. Dieser ist in einem WLAN-Netzwerk mit einem Laptop, der für Debugging-Zwecke und zum Konfigurieren und Kontrollieren der Bildverarbeitung benötigt wird. Auch auf dem Laptop läuft ein ROS-Core, wobei auch dieser sich mit dem Master auf dem Raspberry Pi verbindet. Im folgenden werden nun die einzelnen Knoten genauer vorgestellt.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.51]{"Grafiken/gesamtarchitektur.png"}
+	\includegraphics[scale=0.41]{"Grafiken/gesamtarchitektur.png"}
 	\caption{Service Oriented Architecture}
 	\label{fig:gesamtarch}
 \end{figure}
 
-
-\subsection{Camera Image} ist ein einfacher Publisher, der das Bild der Dronenkamera komprimiert und über den Service Bus den anderen Knoten im Netzwerk als serialisiertes numpy-Array zu Verfügung stellt. Aufgrund der später folgenden rechenintensiven Bildverarbeitung sendet dieser in der finalen Version das Bild jedoch nur mit 10 Hz. Dies is jedoch immer noch ausreichend, da sich die Geschwindigkeit der Drone nicht schnell ändern wird. 
-\subsection{Image Processing} empfängt die Bilddaten von Camera Image und wir zudem über das Topic Processing-Settings vom Laptop aus konfiguriert. Dieser Knoten filtert dann das Bild um anschließend die Position und Drehung des Pakets zu ermitteln. Das gefilterte Bild und die Koordinaten als Typ
+\subsection{Camera Image} ``Camera Image'' ist ein einfacher Publisher, der das Bild der Dronenkamera komprimiert und über den Service Bus den anderen Knoten im Netzwerk als serialisiertes numpy-Array zu Verfügung stellt. Aufgrund der später folgenden rechenintensiven Bildverarbeitung sendet dieser in der finalen Version das Bild jedoch nur mit 10 Hz. Dies is jedoch immer noch ausreichend, da sich die Geschwindigkeit der Drone nicht schnell ändern wird. 
+\subsection{Image Processing} ``Image Processing'' empfängt die Bilddaten von Camera Image und wir zudem über das Topic Processing-Settings vom Laptop aus konfiguriert. Dieser Knoten filtert dann das Bild um anschließend die Position und Drehung des Pakets zu ermitteln. Das gefilterte Bild und die Koordinaten als Typ
 \begin{lstlisting}[language=Python]
 PoseStamped
 \end{lstlisting}
-des Pakets werden publiziert, wobei die Z-Koordinate des 
+des Pakets werden publiziert. Dieser Nachrichtentyp enthält unter 
 \begin{lstlisting}[language=Python]
-PoseStamped
+geometry_msgs/Point
 \end{lstlisting}
-die Drehung angibt.
+drei Koordinaten ($x$, $y$, $z$) wobei in diesem Fall $x$ und $y$ die Position und $z$ die Drehung um die $z$-Achse angibt.
 
-\subsection{Sensors} Sensors verwaltet alle Sensordaten. In der aktuellen Version ist das jedoch nur der Ultraschallsensor. Die Daten werden gesammelt, aufbereitet, validiert und publiziert. So werden dann beispielsweise die Ultraschalldaten unter der Topic 
+\subsection{Sensors} ``Sensors'' verwaltet alle Sensordaten. In der aktuellen Version ist das jedoch nur der Ultraschallsensor. Die Daten werden gesammelt, aufbereitet, validiert und publiziert. So werden dann beispielsweise die Ultraschalldaten unter der Topic 
 \begin{lstlisting}[language=Python]
 /sensor_dist
 \end{lstlisting}
 im Datenformat Float32 mit einer Frequenz von 20 Hz veröffentlicht.
 
-\subsection{Flight Controller} Flight Controller ist die zentrale Steuereinheit der neuen Funktionalität. Er empfängt alle aufbereiteten Sensordaten wie die Koordinaten des Pakets, Ultraschalldistanz, Sensordaten der Drone etc. und führt die Suche und Anflug des Pakets durch. Er gibt die Flugsteuerbefehle an Mavros über die serielle Schnittstelle weiter und gibt Greifbefehle weiter. Mehr dazu ist im Kapitel \ref{gesamtintegration} zu finden. 
+\subsection{Flight Controller} ``Flight Controller'' ist die zentrale Steuereinheit der neuen Funktionalität. Er empfängt alle aufbereiteten Sensordaten wie die Koordinaten des Pakets, Ultraschalldistanz, Sensordaten der Drone etc. und führt die Suche und Anflug des Pakets durch. Er gibt die Flugsteuerbefehle an Mavros über die serielle Schnittstelle weiter und gibt Greifbefehle weiter. Mehr dazu ist im Kapitel \ref{gesamtintegration} zu finden. 
 
 \subsection{Datenübertragungsformate}
 Es war sehr schwierig, die richtigen Formate zu wählen da Python im Allgemeinen eher unsauber mit den verschiedenen Datentypen umgeht. So gibt es z. B. keinen Unterschied zwischen einem 32-Bit oder einem 64-Bit Integrer. Falls die Zahl außerhalb des darstellbaren Bereiches des 32-Bit Interger liegt, so erweitert der Python-Interpreter es selbstständig zu einem 64 Bit Integer. ROS ist hingegen sehr typenspezifisch, wodurch es zuerst einige Unklarheiten bezüglich der Typen gab und diese dementsprechend verändert werden mussten.\\
@@ -121,10 +123,10 @@ Um klarzumachen, dass es sich hierbei um ein Python File handelt, muss die Datei
 starten, um die Pythonumgebung auszuwählen. Es folgt nun für gewöhnlich die Lizenzerklärung zur Datei. Es sollten nun 
 
 \begin{lstlisting}[language=Python]
-numpy as np, time, sys, cv2, roslib, rospy
+numpy, time, cv2, roslib, rospy
 \end{lstlisting}
 
-importiert werden, sowie 
+importiert werden. ``numpy'' ist eine Bibliothek zum effizienten Arbeiten mit numerischen Arrays. ``time'' gibt Zugriff auf die aktuelle Systemzeit. ``cv2'' ist die Python-Version von OpenCV, mit der die Bildverarbeitung implementiert wird. ``roslib'' und ``rospy'' sind die Schnittstellen zum ROS-Bus. Außerdem muss für dieses Skript
 
 \begin{lstlisting}[language=Python]
 CompressedImage
@@ -132,7 +134,7 @@ CompressedImage
 
 \begin{lstlisting}[language=Python]
 sensor_msgs.msg
-\end{lstlisting}. 
+\end{lstlisting} importiert werden. 
 
 Es empfiehlt sich nun die gesamte Funktionalität mittels 
 
@@ -308,7 +310,6 @@ cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
 \end{lstlisting}
 
 zu einem für OpenCV verarbeitbarem Format dekodiert werden. Der darauf folgende Code zur Bildverarbeitung ist in Kapitel \ref{bilderkennung}. beschrieben. 
-\cite{aniskoubaa2019}
 
 \section{Starten und Automation eines ROS-Systems}
 Damit die Knoten auch lauffähig sind, müssen die Dateien zunächst mit 
@@ -352,11 +353,7 @@ Innerhalb des Tags können außerdem Startparameter mit
 arg
 \end{lstlisting}
 
-definiert werden.Mit dem 
-
-\begin{lstlisting}[language=bash]
-env
-\end{lstlisting}-Tag können zudem Umgebungsvariablen gesetzt werden.
+definiert werden. Mit dem ``env''-Tag können zudem Umgebungsvariablen gesetzt werden.
 
 Man bemerke hier die Modularität und Stabilität von ROS. Denn die Knoten geben keinen Fehler aus, obwohl ein anderer Knoten, der eigentlich für die Ausführung von Nöten ist, noch gar nicht gestartet ist. Sobald dieser bereit ist, fangen die davon abhängigen Knoten automatisch an zu arbeiten. 
 
@@ -364,6 +361,7 @@ Man bemerke hier die Modularität und Stabilität von ROS. Denn die Knoten geben
 Die Simulation der Drohne erfolgt in Gazebo. Dafür wird ein PX4-Controller simuliert. Gazebo greift die Signale von dem ROS Interface ab und verarbeitet sie. Dafür wird eine FPL-Drohne simuliert. Ihre Daten sendet dann Gazebo wieder an den PX4-Controller. Weiterhin sendet es einen Video-Stream mit den simulierten Bildern. Dieser wird dann von der Node ImagePub erkannt und in ROS gestreamt. Eigentlich kommt er schon über ROS aber auf diesem Wege ist es realitätsgetreuer. (Die Alternative wäre einfach eine andere Quelle für den ImagePub anzugeben.) Auf diesem Wege kann die Drohne nahezu eins zu eins simuliert werden. \\
 \\
 Auf diesem Wege wurden bereits viele Fehler wie z. B. Vorzeichenfehler bei den Berechnungen gefunden. Jedoch ist es etwas kompliziert neue Drohnen zu implementieren, da dies erst die Umgebung programmiert werden muss. Unten sieht man einen Kurzfilm, welcher eine Simulation zeigt.
-\\
+
+
 Auch bei der Simulation ist ROS von Vorteil, da man im Testmodus einfach einen Sensor simulieren kann ohne die eigentlichen funktionsverarbeitenden Programme umschreiben zu müssen. Diese Programme laufen dann auf einem externen PC, der sich im gleichen Netzwerk wie die der Pi befindet, und senden regelmäßig ``Fake'' Nachrichten (auch als Fake News) bekannt.
 Außerdem kann man so über einen externen PC einfach den Datenfluss kontrollieren, da man quasi die Rohdaten abrufen kann, um die Funktion der einzelnen Programme zu überprüfen. Das ist natürlich auch ein gewisses Sicherheitsrisiko, weshalb die eingehende Kommunikation in den Service Bus beispielsweise durch ein sicheres WiFi-Netzwerk restriktiert werden muss. 

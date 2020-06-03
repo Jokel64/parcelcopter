@@ -1,4 +1,5 @@
 \chapter{Greifermechanik}
+\label{greifer}
 \section{Einleitung zur Mechanik}
 Ziel der konstruktiven Arbeit am und mit dem Quadrokopter ist ein modular zu montierender Greifarm, welcher mit Kameras und Sensoren sein Ziel selbst finden kann. Dabei ist die Mechanik des Greifarms der Kern der Arbeit und beginnt an der Verbindungsstelle mit dem Motor und endet mit der letztendlichen Kontaktstelle zur Last, welche transportiert werden soll.
 \par
@@ -18,15 +19,15 @@ ausgestellt.“ \cite{BMVI}. Dabei ist zu beachten das jedes eingesparte Gramm a
 
 \subsection{Materialvorgabe}
 Um in dieser geringen Gewichtsklasse zu bleiben, wird ein stabiler und gleichzeitig leichter Werkstoff benötigt, welcher zugleich auch keine Unmengen an Kosten mit sich bringt, damit auch der wirtschaftliche Aspekt im Laufe verschiedener Experimente und Testdurchläufe nicht komplett ausgereizt wird. Das Institut bietet dafür Plexiglasplatten an, welche in verschiedenen Wandstärken (3 mm und 6 mm) angeboten werden und zugleich mit einer Laserschneidemaschine in verschiedenste Formen geschnitten werden können. Dabei bietet Plexiglas eine brauchbare Steifigkeit für leichte Anwendungsfälle, sowie mit einer Dichte von 1,18 g/cm³ \cite{Plexiglasdichte} ein geringes Gewicht, wobei es keine enormen Kosten mit sich bringt.
-\\
+
 Neben Kunststoffkleber bietet das Institut außerdem, für form- und kraftschlüssige Verbindungen, Schrauben und Muttern in verschiedensten Längen und Durchmessern an. Da es sich hier jedoch um Metall- und keine Kunststoffschrauben handelt, ist während der konstruktiven Auslegung der Greifarmmechanik auf eine geringe Stückzahl zu achten, um ein zu hohes Gewicht zu verhindern.
 
 \section{Aufgabe und Konzeptideen für die Greifarmmechanik}
 Die grobe Hauptaufgabe der Greifarmmechanik besteht im Aufnehmen und Ablegen einer Last in Form eines kleinen Paketes, welches mit dem Quadrokopter von einem Ort zum anderen Ort transportiert wird. Dabei sollte eine gewisse Stabilität gegeben sein, sowie eine realistische Sicherheit.
-\\
+
 Im Folgenden werden dementsprechend drei Konzeptideen vorgestellt und dessen Vor- und Nachteile gegenübergestellt, wobei dann ein Konzept kategorisch festgelegt wird.
 
-\subsection{1.Konzept}
+\subsection{1.~Konzept}
 Die Funktionsweise des ersten Konzepts aus Abbildung \ref{erste_prinzipskizze} basiert auf einen Motor, der mittels Schnur entgegen einer Feder eine Art Scherensystem öffnet, an denen sich Greifarme befinden, welche die Last halten sollen. Durch die Federkraft soll die benötigte Haftkraft über die Greifarme an die Last geleitet werden, welche ein Abrutschen verhindern soll.
 \par
 Das Konzept zeichnet sich mit einem relativ simplen Aufbau aus, welcher einen geringen Bauraum einnimmt. Durch die Federkraft wird ein sicherer Halt selbst bei Defekten an der Elektronik gewährt. Die mögliche, aber nicht notwendige, parallele Bauweise kann weitere Stabilität hinzufügen.
@@ -40,7 +41,7 @@ Genauso ist die Federdimensionierung und, mit dessen Lebensdauer, die gebotene H
 	\end{center}
 \end{figure}
 
-\subsection{2.Konzept}
+\subsection{2.~Konzept}
 Bei der Funktionsweise des zweiten Konzepts aus Abbildung \ref{zweite_prinzipskizze} übernimmt ein elektrischer Hubzylinder die Arbeit. Dieser öffnet und schließt Greifarme und hält diese in Position mit seiner eigenen Steifigkeit.
 \\
 \\
@@ -56,7 +57,7 @@ Auch hinter dem zweiten Konzept steckt ein simples Grundprinzip. Vorteil des Hub
 \\
 Jedoch wird trotzdem eine gewisse Präzision beim Ansteuern des Paketes benötigt. Auch ist die Rutschfestigkeit wie beim ersten Konzept nicht gewiss. Zusätzlich wird durch die horizontale Bauweise des Hubzylinders ein großer Bauraum eingenommen.
  
-\subsection{3.Konzept}
+\subsection{3.~Konzept}
 Hinter der Funktionsweise des dritten und letzten Konzepts aus Abbildung \ref{dritte_prinzipskizze} verbirgt sich ein Knickgelenk an dessen Ende ein Magnet ist. Dieses Knickgelenk wird mittels zwei Motoren ausgefahren.
 
 \begin{figure}[h]
@@ -70,7 +71,7 @@ Hinter der Funktionsweise des dritten und letzten Konzepts aus Abbildung \ref{dr
 Das letzte Konzept ist zwar, durch den zweiten integrierten Motor, etwas komplexer, jedoch entfällt durch den Magneten die Reibungskomponente, was eine erhöhte Zuverlässigkeit bietet. Auch wird dadurch das Ansteuern des Paketes vereinfacht. Durch das Knickgelenk, kann der Schwerpunkt des gesamten Systems sehr gut mittig gehalten werden.\\
 \\
 Jedoch wird die Gesamtmasse durch den zweiten Motor deutlich erhöht, was auch die maximale Paketmasse niedrig hält. Auch ist die letztendliche Kamera- und Sensorpostion nicht wirklich zentrierbar durch die Lage des Knickgelenks
-\newpage
+
 \subsection{Konzeptauswahl}
 Für ein letztendliches Fazit werden Vor- und Nachteile der vorgestellten Konzepte verglichen und abgewogen, um ein finales Konzept auszuwählen.\\
 \\
@@ -101,13 +102,13 @@ Mit dem gegebenen Haftreibwert und der Erdbeschleunigung $g = 9,81 \frac{m}{s^2}
 \begin{split}
 \frac{1}{2}F_G &= F_H  \\
 F_G &= mg \\
-F_H &= F_N \cdot \mu_H \\
-mg &= 2 F_N \cdot \mu_H \\
+F_H &= F_N \times \mu_H \\
+mg &= 2 F_N \times \mu_H \\
 F_N &= \frac{mg}{2\mu_H} \\
-	&= \frac{0,1kg\cdot9,81\cdot\frac{m}{s^2}}{2\cdot 0,3} \\
+	&= \frac{0,1kg\times9,81\times\frac{m}{s^2}}{2\times 0,3} \\
 	&= 1,635N \\
-F_{Nmin} &= F_N\cdot S \\
-1,635N\cdot 1,8 &= 2,943N \\
+F_{Nmin} &= F_N\times S \\
+1,635N\times 1,8 &= 2,943N \\
 \end{split}
 \end{eqnarray}
 
@@ -128,8 +129,8 @@ Die schlussendlich benötigte Hubzylinderkraft lässt sich über einfache Hebelg
 \begin{eqnarray}
 \label{zweite_berechnung}
 \begin{split}
-F_N \cdot(a+b) &= F_Z \cdot a \\
-F_Z &= F_N \cdot (1 + \frac{b}{a}) \\
+F_N \times(a+b) &= F_Z \times a \\
+F_Z &= F_N \times (1 + \frac{b}{a}) \\
  2F_N &= 6N
 \end{split}
 \end{eqnarray}
@@ -162,7 +163,7 @@ Die letztendlich fertigen dreidimensionalen CAD-Bauteile können nun mit „Inks
 \end{figure}
 
 \subsection{Erste Ergebnisse}
-Die ausgeschnittenen Bauteile werden zur Probe vormontiert, um mögliche Problemstellen ausfindig zu machen. Abbildung \ref{hebelarme} und \ref{vormontage} zeigen erste Montageversuche.
+Die ausgeschnittenen Bauteile werden zur Probe vormontiert, um mögliche Problemstellen ausfindig zu machen. Die Abbildungen \ref{hebelarme} und \ref{vormontage} zeigen erste Montageversuche.
 
 \begin{figure}[h]
 \begin{center}

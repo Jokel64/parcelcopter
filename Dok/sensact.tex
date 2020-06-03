@@ -1,5 +1,6 @@
 %0.5 Seiten
 \chapter{Sensorik und Aktorik}
+\label{sensor}
 Was eine autonome Paketdrohne anspruchsvoller als eine herkömmliche Drohne mit Fernbedienung macht, ist vor allem die Fähigkeit, selbstständig sich zurechtzufinden und ihre Aufgabe ohne die Hilfe von Menschen zu erledigen. Um mit der Umgebung zu interagieren braucht man sowohl Sensoren, welche zur Wahrnehmung sprich zur Messung und Kontrolle von Umgebungsvariablen dienen, als auch Aktoren, welche letztendlich die Umgebung, gesteuert durch elektrische Signale, beeinflussen können. Die Sensoren sind also die Sinne, wie zum Beispiel: fühlen, sehen oder auch riechen, welche der Drohne zur Verfügung stehen, wobei die Aktorik die Arme und Beine der Drohne sind. Um also eine Drohne zu entwickeln, welche filigrane Bewegungen durchführen kann und sich überall zurechtfinden kann braucht man dementsprechend viele Sensoren. 
 
 
@@ -18,12 +19,12 @@ Die Position eines Objektes kann man entweder relativ, also in Relation zu einem
 %1 Seite
 \subsection{Ultraschallsensor}
 Zur Bestimmung von Abständen gibt es mehrere Ansätze, mit unterschiedlichen Vor- und Nachteilen. Man kann den Abstand über die Signallaufzeit, Triangulation oder auch über die Phasendifferenz bestimmen. Am Häufigsten sind hierbei die Signallaufzeitsensoren, welche ein Sendeimpuls abgeben und die Zeit bis zu dem Echo messen. Diese Art der Sensoren lässt sich nochmal in drei Unterkategorien einordnen mit jeweils unterschiedlichen Signalarten. Es gibt elektromagnetische (wie zum Beispiel Radar), optische (hierzu zählt unter anderem Infrarot und Lidar) und akustische (Beispielsweise Ultraschall) Abstandssensoren, die alle ihre Vor- und Nachteile haben. Wir haben uns für einen Ultraschallsensor entschieden, da dieser in dem von uns gewünschtem Bereich (ca. 2 Meter) auf etwa 10cm genau ist und vor allem weil es ein besonders kostengünstiger Sensor ist. Ein Lidarsensor wäre auch eine gute Alternative, jedoch sind diese Sensoren noch deutlich teurer als herkömmliche Ultraschallsensoren.
-\\
+
 Den Ultraschallsensor haben wir direkt mit dem Raspi verbunden, da unser Flight Controller keinen Eingang für einen Ultraschallsensor vorgesehen hat und das somit am Raspi angeschlossen die sauberste Lösung ist.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{"Grafiken/Ultraschallsensor.png"}
-	\caption{Ultraschallsensor Schaubild\footnote{Quelle: https://tutorials-raspberrypi.de/entfernung-messen-mit-ultraschallsensor-hc-sr04/}}
+	\caption{Ultraschallsensor Schaubild\protect\footnotemark}
 	\label{fig:ultraschall}
 \end{figure}
 \footnotetext{Quelle: https://tutorials-raspberrypi.de/entfernung-messen-mit-ultraschallsensor-hc-sr04/}
@@ -65,7 +66,7 @@ Nach einer gründlichen Recherche hatten wir eine engere Auswahl an Kameras zusa
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.6]{"Grafiken/PiCam.png"}
-	\caption{Raspberry Pi Camera Module an einen Raspi angeschlossen \footnote{Quelle: https://www.raspberrypi.org/products/camera-module-v2/}}
+	\caption{Raspberry Pi Camera Module an einen Raspi angeschlossen\protect\footnotemark}
 	\label{fig:picam}
 \end{figure}
 \footnotetext{Quelle: https://www.raspberrypi.org/products/camera-module-v2/}
@@ -97,7 +98,7 @@ Zur Auswahl hatten wir schließlich einen Seilzug, angetrieben durch einen Elekt
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.8]{"Grafiken/Hubzylinder.jpg"}
-	\caption{Elektrischer Hubzylinder \footnote{Quelle: https://www.cti-modellbau.de/CTI-Hubzylinder/titan/}}
+	\caption{Elektrischer Hubzylinder\protect\footnotemark}
 	\label{fig:hubzylinder}
 \end{figure}
 \footnotetext{Quelle: https://www.cti-modellbau.de/CTI-Hubzylinder/titan/}
@@ -112,7 +113,7 @@ Nun stellt sich aber erstmal die Frage, warum wir überhaupt einen solchen Fligh
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.35]{"Grafiken/pixhawk2.png"}
-	\caption{Flight Controller Pixhawk 2 \footnote{Quelle: https://docs.px4.io/v1.9.0/en/flight\_controller/pixhawk-2.html}}
+	\caption{Flight Controller Pixhawk 2\protect\footnotemark}
 	\label{fig:meine-grafik}
 \end{figure}
 \footnotetext{Quelle: https://docs.px4.io/v1.9.0/en/flight\_controller/pixhawk-2.html}
