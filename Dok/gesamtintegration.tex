@@ -26,13 +26,13 @@ Die Kamera bestimmt die Bildposition in Pixel. Abhängig vom Öffnungswinkel der
 Die Formel für die x/y-Koordinate ist:
 \begin{equation}
 \begin{split}
-x = \frac{x^*}{a^*} tan(\frac{a}{2}) h\\
-y = \frac{y^*}{b^*} tan(\frac{b}{2}) h\\
+x = \frac{x^*}{a^*} \tan(\frac{a}{2}) h\\
+y = \frac{y^*}{b^*} \tan(\frac{b}{2}) h\\
 \end{split}
 \end{equation}
 wobei:\\
 a/b* = Bildpunkte in x/y Richtung\\
-x/y* = erkannte Punkte\\
+$x$/$y$* = erkannte Punkte\\
 a/b = Öffungswinkel\\
 
 \begin{figure}[h]
@@ -51,7 +51,7 @@ Wichtig ist das gleichzeitig mit 20 Hz, eine Sollposition gesendet werden muss, 
 Anschließend wird zuerst eine Sollposition angeflogen. Aus dieser Position muss die Drohne, das Paket sehen. Die Abbildung \ref{fig:Drone_Simulation1} zeigt links oben das gefilterte Bild, links unten das Bild der Kamera mit dem erkannten Paket und rechts ein Bild der Drone in der Simulation. 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.8]{"Grafiken/Drone_Gazebossimulatiuon1.png"}
+	\includegraphics[scale=1.2]{"Grafiken/Drone_Gazebossimulatiuon1.png"}
 	\caption{Simulation der Drohne}
 	\label{fig:Drone_Simulation1}
 \end{figure}
@@ -59,7 +59,7 @@ Anschließend wird zuerst eine Sollposition angeflogen. Aus dieser Position muss
  Anschließend richtet sich die Drohne mithilfe der Kamera mittig über dem Paket aus. Dabei vergleicht der Kontroller die aktuelle Position mit der Paketposition. Die Paketposition wird dabei mithilfe der Formel(siehe Sensorerfassung) berechnet. Um keine zu schnellen Änderungen zu fliegen wird ein P-Regler verwendet. Ist das Paket mittig und die Drohne nicht zu schnell(dies wird mithilfe der alten Position und der neuen Position bestimmt) so sinkt die Drohne. Hat sie eine Höhe von 60 cm erreicht, so dreht sie sich und richtet sich entlang des Paketes aus. Dabei verfährt sie nach dem gleichen Verfahren wie bei der Positionsausrichtung und wartet immer, bis das Paket wieder mittig ist. Siehe Abb. \ref{fig:Drone_Simulation2}
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.8]{"Grafiken/Drone_Gazebossimulatiuon2.png"}
+	\includegraphics[scale=1.2]{"Grafiken/Drone_Gazebossimulatiuon2.png"}
 	\caption{Ausrichten über dem Paket}
 	\label{fig:Drone_Simulation2}
 \end{figure}
@@ -69,7 +69,7 @@ Anschließend wird zuerst eine Sollposition angeflogen. Aus dieser Position muss
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.8]{"Grafiken/Drone_Gazebossimulatiuon3.png"}
+	\includegraphics[scale=1.2]{"Grafiken/Drone_Gazebossimulatiuon3.png"}
 	\caption{Halten der Position}
 	\label{fig:Drone_Simulation3}
 \end{figure}
