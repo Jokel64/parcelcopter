@@ -20,7 +20,7 @@ Die Position eines Objektes kann man entweder relativ, also in Relation zu einem
 \subsection{Ultraschallsensor}
 Zur Bestimmung von Abständen gibt es mehrere Ansätze, mit unterschiedlichen Vor- und Nachteilen. Man kann den Abstand über die Signallaufzeit, Triangulation oder auch über die Phasendifferenz bestimmen. Am Häufigsten sind hierbei die Signallaufzeitsensoren, welche ein Sendeimpuls abgeben und die Zeit bis zu dem Echo messen. Diese Art der Sensoren lässt sich nochmal in drei Unterkategorien einordnen mit jeweils unterschiedlichen Signalarten. Es gibt elektromagnetische (wie zum Beispiel Radar), optische (hierzu zählt unter anderem Infrarot und Lidar) und akustische (Beispielsweise Ultraschall) Abstandssensoren, die alle ihre Vor- und Nachteile haben. Wir haben uns für einen Ultraschallsensor entschieden, da dieser in dem von uns gewünschtem Bereich (ca. 2 Meter) auf etwa 10cm genau ist und vor allem weil es ein besonders kostengünstiger Sensor ist. Ein Lidarsensor wäre auch eine gute Alternative, jedoch sind diese Sensoren noch deutlich teurer als herkömmliche Ultraschallsensoren.
 
-Den Ultraschallsensor haben wir direkt mit dem Raspi verbunden, da unser Flight Controller keinen Eingang für einen Ultraschallsensor vorgesehen hat und das somit am Raspi angeschlossen die sauberste Lösung ist.
+Den Ultraschallsensor haben wir direkt mit dem Raspi verbunden, da wir so mehr Kontrolle über den Sensor haben und dies in unseren Augen mehr Sinn macht als ihn mit dem Flight Controller zu verbinden.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{"Grafiken/Ultraschallsensor.png"}
