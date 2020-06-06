@@ -8,6 +8,7 @@ Dabei sollte der Fokus der konstruktiven Ausarbeitung eine stabile, funktionssic
 Für die Konstruktion steht als Grundmaterial für den Rahmen Plexiglas zur Verfügung, welches mit Laserschneidemaschinen in Formen geschnitten werden kann. Weitere benötigte Bauteile wie zum Beispiel ein Motor oder Lagerungen gelten als Zukaufteile.
 \par
 Die tiefere Forschungsfrage hinter dem Projekt ist die Visualisierung des Greifarms im späteren Verlauf, welche Möglichkeiten einem bei der Konstruktion, beim Leichtbau und der Stabilität mit dem vorausgesetzten Material gegeben sind und wie gut das Konzept umsetzbar ist. Bereits heute gibt es schon erste funktionierende Beispiele, welche durch zum Beispiel große Paketlieferanten und ähnlichen Unternehmen ins Leben gerufen worden sind.
+\par
 Für die Auswahl eines Konzepts wird zwischen mehreren Prinzipskizzen eine kategorisch ausgewählt und vollständig dimensioniert. Dann wird nochmals die Realisierung geprüft mit einem CAD Modell bzw. Simulation.
 
 \section{Materialien und Vorgaben}
@@ -33,6 +34,7 @@ Die Funktionsweise des ersten Konzepts aus Abbildung \ref{erste_prinzipskizze} b
 Das Konzept zeichnet sich mit einem relativ simplen Aufbau aus, welcher einen geringen Bauraum einnimmt. Durch die Federkraft wird ein sicherer Halt selbst bei Defekten an der Elektronik gewährt. Die mögliche, aber nicht notwendige, parallele Bauweise kann weitere Stabilität hinzufügen.
 Durch die relativ steifen Greifarme, ist eine erhöhte Präzision beim Ansteuern der Last erfordert. Auch die Rutschfestigkeit bei den Greifarmen ist ungewiss und muss experimentell überprüft werden.
 Genauso ist die Federdimensionierung und, mit dessen Lebensdauer, die gebotene Haftkraft unsicher.
+
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=0.5]{"Grafiken/Skizze1mechanik.png"}
@@ -41,10 +43,13 @@ Genauso ist die Federdimensionierung und, mit dessen Lebensdauer, die gebotene H
 	\end{center}
 \end{figure}
 
+\newpage
 \subsection{2.~Konzept}
 Bei der Funktionsweise des zweiten Konzepts aus Abbildung \ref{zweite_prinzipskizze} übernimmt ein elektrischer Hubzylinder die Arbeit. Dieser öffnet und schließt Greifarme und hält diese in Position mit seiner eigenen Steifigkeit.
-\\
-\\
+\par
+Auch hinter dem zweiten Konzept steckt ein simples Grundprinzip. Vorteil des Hubzylinders wäre die Steifigkeit, die ohne elektrisches Signal nicht schwindet. Auch ist hier eine parallele Bauweise für mehr Stabilität möglich. Durch den einfach geregelten Hubzylinder, lässt sich die Greifarmbreite beliebig einstellen, wodurch verschieden große Pakete aufgenommen werden können.
+\par
+Jedoch wird trotzdem eine gewisse Präzision beim Ansteuern des Paketes benötigt. Auch ist die Rutschfestigkeit wie beim ersten Konzept nicht gewiss. Zusätzlich wird durch die horizontale Bauweise des Hubzylinders ein großer Bauraum eingenommen.
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=0.7]{"Grafiken/Skizze2mechanik.png"}
@@ -53,12 +58,11 @@ Bei der Funktionsweise des zweiten Konzepts aus Abbildung \ref{zweite_prinzipski
 	\end{center}
 \end{figure}
 \newpage
-Auch hinter dem zweiten Konzept steckt ein simples Grundprinzip. Vorteil des Hubzylinders wäre die Steifigkeit, die ohne elektrisches Signal nicht schwindet. Auch ist hier eine parallele Bauweise für mehr Stabilität möglich. Durch den einfach geregelten Hubzylinder, lässt sich die Greifarmbreite beliebig einstellen, wodurch verschieden große Pakete aufgenommen werden können.\\
-\\
-Jedoch wird trotzdem eine gewisse Präzision beim Ansteuern des Paketes benötigt. Auch ist die Rutschfestigkeit wie beim ersten Konzept nicht gewiss. Zusätzlich wird durch die horizontale Bauweise des Hubzylinders ein großer Bauraum eingenommen.
- 
 \subsection{3.~Konzept}
 Hinter der Funktionsweise des dritten und letzten Konzepts aus Abbildung \ref{dritte_prinzipskizze} verbirgt sich ein Knickgelenk an dessen Ende ein Magnet ist. Dieses Knickgelenk wird mittels zwei Motoren ausgefahren.
+\par
+Das letzte Konzept ist zwar, durch den zweiten integrierten Motor, etwas komplexer, jedoch entfällt durch den Magneten die Reibungskomponente, was eine erhöhte Zuverlässigkeit bietet. Auch wird dadurch das Ansteuern des Paketes vereinfacht. Durch das Knickgelenk, kann der Schwerpunkt des gesamten Systems sehr gut mittig gehalten werden.
+Jedoch wird die Gesamtmasse durch den zweiten Motor deutlich erhöht, was auch die maximale Paketmasse niedrig hält. Auch ist die letztendliche Kamera- und Sensorpostion nicht wirklich zentrierbar durch die Lage des Knickgelenks
 
 \begin{figure}[h]
 	\begin{center}
@@ -67,11 +71,7 @@ Hinter der Funktionsweise des dritten und letzten Konzepts aus Abbildung \ref{dr
 	\label{dritte_prinzipskizze}
 	\end{center}
 \end{figure}
-
-Das letzte Konzept ist zwar, durch den zweiten integrierten Motor, etwas komplexer, jedoch entfällt durch den Magneten die Reibungskomponente, was eine erhöhte Zuverlässigkeit bietet. Auch wird dadurch das Ansteuern des Paketes vereinfacht. Durch das Knickgelenk, kann der Schwerpunkt des gesamten Systems sehr gut mittig gehalten werden.\\
-\\
-Jedoch wird die Gesamtmasse durch den zweiten Motor deutlich erhöht, was auch die maximale Paketmasse niedrig hält. Auch ist die letztendliche Kamera- und Sensorpostion nicht wirklich zentrierbar durch die Lage des Knickgelenks
-
+\newpage
 \subsection{Konzeptauswahl}
 Für ein letztendliches Fazit werden Vor- und Nachteile der vorgestellten Konzepte verglichen und abgewogen, um ein finales Konzept auszuwählen.\\
 \\
@@ -91,9 +91,9 @@ Die letztendlich wichtige Kraft ist die wirkende Hubzylinderkraft, welche in For
 	\label{greiferfläche}
 	\end{center}
 \end{figure}
+Aus der Abbildung \ref{greiferfläche} ergibt sich, dass die letztendlich benötigte Normalkraft abhängig von der Gewichtskraft und dem Haftreibwert ist. Da sich die Reibwerte zu jeweiligen Gleitebenen verschiedener Materialien nur experimentell erörtern lassen, muss ein Mittelwert genommen werden, welcher nach den ersten Experimenten eventuell zu korrigieren ist. Als Oberflächen werden Gummi und Plexiglas genommen. Nach längerer Recherche setzt sich ein ungefährer Mittelwert von $\mu_H = 0,3$ durch.\footnote[1]{Quelle für Haftreibungszahlen: https://www.chemie.de/lexikon/Haftreibung.html (23.05.2020)}
+\par
 \newpage
-Aus der Abbildung \ref{greiferfläche} ergibt sich, dass die letztendlich benötigte Normalkraft abhängig von der Gewichtskraft und dem Haftreibwert ist. Da sich die Reibwerte zu jeweiligen Gleitebenen verschiedener Materialien nur experimentell erörtern lassen, muss ein Mittelwert genommen werden, welcher nach den ersten Experimenten eventuell zu korrigieren ist. Als Oberflächen werden Gummi und Plexiglas genommen. Nach längerer Recherche setzt sich ein ungefährer Mittelwert von $\mu_H = 0,3$ durch.\footnote[1]{Quelle für Haftreibungszahlen: https://www.chemie.de/lexikon/Haftreibung.html (23.05.2020)}\\
-\\
 Für die zu ermittelnde Gewichtskraft ist von einem Gewicht von $m=50g$ bis $m=100 g$ für die Last zu schätzen. Um eine gute Fehlertoleranz und damit Sicherheit zu bieten, wird der errechnete Wert mit dem Faktor $S = 1,8$ angepasst.
 Mit dem gegebenen Haftreibwert und der Erdbeschleunigung $g = 9,81 \frac{m}{s^2}$ auf die Last, lässt sich nun die nötige Haftkraft in Form der Normalkraft berechnen:
 
@@ -108,7 +108,8 @@ F_N &= \frac{mg}{2\mu_H} \\
 	&= \frac{0,1kg\times9,81\times\frac{m}{s^2}}{2\times 0,3} \\
 	&= 1,635N \\
 F_{Nmin} &= F_N\times S \\
-1,635N\times 1,8 &= 2,943N \\
+	&= 1,635N\times 1,8 \\
+	&= 2,943N \\
 \end{split}
 \end{eqnarray}
 
@@ -141,7 +142,9 @@ Mit einer erwünschten Öffnungsbreite von jeweils 30 mm pro Seite und einem Fak
 
 \section{Vom Modell zu den ersten Bauteilen}
 \subsection{Creo Modell}
-Mit den ersten vordimensionierten Bauteilen und den ersten festen Maßen von den Zukaufteilen, lässt sich nun ein erstes 3D CAD-Modell bauen. Dabei werden je nach Absprache und Änderungen von Eigenschaften Anpassungen unternommen, um dem finalen Produkt so nah wie möglich zu ähneln. Aus dem CAD Modell aus Abbildung \ref{creo1}, modelliert mit "Creo Parametrics5", lässt sich schon die grobe Gestalt der Greifarmmechanik erkennen. Ausgehend von der Nummerierung in Abbildung \ref{creo1} erkennt man die Bauteile Bodenplatte(1), Hebelarm(2), Führungsschiene(3) und Greifplatte (4). Sie bilden die Grundbausteine des Endprodukts der Greifarmmechanik. Im Zwischenraum von Bodenplatte und Hebelarmen soll später der Hubzylinder(5) Platz finden. Bauteile wie zum Beispiel Verbindungsschrauben oder Abstandshülsen sind außen vor und werden erstmal nicht in der Auflistung berücksichtigt, da diese sich in der Anzahl und der Position noch stark ändern können.
+Mit den ersten vordimensionierten Bauteilen und den ersten festen Maßen von den Zukaufteilen, lässt sich nun ein erstes 3D CAD-Modell bauen. Dabei werden je nach Absprache und Änderungen von Eigenschaften Anpassungen unternommen, um dem finalen Produkt so nah wie möglich zu ähneln. Aus dem CAD Modell aus Abbildung \ref{creo1}, modelliert mit "Creo Parametrics5", lässt sich schon die grobe Gestalt der Greifarmmechanik erkennen.
+\newpage
+Ausgehend von der Nummerierung in Abbildung \ref{creo1} erkennt man die Bauteile Bodenplatte(1), Hebelarm(2), Führungsschiene(3) und Greifplatte (4). Sie bilden die Grundbausteine des Endprodukts der Greifarmmechanik. Im Zwischenraum von Bodenplatte und Hebelarmen soll später der Hubzylinder(5) Platz finden. Bauteile wie zum Beispiel Verbindungsschrauben oder Abstandshülsen sind außen vor und werden erstmal nicht in der Auflistung berücksichtigt, da diese sich in der Anzahl und der Position noch stark ändern können.
 \begin{figure}[h]
 	\begin{center}
 	\includegraphics[scale=0.6]{Grafiken/Creo1bearbeitet.png}
@@ -149,7 +152,6 @@ Mit den ersten vordimensionierten Bauteilen und den ersten festen Maßen von den
 	\label{creo1}
 	\end{center}
 \end{figure}
-\newpage
 \subsection{Inkscape}
 Die letztendlich fertigen dreidimensionalen CAD-Bauteile können nun mit „Inkscape“, eine Software zur Bearbeitung und Erstellung zweidimensionaler Vektorgrafiken, zu Schnittmustern erzeugt werden. Mithilfe dieser Schnittmuster werden die fertigen Bauteile zweidimensional aus den Plexiglasplatten mit konstanter Wandstärke von der Laserschneidemaschine ausgeschnitten. Dementsprechend ist bei der Konstruktion der Bauteile zu beachten, dass diese zweidimensional als Schnittmuster abgebildet werden können.
 

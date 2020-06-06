@@ -1,0 +1,64 @@
+\babel@toc {ngerman}{}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}%
+\contentsline {chapter}{\numberline {2}Greifermechanik}{3}%
+\contentsline {section}{\numberline {2.1}Einleitung zur Mechanik}{3}%
+\contentsline {section}{\numberline {2.2}Materialien und Vorgaben}{4}%
+\contentsline {subsection}{\numberline {2.2.1}Gesetzeslage}{4}%
+\contentsline {subsection}{\numberline {2.2.2}Materialvorgabe}{4}%
+\contentsline {section}{\numberline {2.3}Aufgabe und Konzeptideen f\IeC {\"u}r die Greifarmmechanik}{5}%
+\contentsline {subsection}{\numberline {2.3.1}1.~Konzept}{5}%
+\contentsline {subsection}{\numberline {2.3.2}2.~Konzept}{6}%
+\contentsline {subsection}{\numberline {2.3.3}3.~Konzept}{7}%
+\contentsline {subsection}{\numberline {2.3.4}Konzeptauswahl}{8}%
+\contentsline {section}{\numberline {2.4}Berechnung und Vordimensionierung}{9}%
+\contentsline {subsection}{\numberline {2.4.1}Ben\IeC {\"o}tigte Normalkraft}{9}%
+\contentsline {subsection}{\numberline {2.4.2}Ben\IeC {\"o}tigte Hubzylinderkraft}{10}%
+\contentsline {subsection}{\numberline {2.4.3}Auswahl des Hubzylinders}{11}%
+\contentsline {section}{\numberline {2.5}Vom Modell zu den ersten Bauteilen}{11}%
+\contentsline {subsection}{\numberline {2.5.1}Creo Modell}{11}%
+\contentsline {subsection}{\numberline {2.5.2}Inkscape}{12}%
+\contentsline {subsection}{\numberline {2.5.3}Erste Ergebnisse}{13}%
+\contentsline {section}{\numberline {2.6}Problematiken und L\IeC {\"o}sungen}{14}%
+\contentsline {section}{\numberline {2.7}Fazit zur Mechanik}{15}%
+\contentsline {chapter}{\numberline {3}Sensorik und Aktorik}{16}%
+\contentsline {section}{\numberline {3.1}Sensorik}{16}%
+\contentsline {subsection}{\numberline {3.1.1}Positionssensorik}{17}%
+\contentsline {subsection}{\numberline {3.1.2}Ultraschallsensor}{17}%
+\contentsline {subsection}{\numberline {3.1.3}Global Positioning System (GPS)}{19}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}Funktionsweise}{19}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}Hardwareimplementierung}{19}%
+\contentsline {subsection}{\numberline {3.1.4}Kamera}{20}%
+\contentsline {section}{\numberline {3.2}Aktorik}{22}%
+\contentsline {subsection}{\numberline {3.2.1}Hubzylinder}{22}%
+\contentsline {subsection}{\numberline {3.2.2}Flight-Controller}{23}%
+\contentsline {chapter}{\numberline {4}Softwareimplementierung}{25}%
+\contentsline {section}{\numberline {4.1}Softwareanforderung}{25}%
+\contentsline {section}{\numberline {4.2}Python als Programmiersprache}{26}%
+\contentsline {section}{\numberline {4.3}Vergleich Monolithische Single Application und Service Oriented Architecture}{27}%
+\contentsline {subsection}{\numberline {4.3.1}Monolithische Single Application}{27}%
+\contentsline {subsection}{\numberline {4.3.2}Service Oriented Architecture}{28}%
+\contentsline {subsection}{\numberline {4.3.3}Robot Operating System}{28}%
+\contentsline {subsection}{\numberline {4.3.4}ROS als Beispiel einer Service Oriented Architecture (SOA) / Microservices}{29}%
+\contentsline {section}{\numberline {4.4}Finale Gesamtarchitektur - \IeC {\"U}bersicht}{30}%
+\contentsline {subsection}{\numberline {4.4.1}Camera Image}{31}%
+\contentsline {subsection}{\numberline {4.4.2}Image Processing}{31}%
+\contentsline {subsection}{\numberline {4.4.3}Sensors}{31}%
+\contentsline {subsection}{\numberline {4.4.4}Flight Controller}{31}%
+\contentsline {subsection}{\numberline {4.4.5}Daten\IeC {\"u}bertragungsformate}{32}%
+\contentsline {section}{\numberline {4.5}Implementierung der Kommunikation in ROS}{32}%
+\contentsline {subsection}{\numberline {4.5.1}Kamera Publisher}{32}%
+\contentsline {subsection}{\numberline {4.5.2}Kamera Subscriber}{35}%
+\contentsline {section}{\numberline {4.6}Starten und Automation eines ROS-Systems}{35}%
+\contentsline {section}{\numberline {4.7}Mavros und Simulation}{36}%
+\contentsline {chapter}{\numberline {5}Bilderkennung}{38}%
+\contentsline {chapter}{\numberline {6}Gesamtintegration}{41}%
+\contentsline {section}{\numberline {6.1}Sensordatenverarbeitung}{41}%
+\contentsline {section}{\numberline {6.2}Programmablauf}{42}%
+\contentsline {chapter}{\numberline {7}Fazit und Ausblick}{46}%
+\contentsline {chapter}{Anhang}{48}%
+\contentsline {section}{\numberline {A.1}ROS auf Ubuntu}{48}%
+\contentsline {subsection}{\numberline {A.1.1}Setup}{48}%
+\contentsline {subsection}{\numberline {A.1.2}Workspaces}{49}%
+\contentsline {subsection}{\numberline {A.1.3}.bashrc}{49}%
+\contentsline {section}{\numberline {A.2}Entwicklungsumgebung und Versionsverwaltung}{50}%
+\contentsline {section}{\numberline {A.3}Inhalt der CD-ROM}{51}%
