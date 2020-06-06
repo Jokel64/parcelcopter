@@ -1,3 +1,4 @@
+
 %###########################################################################
 %
 %   Anhang
@@ -11,16 +12,79 @@
 %###########################################################################
 %   Anhang A
 %###########################################################################
-\section{Überschrift von Anhang A}
+\section{ROS auf Ubuntu}
+Für eine effektive und effiziente Entwicklung des Softwaresystems ist die Nutzung geeigneter unterstützender Software unabdingbar. Daher soll nun die verwendete Toolchain kurz vorgestellt werden.
+\subsection{Setup}
 \markboth{Anhang}{Anhang}
-Text
+Sowohl die Entwicklung als auch die Runtime läuft auf Ubuntu 18.04. Das gilt also sowohl für Entwicklungsrechner, als auch für den Raspberry Pi, wobei bei diesem Ubuntu Mate eingesetzt wird. Der Vorteil ist, dass ROS nativ darauf funktioniert und sehr viele Bibliotheken für ROS bereits vorkompiliert zur Verfügung stehen. Es ist dabei für die aktuelle ROS-Version "Melodic" dringend davon abzuraten, das System auf einer Raspian-Installation laufen zu lassen, da man einerseits alle Pakete selber kompilieren muss und darüber hinaus viele der Abhängigkeiten von MAVROS nicht zu Verfügung stehen. Wichtig ist auch, dass "Melodic" ausschließlich von der Ubuntu-Version 18.04 unterstützt wird. Die Installation von ROS lässt sich auf Ubuntu nach Hinzufügen des Repositories über 
+
+\begin{lstlisting}[language=bash]
+$ sudo apt install ros-melodic-ros-base
+\end{lstlisting}
+
+einfach durchführen. Hierbei ist es empfehlenswert für den Raspberry Pi die 
+
+\begin{lstlisting}[language=bash]
+$ ros-base
+\end{lstlisting}
+
+Version und für den Entwicklungsrechner die 
+
+\begin{lstlisting}[language=bash]
+$ desktop-full
+\end{lstlisting}
+
+Version zu nehmen, da diese bereits die wichtigsten grafischen Werkzeuge installiert hat. Nachdem man nun noch rosdep initialisiert, welches das Arbeiten mit Softwareabhängigkeiten deutlich vereinfacht, müssen nun die mitinstallierten ROS-Pakete im aktuell genutzten Terminal mit Hilfe des 
+
+\begin{lstlisting}[language=bash]
+$ source
+\end{lstlisting}
+
+Befehls geladen werden. Bei einer Standardinstallation geht das mit 
+
+\begin{lstlisting}[language=bash]
+$ source /opt/ros/melodic/setup.bash
+\end{lstlisting}. \cite{martinez2013learning}
 
 %###########################################################################
 %    Anhang B
 %###########################################################################
-\section{Überschrift von Anhang B}
+\subsection{Workspaces}
 \markboth{Anhang}{Anhang}
-Text
+Alle eigenen Entwicklungen finden im sogenannten catkin-Workspace statt, worin sich die eigenen Pakete befinden. Dieser kann im home-Verzeichnis des Benutzers nach Erstellen des Verzeichnisses "catkin\_ws" mit 
+
+\begin{lstlisting}[language=bash]
+$ catkin_make 
+-DPYTHON_EXECUTABLE
+=/usr/bin/python3
+\end{lstlisting}
+
+erstellt werden. Dabei muss 
+
+\begin{lstlisting}[language=bash]
+$ catkin_make
+\end{lstlisting}
+
+jedes mal ausgeführt werden, wenn ein neues Paket erstellt wurde. Das kann mit dem Befehl 
+
+\begin{lstlisting}[language=bash]
+$ catkin_create_pkg my-package-name 
+std_msgs rospy roscpp
+\end{lstlisting}
+
+erreicht werden. Dadurch wir ein gleichnamiger Ordner im ``src''-Ordner des Workspaces erstellt, in dem die Sourcedateien abgelegt werden können. Um die neuen Pakete nun auch in ROS zu Verfügung zu haben, müssen diese auch im Terminal geladen werden. Das geht analog zum Laden der vorinstallierten Pakete mit 
+
+\begin{lstlisting}[language=bash]
+$ source ~/catkin_ws/devel/setup.bash
+\end{lstlisting}.
+
+\subsection{.bashrc}
+\markboth{Anhang}{Anhang}
+Um nicht bei jedem neuen Terminal erst die Pakete manuell laden zu müssen, bietet Ubuntu die Möglichkeit dies automatisch zu tun. Dafür ist die Datei .bashrc zuständig, die sich im home-Verzeichnis eines jeden Benutzer befindet. In diese können die beiden Befehle einfach angehängt werden. Auch die Konfiguration für Gazebo (siehe Kapitel \ref{gesamtintegration}) kann hier bereits erfolgen. Es sei aber zu erwähnen, dass dies nur so lange sinnvoll ist, wie ROS hauptsächlich auf dem System genutzt wird. 
+
+\section{Entwicklungsumgebung und Versionsverwaltung}
+\markboth{Anhang}{Anhang}
+Eine (integrierte) Entwicklungsumgebung sollte den Entwickler in seiner Arbeit unterstützen und ihm sich wiederholende oder logisch einfache, aber zeitaufwändige Schritte abnehmen. Für diese Entwicklung fiel daher die Wahl auf "PyCharm" der Firma JetBrains. Dieses bietet neben dem obligatorischen Texteditor mit integriertem Auto-Complete und Compiler Vorschläge zu Codeverbesserung Refactoring etc. Es macht hier jedoch Sinn sich eine der ROS-Erweiterungen für PyCharm zu installieren, damit die ROS-eigenen Python Bibliotheken auch korrekt erkannt werden. PyCharm arbeitet zudem mit Virtual Environments (venv), also einer abgekapselten, meist projektspezifischen Python-Installation, die nur die zusätzlichen Bibliotheken enthält, die für das aktuelle Projekt benötigt werden. Diese sollte bei allen Entwicklern identisch sein, um Versionsinkompatibilitäten zu vermeiden. Ein weitere Funktion von PyCharm ist die integrierte Versionsverwaltung, kurz VCS (Version Control System). Diese bietet eine direkte Anbindung an Git, das Versionen des Sourcecodes verwaltet und Teilentwicklungen in den verschieden Entwicklungszweigen (branch) der Entwickler effektiv zum Hauptzweig (master) zusammenbringt (merge). Konflikte, wenn beispielsweise eine Datei von zwei zu vereinenden Zweigen bearbeitet wurden, müssen jedoch oft von Hand gelöst werden. Deshalb macht es Sinn Funktionalitäten weitestgehend in einzelne Dateien zu unterteilen. 
 
 %###########################################################################
 %    Anhang C (entfaellt, wenn keine für diese Arbeit relevanten Daten, 
@@ -34,16 +98,16 @@ Text
 %
 Die beigelegte CD-ROM enthält in der obersten Dateistruktur die Einträge
 \begin{itemize}
-\item \textbf{stud$\_${XXX}.pdf}: das PDF-File zur Studienarbeit
-STUD--{XXX}.
-%
-\item \textbf{STUD$\_${XXX}/}: ein Verzeichnis mit den TEX-Dateien des in
-LaTeX verfassten Berichtes zur Studienarbeit STUD--{XXX} sowie alle
-dazugehörigen Grafiken als *.eps und *.svg Dateien.
-% 
-\item \textbf{DATA/}: ein Verzeichnis mit den für diese Arbeit
-relevanten Daten, Hilfsprogrammen, Skripts und Simulationsumgebungen.
-%
+	\item \textbf{stud$\_${26}.pdf}: das PDF-File zur Studienarbeit
+	STUD--{26}.
+	%
+	\item \textbf{STUD$\_${26}/}: ein Verzeichnis mit den TEX-Dateien des in
+	LaTeX verfassten Berichtes zur Studienarbeit STUD--{26} sowie alle
+	dazugehörigen Grafiken als *.eps und *.svg Dateien.
+	% 
+	\item \textbf{DATA/}: ein Verzeichnis mit den für diese Arbeit
+	relevanten Daten, Hilfsprogrammen, Skripts und Simulationsumgebungen.
+	%
 \end{itemize} 
 Zusätzliche Informationen stehen in den readme.txt-Dateien der
 jeweiligen Verzeichnisse zur Verfügung.
