@@ -1,0 +1,20 @@
+\chapter{Einleitung}
+In Zeiten wo manchmal jede Sekunde zählt und der Verkehrsfluss auf den Straßen nicht immer garantiert ist, ist der schnelle Luftweg mit einer Drohne oftmals die bessere Option. Ein Automatisierter Transport über den Luftverkehr könnte die Lebensqualität in vielen Bereichen verbessern und dabei Kosten und Umweltschadstoffe, durch die ersparte Fahrt, verhindern. Die kürzlich rasant wachsende Covid-19 Epidemie zeigt deutlich, dass im medizinischen Bereich enorme Schwachstellen in unserer heutigen Infrastruktur zu finden sind. Während es auf der Nordhalbkugel vor allem die Krankenhäuser sind, welche durch die pure Masse an erkrankten Patienten keine weiteren Kapazitäten mehr haben, sind es in Ländern Afrikas die Wege, welche teilweise stundenlang bis zur nächsten ärztlichen Versorgung sind.\\
+\\
+Ein schon laufendes Projekt des Technologieunternehmens „Zipline“ nutzt mit ihren Drohnen den Luftraum, um in Afrika, genauer gesagt in Rwanda und Ghana, Medikamente sowie gespendetes Blut innerhalb von Minuten an Notfallorte zu bringen. \footnote[1]{Für einen genaueren Einblick: https://flyzipline.com/ (23.05.2020)}\\
+\\
+Natürlich stellt sich da die Frage über die geltenden Gesetze im Luftraum. Diese stellen in den USA und Europa immer noch Grenzen den Drohnen gegenüber und schränken dadurch kommende Innovationen in ihrer Realisierbarkeit ein. Afrika setzt jedoch den Fokus auf Innovation und vielversprechende Technik, weshalb sie dieses Projekt fördern.\footnote[2]{Ein Forbes Artikel darüber: https://www.forbes.com/sites/andrewcharlton5/2020/05/06/when-it-comes-to-sensible-drone-policy-africa-leads-the-way/ (23.05.2020)}. Doch auch in der EU sind, wegen den immer noch vielen offenen Fragen, Änderungen im Gesetzbuch zu erwarten.\footnote[3]{https://www.drohnen.de/20336/drohnen-gesetze-eu/ (23.05.2020)} 
+\newpage
+Vor diesem Hintergrund geht es bei dieser Projektarbeit um die Entwicklung einer Paketgreiffunktion für einen
+bereits funktionierenden Quadrokopter. Die zu entwickelnde Hardware lässt sich dabei
+in vier Kategorien einteilen: 
+
+Ein Greifarm, der in der Lage ist, Pakete mit einer Größe
+von ca. 10 cm zu greifen und zu halten; eine Kamera, die das zu greifende Paket
+erkennt; diverse Sensorik und Aktorik für den Greifarm und anderweitige
+Kontrollfunktionen; ein System-on-a-Chip (SoC) für die Bildanalyse, Regelung und
+Steuerung des Greifarms und des Quadrokopters, wobei dieser selbst bereits mit
+einem weiteren SoC ausgestattet ist, mit welchem für die Steuerung nur kommuniziert
+werden muss.
+
+In Kapitel \ref{greifer} wird zunächst auf die mechanische Auslegung und Konstruktion des Greifarms eingegangen. Anschließend wird der Greifer in Kapitel \ref{sensor} mit Sensoren und Aktoren ausgestattet, welche dann in Kapitel \ref{software} mit Software zum Leben erweckt werden. In Kapitel \ref{bilderkennung} mit einer Einführung in den Bilderkennungsalgorithmus der letzte Baustein geliefert, der dann in Kapitel \ref{gesamtintegration} mit den anderen Komponenten zu einem Gesamtsystem konsolidiert wird. 

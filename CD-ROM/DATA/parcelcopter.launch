@@ -1,0 +1,10 @@
+<launch>
+    <!--<env name="ROS_PACKAGE_PATH" value="~/catkin_ws/src/Firmware" />
+    <env name="ROS_PACKAGE_PATH" value="~/catkin_ws/src/Firmware/Tools/sitl_gazebo" />-->
+    <include file="$(find px4)/launch/mavros_posix_sitl_cam.launch"/>-
+    <node name="CameraImagePub" pkg="parcelcopter" type="CameraImagePub.py" />
+    <node name="CameraSettings" pkg="parcelcopter" type="CameraSettings.py" />
+    <node name="ImageProcessing" pkg="parcelcopter" type="ImageProcessing.py" />
+    <!---<arg name="node_start_delay" default="5.0" />-->
+    <node name="FlightController" pkg="parcelcopter" type="FlightController.py" />
+</launch>
