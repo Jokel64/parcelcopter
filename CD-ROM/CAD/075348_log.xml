@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--UGC_VERSION = 1024-->
+<XML_DOCUMENT xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+    <PTC_HEADER>
+        <VENDOR>Parametric Technology Corporation</VENDOR>
+        <PRODUCT>Creo Parametric 3602018050</PRODUCT>
+        <XML_VERSION>1.0</XML_VERSION>
+        <HOST_NAME>DESKTOP-LCKH9N2</HOST_NAME>
+        <USER>Sebas</USER>
+        <MACHINE_TYPE> Intel64 Family 6 Model 158 Stepping 9  GenuineIntel  3792 MHz</MACHINE_TYPE>
+    </PTC_HEADER>
+    <item item_type="4" pointer="TRUE" tag="SUMMARY OF IMPORT PROCESSING">
+        <name pointer="TRUE" type="9">
+            <value__PO__ws_val__PC__>Zusammenfassung über Import-Verarbeitung</value__PO__ws_val__PC__>
+        </name>
+        <item__PO__item_set__PC__ pointer="TRUE" tag="NULL">
+            <name>NULL</name>
+            <items SOAP-ENC:Array="[3]">
+                <items_ENTRY item_type="2" pointer="TRUE" tag="Page info">
+                    <name>NULL</name>
+                    <item__PO__ent__PC__ pointer="TRUE" tag="NULL">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY pointer="TRUE" tag="current page">
+                                <name pointer="TRUE" type="6">
+                                    <value__PO__cs_val__PC__>current page</value__PO__cs_val__PC__>
+                                </name>
+                                <value pointer="TRUE" type="1">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY pointer="TRUE" tag="total pages">
+                                <name pointer="TRUE" type="6">
+                                    <value__PO__cs_val__PC__>total pages</value__PO__cs_val__PC__>
+                                </name>
+                                <value pointer="TRUE" type="1">
+                                    <value__PO__i_val__PC__>1</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY pointer="TRUE" tag="short log">
+                                <name pointer="TRUE" type="6">
+                                    <value__PO__cs_val__PC__>short log</value__PO__cs_val__PC__>
+                                </name>
+                                <value pointer="TRUE" type="1">
+                                    <value__PO__i_val__PC__>0</value__PO__i_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY item_type="2" pointer="TRUE" tag="Input data">
+                    <name pointer="TRUE" type="9">
+                        <value__PO__ws_val__PC__>Allgemeine Informationen</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__ent__PC__ pointer="TRUE" tag="NULL">
+                        <name>NULL</name>
+                        <attrs SOAP-ENC:Array="[3]">
+                            <attrs_ENTRY pointer="TRUE" tag="Interface type">
+                                <name pointer="TRUE" type="9">
+                                    <value__PO__ws_val__PC__>Schnittstellentyp:</value__PO__ws_val__PC__>
+                                </name>
+                                <value pointer="TRUE" type="6">
+                                    <value__PO__cs_val__PC__>STEP</value__PO__cs_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY pointer="TRUE" tag="File name">
+                                <name pointer="TRUE" type="9">
+                                    <value__PO__ws_val__PC__>Dateiname:</value__PO__ws_val__PC__>
+                                </name>
+                                <value pointer="TRUE" type="10">
+                                    <value__PO__ws_val__PC__>pfazip://lego-part-075348.snapshot.6/075348.stp</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                            <attrs_ENTRY pointer="TRUE" tag="Model name">
+                                <name pointer="TRUE" type="9">
+                                    <value__PO__ws_val__PC__>Modellname:</value__PO__ws_val__PC__>
+                                </name>
+                                <value pointer="TRUE" type="10">
+                                    <value__PO__ws_val__PC__>DÄMPFER</value__PO__ws_val__PC__>
+                                </value>
+                            </attrs_ENTRY>
+                        </attrs>
+                    </item__PO__ent__PC__>
+                </items_ENTRY>
+                <items_ENTRY item_type="4" pointer="TRUE" tag="Geometry Processing">
+                    <name pointer="TRUE" type="9">
+                        <value__PO__ws_val__PC__>Geometrieverarbeitung</value__PO__ws_val__PC__>
+                    </name>
+                    <item__PO__item_set__PC__ pointer="TRUE" tag="NULL">
+                        <name>NULL</name>
+                        <items SOAP-ENC:Array="[1]">
+                            <items_ENTRY item_type="3" pointer="TRUE" tag="Processing errors of model">
+                                <name pointer="TRUE" type="9">
+                                    <value__PO__ws_val__PC__>Modellfehler werden verarbeitet</value__PO__ws_val__PC__>
+                                </name>
+                                <item__PO__ent_set__PC__ pointer="TRUE" tag="NULL">
+                                    <name pointer="TRUE" type="6">
+                                        <value__PO__cs_val__PC__>075348</value__PO__cs_val__PC__>
+                                    </name>
+                                    <ents SOAP-ENC:Array="[11]">
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3415</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>125</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>CYLINDRICAL_SURFACE</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Berandung einer Fläche ohne Flächeninhalt übersprungen</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3422</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>116</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>CIRCLE</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Nulllängen-Berandungskurve übersprungen</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3433</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>116</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>CIRCLE</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Nulllängen-Berandungskurve übersprungen</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3438</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>227</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>ADVANCED_FACE</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>nicht verarbeitet</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3443</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>143</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>PLANE</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Berandung einer Fläche ohne Flächeninhalt übersprungen</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3446</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>208</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>FACE_OUTER_BOUND</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>nicht verarbeitet</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3447</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>227</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>ADVANCED_FACE</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Fläche ohne Flächeninhalt übersprungen.</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3452</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>143</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>PLANE</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Berandung einer Fläche ohne Flächeninhalt übersprungen</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3455</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>208</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>FACE_OUTER_BOUND</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>nicht verarbeitet</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="NULL">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>3456</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>227</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="6">
+                                                        <value__PO__cs_val__PC__>ADVANCED_FACE</value__PO__cs_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Fläche ohne Flächeninhalt übersprungen.</value__PO__ws_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                        <ents_ENTRY pointer="TRUE" tag="Table columns">
+                                            <name>NULL</name>
+                                            <attrs SOAP-ENC:Array="[4]">
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_id">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Element-ID</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>-1</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Elementtyp</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>-1</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Entity_type_name">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Name des Elementtyps</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>-1</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                                <attrs_ENTRY pointer="TRUE" tag="Comment">
+                                                    <name pointer="TRUE" type="9">
+                                                        <value__PO__ws_val__PC__>Kommentar</value__PO__ws_val__PC__>
+                                                    </name>
+                                                    <value pointer="TRUE" type="1">
+                                                        <value__PO__i_val__PC__>-1</value__PO__i_val__PC__>
+                                                    </value>
+                                                </attrs_ENTRY>
+                                            </attrs>
+                                        </ents_ENTRY>
+                                    </ents>
+                                </item__PO__ent_set__PC__>
+                            </items_ENTRY>
+                        </items>
+                    </item__PO__item_set__PC__>
+                </items_ENTRY>
+            </items>
+        </item__PO__item_set__PC__>
+    </item>
+</XML_DOCUMENT>

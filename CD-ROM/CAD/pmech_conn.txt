@@ -1,0 +1,10 @@
+       Fehlerdiagnose für Analyse-/Baugruppenfehler
+
+  Es können nicht alle Positionsbedingungen gleichzeitig erfüllt werden.
+Die folgenden Positionsbedingungen können nicht erfüllt werden:
+
+
+1) Die folgende kinematische Schleife kann nicht geschlossen werden: Ground -
+body1 - body2 - Ground.
+
+
